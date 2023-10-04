@@ -2,16 +2,16 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <span>My Project</span>,
+  logo: <span>ArchGPT</span>,
   project: {
-    link: 'https://github.com/shuding/nextra-docs-template',
+    link: 'https://github.com/ArchGPT',
   },
   chat: {
-    link: 'https://discord.com',
+    link: 'https://discord.com/invite/pCcWcncwkw',
   },
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  docsRepositoryBase: 'https://github.com/ArchGPT/docs',
   footer: {
-    text: 'Nextra Docs Template',
+    text: 'ArchGPT © 2420',
   },
 }
 
