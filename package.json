@@ -1,0 +1,8 @@
+{
+  "name": "archgpt",
+  "version": "0.0.1",
+  "main": "index.ts",
+  "repository": "https://github.com/ArchGPT/ArchGPT",
+  "author": "archy <a@0a.io>",
+  "license": "MIT"
+}

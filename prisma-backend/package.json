@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.4.1",
+    "lodash": "^4.17.21",
     "prisma": "^5.4.1",
     "tree-sitter": "^0.20.5",
     "tree-sitter-typescript": "^0.20.3",

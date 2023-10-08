@@ -1,6 +1,14 @@
 # archgpt-prisma-backend
 
+https://bun.sh/guides/ecosystem/prisma ->
+
+<!-- bunx prisma init --datasource-provider sqlite -->
+
+
+-------------
+
 To install dependencies:
+
 
 ```bash
 bun install
