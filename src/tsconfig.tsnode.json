@@ -16,7 +16,7 @@
     "isolatedModules": true,
     "noImplicitAny": false,
     "jsx": "preserve",
-
+    "target": "es2022",
     //
 
     "baseUrl": ".",

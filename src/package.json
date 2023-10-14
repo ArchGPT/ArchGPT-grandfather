@@ -1,0 +1,44 @@
+{
+  "name": "archgpt-local",
+  "module": "index.ts",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "scripts": {
+    "tsnode": "ts-node --project ./tsconfig.tsnode.json --transpile-only",
+    "test": "yarn jest --no-watchman",
+    "clean-db": "rm -rf vector_db"
+  },
+  "devDependencies": {
+    "@apache-arrow/ts": "^12.0.0",
+    "@jest/globals": "^29.7.0",
+    "@swc-node/register": "^1.6.8",
+    "@types/lodash": "^4.14.199",
+    "@types/node": "^20.8.4",
+    "bun-types": "latest",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.4.1",
+    "@swc/core": "^1.1.82",
+    "apache-arrow": "^12.0.0",
+    "dotenv": "^16.3.1",
+    "hono": "^3.7.5",
+    "immer": "^10.0.3",
+    "lodash": "^4.17.21",
+    "minimatch": "^9.0.3",
+    "openai": "^3.2.1",
+    "parse-gitignore": "^2.0.0",
+    "prisma": "^5.4.1",
+    "tree-sitter": "^0.20.5",
+    "tree-sitter-typescript": "^0.20.3",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.2.2",
+    "vectordb": "^0.3.0",
+    "web-tree-sitter": "^0.20.8"
+  }
+}

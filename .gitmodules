@@ -1,0 +1,3 @@
+[submodule "victor"]
+	path = victor
+	url = git@github.com:ArchGPT/victor.git
