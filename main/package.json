@@ -30,7 +30,7 @@
     "immer": "^10.0.3",
     "lodash": "^4.17.21",
     "minimatch": "^9.0.3",
-    "openai": "^3.2.1",
+    "openai": "^4.12.1",
     "parse-gitignore": "^2.0.0",
     "prisma": "^5.4.1",
     "tree-sitter": "^0.20.5",

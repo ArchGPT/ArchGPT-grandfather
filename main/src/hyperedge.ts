@@ -1,4 +1,4 @@
-import { ArST, FileWithArST } from "./parser"
+import { ArST, ArST_withMetaInfo } from "./parser"
 
 export type HyperEdge = {
   vertices: Vertex[]
@@ -11,7 +11,7 @@ export type Vertex = {
 }
 
 
-export const hyperEdgeFromFile = (file: FileWithArST): HyperEdge => {
+export const hyperEdgeFromFile = (file: ArST_withMetaInfo): HyperEdge => {
 
   const fileHasFishAnnotation = false
 

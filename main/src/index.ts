@@ -1,18 +1,17 @@
 import fs from 'fs';
 import path from 'path';
-import { ArST, makeQuery, FileWithArST } from './parser';
+import { ArST, makeQuery, ArST_withMetaInfo } from './parser';
 import _ from 'lodash';
 import parseGI from 'parse-gitignore'
 import { minimatch } from 'minimatch'
 import { initHypeEdges } from './readWrite';
 import { initDB, searchFiles, searchSegs } from './db';
-import { createChatStream } from './runEnv/vercelEdgeChat';
 
 import OpenAI from "openai";
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 
-export function applyMakeQueryToDir(folderPath: string, gitIgnoredFiles: string[] = []): FileWithArST[] {
+export function applyMakeQueryToDir(folderPath: string, gitIgnoredFiles: string[] = []): ArST_withMetaInfo[] {
   const files = fs.readdirSync(folderPath)
 
   return _.flatten(files.map((file) => {
@@ -55,97 +54,93 @@ export function applyMakeQueryToDir(folderPath: string, gitIgnoredFiles: string[
 
 }
 
-export const initArchGPT = async (folder: string = '../../example-todo-list/') => {
+type ArchGPTOption = {
+  converDBPathToMatchF_Path: (path: string) => string
+}
 
-  const hs = initHypeEdges(folder, { fromScratch: true })
+export const initArchGPT = async (folder: string = '../../example-todo-list/', option: ArchGPTOption) => {
+
+  const hs = initHypeEdges(folder, { fromScratch: false })
 
   const { db, tables } = await initDB(folder, hs, { fromScratch: false })
 
 
-  // const files = await searchFiles(tables[0], "User Interface", { nameOnly: true })
-  // const segs = await searchSegs(tables[1], "User Interface", { nameOnly: true })
+  const fns = {
+    searchFiles: async (query: string, options: { nameOnly?: boolean } = {}): Promise<ArST_withMetaInfo[]> => {
 
 
-  // console.log(files);
-
-  return {
-    searchFiles: async (query: string, options: { nameOnly?: boolean } = {}) => {
-      return await searchFiles(tables[0], query, options)
+      const r = searchFiles(hs, option.converDBPathToMatchF_Path)(tables[0], query, options)
+      return r
     },
     searchSegs: async (query: string, options: { nameOnly?: boolean } = {}) => {
-      return await searchSegs(tables[1], query, options)
+      return await searchSegs(hs)(tables[1], query, options)
     },
-    runPrompt: async (purpose: string, config: ArchPromptObject): Promise<any> => {
-      const mainMessage = await promptPurposeMap[purpose](
-        config.fileTitle,
+    runPrompt: async (purpose: string, config: PromptConfig): Promise<string> => {
+      const [systemMsg, mainMessage] = await promptPurposeMap[purpose](
         config.description,
         config.basedOn
       )
       const result = await openai.chat.completions.create({
         model: config.llm,
-        messages: mainMessage,
+        messages: [
+          { role: 'system', content: systemMsg },
+          { role: 'user', content: mainMessage }
+        ]
+
       });
       return result.choices[0].message.content
     },
-    composeMessage: () => { }
+    composeMessage: async (purpose: string, config: PromptConfig): Promise<[string, string]> => {
+      const [systemMsg, mainMessage] = await promptPurposeMap[purpose](
+        config.description,
+        config.basedOn
+      )
+      return [systemMsg, mainMessage]
+    }
   }
 
+  return fns
 }
 
-export type Config = {
-  basedOn: ArST[]
-  fileTitle: string
+export type PromptConfig = {
+  basedOn: ArST_withMetaInfo[]
   description: string
   llm: LLMType
-  llmConfig: LLMConfig
 }
 
-export type ArchPromptObject = Config & {
-  purpose: PromptPurpose,
-  promptObj: ArST[],
-  fileTitle: string,
-  result: string
-}
+
 
 export type LLMType = "gpt-4" | "gpt-3.5-turbo" | "codellama"
 
-export type LLMConfig = {
-  ollamaPort?: number
-}
 
-export type promptObj = {
-  mode: LLMType,
-  messages: string[]
-  purpose: PromptPurpose
-  config: Config
-}
 
 export type PromptPart = ''
 
 export type PromptPurpose = "CREATE_FILE" | "EDIT_FILE" | "CREATE_SEG" | "EDIT_SEG"
 
 
-const createFile = (fileTitle, description, ArST: ArST[]) => `Here is the content of \`${fileTitle}\`:
+const createFile = (description: string, ArST: ArST_withMetaInfo[]) => [`Given a file or code snippet, you will implement a feature based on an english description.`, `Here is the content of \`${ArST[0].filePath}\`:
 
 \`\`\`typescript
-${ArST[0].str}
+${ArST[0].ast.str}
 \`\`\`
 
 create a new file based on description:
 
 > ${description}
-`
+`]
 
-const editFile = (fileTitle, description, ArST: ArST[]) => `Here is the content of \`${fileTitle}\`:
+const editFile = (description: string, ArST: ArST_withMetaInfo[]) => [`Given a file or code snippet, you will implement a feature based on an english description.`, `Here is the content of \`${ArST[0].filePath}\`:
 
 \`\`\`typescript
-${ArST[0].str}
+${ArST[0].ast.str}
 \`\`\`
 
 edit this file based on description:
 > ${description}
 
-`
+`]
+
 
 const promptPurposeMap = {
   "CREATE_FILE": createFile,

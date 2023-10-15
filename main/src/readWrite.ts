@@ -1,6 +1,6 @@
 import { describe, expect, test } from '@jest/globals';
 import { initDB } from './db';
-import { FileWithArST, flattenArST, makeQuery } from './parser';
+import { ArST_withMetaInfo, flattenArST, makeQuery } from './parser';
 import { applyMakeQueryToDir } from '.'
 import fs, {
   readFileSync, writeFileSync,
@@ -10,7 +10,7 @@ import { writeFileSyncAndCreateFolderINE } from './util';
 import path from 'path';
 
 
-export const writeToFolder = (hs: FileWithArST[], folder: string) => {
+export const writeToFolder = (hs: ArST_withMetaInfo[], folder: string) => {
   // writing into .archy folder
   hs.forEach((h) => {
     const fp = h.filePath
@@ -29,9 +29,9 @@ export const writeToFolder = (hs: FileWithArST[], folder: string) => {
 }
 
 // do so recurisvely 
-export const readFromFolder = (folder: string): FileWithArST[] => {
+export const readFromFolder = (folder: string): ArST_withMetaInfo[] => {
   const files = fs.readdirSync(folder)
-  const hs: FileWithArST[] = []
+  const hs: ArST_withMetaInfo[] = []
   files.forEach((file) => {
     const filePath = path.join(folder, file);
     const stats = fs.statSync(filePath)
@@ -52,8 +52,8 @@ export type HS_INIT_Option = {
 }
 
 // init -> read from folder if not, otherwise call applyMakeQueryToDir
-export const initHypeEdges = (folder: string, initOption: HS_INIT_Option): FileWithArST[] => {
-  const hs: FileWithArST[] = []
+export const initHypeEdges = (folder: string, initOption: HS_INIT_Option): ArST_withMetaInfo[] => {
+  const hs: ArST_withMetaInfo[] = []
   if (!initOption.fromScratch && fs.existsSync(path.join(folder, '.archy'))) {
     hs.push(...readFromFolder(path.join(folder, '.archy')))
   } else {
@@ -63,7 +63,7 @@ export const initHypeEdges = (folder: string, initOption: HS_INIT_Option): FileW
 
 }
 
-export const detectHyperEdgesDiff = (hs1: FileWithArST[], hs2: FileWithArST[]) => {
+export const detectHyperEdgesDiff = (hs1: ArST_withMetaInfo[], hs2: ArST_withMetaInfo[]) => {
   const hs1Str = hs1.map((h) => h.str)
   const hs2Str = hs2.map((h) => h.str)
   const diff = hs1Str.filter((h) => !hs2Str.includes(h))

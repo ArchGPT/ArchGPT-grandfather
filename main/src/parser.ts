@@ -127,9 +127,9 @@ interface Option {
 type FISH_DICT = { [fishName: string]: string[] }
 
 
-export type FileWithArST = { imports: string[], ast: ArST, filePath: string, isTest?: boolean, isConfig?: boolean, hasFishAnnotation?: boolean }
+export type ArST_withMetaInfo = { imports: string[], ast: ArST, filePath: string, isTest?: boolean, isConfig?: boolean, hasFishAnnotation?: boolean }
 
-export const makeQuery = (inputContent: string = fs.readFileSync('./index.ts', 'utf-8'), filePath = './index.ts',): FileWithArST => {
+export const makeQuery = (inputContent: string = fs.readFileSync('./index.ts', 'utf-8'), filePath = './index.ts',): ArST_withMetaInfo => {
 
   const ext = path.extname(filePath)
   let lang = null

@@ -1,9 +1,48 @@
-import { connect, Connection, EmbeddingFunction, MetricType, OpenAIEmbeddingFunction, Table } from 'vectordb'
+import { connect, Connection, EmbeddingFunction, MetricType, Table } from 'vectordb'
 import { tableFromArrays, tableFromIPC, tableToIPC, FixedSizeList, Field, Int32, makeVector, Schema, Utf8, Table as ArrowTable, vectorFromArray, Float32 } from 'apache-arrow'
 import { readFileSync, writeFileSync } from 'fs'
-import { ArST, flattenArST, FileWithArST, idOfArST } from './parser'
+import { ArST, flattenArST, ArST_withMetaInfo, idOfArST } from './parser'
 import path from 'path'
 import _ from 'lodash'
+import OpenAI from "openai"
+
+export class OpenAIEmbeddingFunction implements EmbeddingFunction<string> {
+  private readonly _openai: any
+  private readonly _modelName: string
+
+  constructor(sourceColumn: string, openAIKey: string, modelName: string = 'text-embedding-ada-002') {
+    let openai
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      openai = require('openai')
+    } catch {
+      throw new Error('please install openai using npm install openai')
+    }
+
+    this.sourceColumn = sourceColumn
+    this._openai = new OpenAI({
+      apiKey: openAIKey
+    })
+    this._modelName = modelName
+  }
+
+  async embed(data: string[]): Promise<number[][]> {
+    const response = await this._openai.embeddings.create({
+      model: this._modelName,
+      input: data
+    })
+    const embeddings: number[][] = []
+    // console.log("io", data, response.data);
+
+    for (let i = 0; i < response.data.length; i++) {
+      embeddings.push(response.data[i].embedding as number[])
+    }
+    return embeddings
+  }
+
+  sourceColumn: string
+}
+
 
 
 type EmbeddingEntry = {
@@ -58,7 +97,7 @@ const checkIfExist = async (trees: ArST[], str: string) => {
   return tree
 }
 
-export const initDB = async (folderPath: string, hs: FileWithArST[], option = { fromScratch: false }) => {
+export const initDB = async (folderPath: string, hs: ArST_withMetaInfo[], option = { fromScratch: false }) => {
   console.log("INIT..");
   const db = await connect(path.join(folderPath, '.archy', '.db', 'vector_db'))
 
@@ -92,7 +131,7 @@ export const initDB = async (folderPath: string, hs: FileWithArST[], option = { 
   return { db, tables: [table, segTables] }
 }
 
-const makeEntry = (f: FileWithArST, tags) => {
+const makeEntry = (f: ArST_withMetaInfo, tags) => {
   return {
     str: f.ast.str,
     fileName: f.filePath,
@@ -101,14 +140,14 @@ const makeEntry = (f: FileWithArST, tags) => {
   }
 }
 
-const arcSTsForSegs = (hs: FileWithArST[]) => {
-  const allArcSts: FileWithArST[] = hs.flatMap((f) => flattenArST(f.ast).map((a) => ({ ast: a, filePath: f.filePath, imports: f.imports })))
+const arcSTsForSegs = (hs: ArST_withMetaInfo[]) => {
+  const allArcSts: ArST_withMetaInfo[] = hs.flatMap((f) => flattenArST(f.ast).map((a) => ({ ast: a, filePath: f.filePath, imports: f.imports })))
   console.log("allArcSts", allArcSts.length, allArcSts.map((a) => a.ast.label));
 
   return allArcSts.filter((a) => a.ast.label === "fish_segments")
 }
 
-const createSegsTables = async (db: Connection, hs: FileWithArST[]) => {
+const createSegsTables = async (db: Connection, hs: ArST_withMetaInfo[]) => {
   const [table, shouldInit] = await getTable(db, { fromScratch: true }, "code-segs")
   if (shouldInit) {
     const startTime = Date.now()
@@ -146,7 +185,7 @@ export const rankEntry = async (table: Table<EmbeddingEntry>, searchText: string
 
 }
 
-export const searchSegs = async (table: Table<EmbeddingEntry>, searchText: string, rankOption: RankOption) => {
+export const searchSegs = (files: ArST_withMetaInfo[]) => async (table: Table<EmbeddingEntry>, searchText: string, rankOption: RankOption) => {
 
   return await rankEntry(table, searchText,
     // "labels LIKE 'SEG%'",
@@ -157,9 +196,14 @@ export const searchSegs = async (table: Table<EmbeddingEntry>, searchText: strin
 type RankOption = {
   nameOnly?: boolean
 }
-export const searchFiles = async (table: Table<EmbeddingEntry>, searchText: string, rankOption: RankOption) => {
+export const searchFiles = (files: ArST_withMetaInfo[], transformFilePath = (a) => a) => async (table: Table<EmbeddingEntry>, searchText: string, rankOption: RankOption) => {
 
-  return await rankEntry(table, searchText, "labels='FILE'", rankOption)
+  const result = await rankEntry(table, searchText, "labels='FILE'", rankOption)
+
+
+  return result[0].map((a) =>
+    _.find(files, { filePath: transformFilePath(a[0]) }))
+
 
 }
 
