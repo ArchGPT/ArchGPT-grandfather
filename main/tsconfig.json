@@ -13,6 +13,6 @@
     "noEmitOnError": false
   },
 
-  "include": ["*", "src/*.ts"],
+  "include": ["*", "src/*.ts", "src/**/*.ts"],
   "exclude": ["**/*.spec.ts"]
 }

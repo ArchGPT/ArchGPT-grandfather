@@ -237,7 +237,7 @@ export type ArST = {
 
 
 
-export const idOfArcST = (node: ArST) => {
+export const idOfArST = (node: ArST) => {
   return node.nestedIndex.join("-") + "_" + node.label.toString() + "_" + node.name
 }
 
@@ -249,7 +249,7 @@ const getByIndex = (ast: ArST, index: number[]): ArST => {
   return node
 }
 
-export const flattenArcST = (ast: ArST): ArST[] => {
+export const flattenArST = (ast: ArST): ArST[] => {
   const output: ArST[] = []
   const queue: ArST[] = [ast]
   while (queue.length > 0) {
