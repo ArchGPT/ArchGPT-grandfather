@@ -1,6 +1,6 @@
 import { describe, expect, test } from '@jest/globals';
 import { initDB } from './db';
-import { FileWithArST, flattenArcST, makeQuery } from './parser';
+import { FileWithArST, flattenArST, makeQuery } from './parser';
 import { applyMakeQueryToDir } from '.'
 import fs, {
   readFileSync, writeFileSync,

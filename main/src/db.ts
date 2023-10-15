@@ -1,7 +1,7 @@
 import { connect, Connection, EmbeddingFunction, MetricType, OpenAIEmbeddingFunction, Table } from 'vectordb'
 import { tableFromArrays, tableFromIPC, tableToIPC, FixedSizeList, Field, Int32, makeVector, Schema, Utf8, Table as ArrowTable, vectorFromArray, Float32 } from 'apache-arrow'
 import { readFileSync, writeFileSync } from 'fs'
-import { ArST, flattenArcST, FileWithArST, idOfArcST } from './parser'
+import { ArST, flattenArST, FileWithArST, idOfArST } from './parser'
 import path from 'path'
 import _ from 'lodash'
 
@@ -70,17 +70,17 @@ export const initDB = async (folderPath: string, hs: FileWithArST[], option = { 
    */
   if (shouldInit) {
     const startTime = Date.now()
-    const ArcSTs = hs.filter((a) => a.ast.nestedIndex.length === 0 && !a.isTest && !a.isConfig)
-    // console.log("ArcSTs", ArcSTs.length);
+    const ArSTs = hs.filter((a) => a.ast.nestedIndex.length === 0 && !a.isTest && !a.isConfig)
+    // console.log("ArSTs", ArSTs.length);
 
     const metaEntries = await makeDefaultCategoiesAndSymbol()
 
-    const embeddingEntries: EmbeddingEntry[] = ArcSTs.map((a) =>
+    const embeddingEntries: EmbeddingEntry[] = ArSTs.map((a) =>
       makeEntry(a, "FILE")
     )
     await table.add([...embeddingEntries, ...metaEntries])
     const endTime = Date.now()
-    console.log(`Embedding ${ArcSTs.length} ArcSTs took ${endTime - startTime} ms`);
+    console.log(`Embedding ${ArSTs.length} ArSTs took ${endTime - startTime} ms`);
   } else {
     console.log("HAS INITED");
 
@@ -102,7 +102,7 @@ const makeEntry = (f: FileWithArST, tags) => {
 }
 
 const arcSTsForSegs = (hs: FileWithArST[]) => {
-  const allArcSts: FileWithArST[] = hs.flatMap((f) => flattenArcST(f.ast).map((a) => ({ ast: a, filePath: f.filePath, imports: f.imports })))
+  const allArcSts: FileWithArST[] = hs.flatMap((f) => flattenArST(f.ast).map((a) => ({ ast: a, filePath: f.filePath, imports: f.imports })))
   console.log("allArcSts", allArcSts.length, allArcSts.map((a) => a.ast.label));
 
   return allArcSts.filter((a) => a.ast.label === "fish_segments")
@@ -119,7 +119,7 @@ const createSegsTables = async (db: Connection, hs: FileWithArST[]) => {
     )
     await table.add([...embeddingEntries, ...metaEntries])
     const endTime = Date.now()
-    console.log(`Embedding ${segs.length} ArcSTs took ${endTime - startTime} ms`);
+    console.log(`Embedding ${segs.length} ArSTs took ${endTime - startTime} ms`);
   } else {
     console.log("HAS INITED");
   }
@@ -146,7 +146,7 @@ export const rankEntry = async (table: Table<EmbeddingEntry>, searchText: string
 
 }
 
-export const rankSegs = async (table: Table<EmbeddingEntry>, searchText: string, rankOption: RankOption) => {
+export const searchSegs = async (table: Table<EmbeddingEntry>, searchText: string, rankOption: RankOption) => {
 
   return await rankEntry(table, searchText,
     // "labels LIKE 'SEG%'",
@@ -157,7 +157,7 @@ export const rankSegs = async (table: Table<EmbeddingEntry>, searchText: string,
 type RankOption = {
   nameOnly?: boolean
 }
-export const rankFiles = async (table: Table<EmbeddingEntry>, searchText: string, rankOption: RankOption) => {
+export const searchFiles = async (table: Table<EmbeddingEntry>, searchText: string, rankOption: RankOption) => {
 
   return await rankEntry(table, searchText, "labels='FILE'", rankOption)
 

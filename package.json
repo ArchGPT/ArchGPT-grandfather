@@ -4,5 +4,8 @@
   "main": "index.ts",
   "repository": "https://github.com/ArchGPT/ArchGPT",
   "author": "archy <a@0a.io>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "openai": "^4.12.1"
+  }
 }
