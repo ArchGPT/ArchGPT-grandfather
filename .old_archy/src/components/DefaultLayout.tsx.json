@@ -1,0 +1,1664 @@
+{
+  "ast": {
+    "nestedIndex": [],
+    "label": "FILE",
+    "name": "root",
+    "str": "import Head from 'next/head';\nimport { ReactNode } from 'react';\n\ntype DefaultLayoutProps = { children: ReactNode };\n\nexport const DefaultLayout = ({ children }: DefaultLayoutProps) => {\n  return (\n    <>\n      <Head>\n        <title>Prisma Starter</title>\n        <link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </>\n  );\n};\n",
+    "childrenLabels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "children": [
+      {
+        "nestedIndex": [
+          0
+        ],
+        "str": "import Head from 'next/head';",
+        "label": 0,
+        "name": "import_statement",
+        "childrenLabels": [
+          0,
+          "sourceNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              0,
+              0
+            ],
+            "str": "Head",
+            "label": 0,
+            "name": "import_clause",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  0,
+                  0,
+                  0
+                ],
+                "str": "Head",
+                "label": 0,
+                "name": "identifier"
+              }
+            ]
+          },
+          {
+            "nestedIndex": [
+              0,
+              1
+            ],
+            "str": "'next/head'",
+            "label": "sourceNode",
+            "name": "string",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  0,
+                  1,
+                  0
+                ],
+                "str": "next/head",
+                "label": 0,
+                "name": "string_fragment"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          1
+        ],
+        "str": "import { ReactNode } from 'react';",
+        "label": 1,
+        "name": "import_statement",
+        "childrenLabels": [
+          0,
+          "sourceNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              1,
+              0
+            ],
+            "str": "{ ReactNode }",
+            "label": 0,
+            "name": "import_clause",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  0
+                ],
+                "str": "{ ReactNode }",
+                "label": 0,
+                "name": "named_imports",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "ReactNode",
+                    "label": 0,
+                    "name": "import_specifier",
+                    "childrenLabels": [
+                      "nameNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "str": "ReactNode",
+                        "label": "nameNode",
+                        "name": "identifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nestedIndex": [
+              1,
+              1
+            ],
+            "str": "'react'",
+            "label": "sourceNode",
+            "name": "string",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  1,
+                  1,
+                  0
+                ],
+                "str": "react",
+                "label": 0,
+                "name": "string_fragment"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          2
+        ],
+        "str": "type DefaultLayoutProps = { children: ReactNode };",
+        "label": 2,
+        "name": "type_alias_declaration",
+        "childrenLabels": [
+          "nameNode",
+          "valueNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              2,
+              0
+            ],
+            "str": "DefaultLayoutProps",
+            "label": "nameNode",
+            "name": "type_identifier"
+          },
+          {
+            "nestedIndex": [
+              2,
+              1
+            ],
+            "str": "{ children: ReactNode }",
+            "label": "valueNode",
+            "name": "object_type",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  2,
+                  1,
+                  0
+                ],
+                "str": "children: ReactNode",
+                "label": 0,
+                "name": "property_signature",
+                "childrenLabels": [
+                  "nameNode",
+                  "typeNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      2,
+                      1,
+                      0,
+                      0
+                    ],
+                    "str": "children",
+                    "label": "nameNode",
+                    "name": "property_identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      2,
+                      1,
+                      0,
+                      1
+                    ],
+                    "str": ": ReactNode",
+                    "label": "typeNode",
+                    "name": "type_annotation",
+                    "childrenLabels": [
+                      0
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          2,
+                          1,
+                          0,
+                          1,
+                          0
+                        ],
+                        "str": "ReactNode",
+                        "label": 0,
+                        "name": "type_identifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          3
+        ],
+        "str": "export const DefaultLayout = ({ children }: DefaultLayoutProps) => {\n  return (\n    <>\n      <Head>\n        <title>Prisma Starter</title>\n        <link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </>\n  );\n};",
+        "label": 3,
+        "name": "export_statement",
+        "childrenLabels": [
+          "declarationNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              3,
+              0
+            ],
+            "str": "const DefaultLayout = ({ children }: DefaultLayoutProps) => {\n  return (\n    <>\n      <Head>\n        <title>Prisma Starter</title>\n        <link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </>\n  );\n};",
+            "label": "declarationNode",
+            "name": "lexical_declaration",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  3,
+                  0,
+                  0
+                ],
+                "str": "DefaultLayout = ({ children }: DefaultLayoutProps) => {\n  return (\n    <>\n      <Head>\n        <title>Prisma Starter</title>\n        <link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </>\n  );\n}",
+                "label": 0,
+                "name": "variable_declarator",
+                "childrenLabels": [
+                  "nameNode",
+                  "valueNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      3,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "DefaultLayout",
+                    "label": "nameNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      3,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "({ children }: DefaultLayoutProps) => {\n  return (\n    <>\n      <Head>\n        <title>Prisma Starter</title>\n        <link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </>\n  );\n}",
+                    "label": "valueNode",
+                    "name": "arrow_function",
+                    "childrenLabels": [
+                      "parametersNode",
+                      "bodyNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          3,
+                          0,
+                          0,
+                          1,
+                          0
+                        ],
+                        "str": "({ children }: DefaultLayoutProps)",
+                        "label": "parametersNode",
+                        "name": "formal_parameters",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              3,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0
+                            ],
+                            "str": "{ children }: DefaultLayoutProps",
+                            "label": 0,
+                            "name": "required_parameter",
+                            "childrenLabels": [
+                              "patternNode",
+                              "typeNode"
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  3,
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                  0
+                                ],
+                                "str": "{ children }",
+                                "label": "patternNode",
+                                "name": "object_pattern",
+                                "childrenLabels": [
+                                  0
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      3,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "children",
+                                    "label": 0,
+                                    "name": "shorthand_property_identifier_pattern"
+                                  }
+                                ]
+                              },
+                              {
+                                "nestedIndex": [
+                                  3,
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                  1
+                                ],
+                                "str": ": DefaultLayoutProps",
+                                "label": "typeNode",
+                                "name": "type_annotation",
+                                "childrenLabels": [
+                                  0
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      3,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      0
+                                    ],
+                                    "str": "DefaultLayoutProps",
+                                    "label": 0,
+                                    "name": "type_identifier"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "nestedIndex": [
+                          3,
+                          0,
+                          0,
+                          1,
+                          1
+                        ],
+                        "str": "{\n  return (\n    <>\n      <Head>\n        <title>Prisma Starter</title>\n        <link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </>\n  );\n}",
+                        "label": "bodyNode",
+                        "name": "statement_block",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              3,
+                              0,
+                              0,
+                              1,
+                              1,
+                              0
+                            ],
+                            "str": "return (\n    <>\n      <Head>\n        <title>Prisma Starter</title>\n        <link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </>\n  );",
+                            "label": 0,
+                            "name": "return_statement",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  3,
+                                  0,
+                                  0,
+                                  1,
+                                  1,
+                                  0,
+                                  0
+                                ],
+                                "str": "(\n    <>\n      <Head>\n        <title>Prisma Starter</title>\n        <link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </>\n  )",
+                                "label": 0,
+                                "name": "parenthesized_expression",
+                                "childrenLabels": [
+                                  0,
+                                  1
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      3,
+                                      0,
+                                      0,
+                                      1,
+                                      1,
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "<>\n      <Head>\n        <title>Prisma Starter</title>\n        <link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </",
+                                    "label": 0,
+                                    "name": "type_assertion",
+                                    "childrenLabels": [
+                                      0,
+                                      1
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          3,
+                                          0,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          0,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "<>",
+                                        "label": 0,
+                                        "name": "type_arguments",
+                                        "childrenLabels": [
+                                          0
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              3,
+                                              0,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              0,
+                                              0,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "",
+                                            "label": 0,
+                                            "name": "type_identifier"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          3,
+                                          0,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          0,
+                                          0,
+                                          1
+                                        ],
+                                        "str": "<Head>\n        <title>Prisma Starter</title>\n        <link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </",
+                                        "label": 1,
+                                        "name": "type_assertion",
+                                        "childrenLabels": [
+                                          0,
+                                          1
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              3,
+                                              0,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              0,
+                                              0,
+                                              1,
+                                              0
+                                            ],
+                                            "str": "<Head>",
+                                            "label": 0,
+                                            "name": "type_arguments",
+                                            "childrenLabels": [
+                                              0
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  3,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "Head",
+                                                "label": 0,
+                                                "name": "type_identifier"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              3,
+                                              0,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              0,
+                                              0,
+                                              1,
+                                              1
+                                            ],
+                                            "str": "<title>Prisma Starter</title>\n        <link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </",
+                                            "label": 1,
+                                            "name": "type_assertion",
+                                            "childrenLabels": [
+                                              0,
+                                              1
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  3,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "<title>",
+                                                "label": 0,
+                                                "name": "type_arguments",
+                                                "childrenLabels": [
+                                                  0
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      3,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      0
+                                                    ],
+                                                    "str": "title",
+                                                    "label": 0,
+                                                    "name": "type_identifier"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  3,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1
+                                                ],
+                                                "str": "Prisma Starter</title>\n        <link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </",
+                                                "label": 1,
+                                                "name": "binary_expression",
+                                                "childrenLabels": [
+                                                  "leftNode",
+                                                  "rightNode"
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      3,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      0
+                                                    ],
+                                                    "str": "Prisma Starter",
+                                                    "label": "leftNode",
+                                                    "name": "member_expression",
+                                                    "childrenLabels": [
+                                                      "objectNode",
+                                                      "optionalChainNode",
+                                                      "propertyNode"
+                                                    ],
+                                                    "children": [
+                                                      {
+                                                        "nestedIndex": [
+                                                          3,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          0
+                                                        ],
+                                                        "str": "Prisma",
+                                                        "label": "objectNode",
+                                                        "name": "identifier"
+                                                      },
+                                                      {
+                                                        "nestedIndex": [
+                                                          3,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          1
+                                                        ],
+                                                        "str": "",
+                                                        "label": "optionalChainNode",
+                                                        "name": "optional_chain"
+                                                      },
+                                                      {
+                                                        "nestedIndex": [
+                                                          3,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          2
+                                                        ],
+                                                        "str": "Starter",
+                                                        "label": "propertyNode",
+                                                        "name": "property_identifier"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "nestedIndex": [
+                                                      3,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      1
+                                                    ],
+                                                    "str": "/title>\n        <link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </",
+                                                    "label": "rightNode",
+                                                    "name": "binary_expression",
+                                                    "childrenLabels": [
+                                                      "leftNode",
+                                                      "rightNode"
+                                                    ],
+                                                    "children": [
+                                                      {
+                                                        "nestedIndex": [
+                                                          3,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          0
+                                                        ],
+                                                        "str": "/title>",
+                                                        "label": "leftNode",
+                                                        "name": "regex",
+                                                        "childrenLabels": [
+                                                          "patternNode"
+                                                        ],
+                                                        "children": [
+                                                          {
+                                                            "nestedIndex": [
+                                                              3,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              0,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              0,
+                                                              0
+                                                            ],
+                                                            "str": "title>",
+                                                            "label": "patternNode",
+                                                            "name": "regex_pattern"
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "nestedIndex": [
+                                                          3,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          1
+                                                        ],
+                                                        "str": "link rel=\"icon\" href=\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </",
+                                                        "label": "rightNode",
+                                                        "name": "assignment_expression",
+                                                        "childrenLabels": [
+                                                          "leftNode",
+                                                          1,
+                                                          "rightNode"
+                                                        ],
+                                                        "children": [
+                                                          {
+                                                            "nestedIndex": [
+                                                              3,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              0,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              0
+                                                            ],
+                                                            "str": "link",
+                                                            "label": "leftNode",
+                                                            "name": "identifier"
+                                                          },
+                                                          {
+                                                            "nestedIndex": [
+                                                              3,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              0,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              1
+                                                            ],
+                                                            "str": "rel=\"icon\" href",
+                                                            "label": 1,
+                                                            "name": "ERROR",
+                                                            "childrenLabels": [
+                                                              0,
+                                                              1,
+                                                              2
+                                                            ],
+                                                            "children": [
+                                                              {
+                                                                "nestedIndex": [
+                                                                  3,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  0
+                                                                ],
+                                                                "str": "rel",
+                                                                "label": 0,
+                                                                "name": "identifier"
+                                                              },
+                                                              {
+                                                                "nestedIndex": [
+                                                                  3,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1
+                                                                ],
+                                                                "str": "\"icon\"",
+                                                                "label": 1,
+                                                                "name": "string",
+                                                                "childrenLabels": [
+                                                                  0
+                                                                ],
+                                                                "children": [
+                                                                  {
+                                                                    "nestedIndex": [
+                                                                      3,
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      0,
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      0
+                                                                    ],
+                                                                    "str": "icon",
+                                                                    "label": 0,
+                                                                    "name": "string_fragment"
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "nestedIndex": [
+                                                                  3,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  2
+                                                                ],
+                                                                "str": "href",
+                                                                "label": 2,
+                                                                "name": "identifier"
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "nestedIndex": [
+                                                              3,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              0,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              2
+                                                            ],
+                                                            "str": "\"/favicon.ico\" />\n      </Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </",
+                                                            "label": "rightNode",
+                                                            "name": "binary_expression",
+                                                            "childrenLabels": [
+                                                              "leftNode",
+                                                              1,
+                                                              "rightNode"
+                                                            ],
+                                                            "children": [
+                                                              {
+                                                                "nestedIndex": [
+                                                                  3,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  2,
+                                                                  0
+                                                                ],
+                                                                "str": "\"/favicon.ico\"",
+                                                                "label": "leftNode",
+                                                                "name": "string",
+                                                                "childrenLabels": [
+                                                                  0
+                                                                ],
+                                                                "children": [
+                                                                  {
+                                                                    "nestedIndex": [
+                                                                      3,
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      0,
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      2,
+                                                                      0,
+                                                                      0
+                                                                    ],
+                                                                    "str": "/favicon.ico",
+                                                                    "label": 0,
+                                                                    "name": "string_fragment"
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "nestedIndex": [
+                                                                  3,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  2,
+                                                                  1
+                                                                ],
+                                                                "str": ">",
+                                                                "label": 1,
+                                                                "name": "ERROR"
+                                                              },
+                                                              {
+                                                                "nestedIndex": [
+                                                                  3,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  2,
+                                                                  2
+                                                                ],
+                                                                "str": "</Head>\n\n      <main className=\"h-screen\">{children}</main>\n    </",
+                                                                "label": "rightNode",
+                                                                "name": "type_assertion",
+                                                                "childrenLabels": [
+                                                                  0,
+                                                                  1
+                                                                ],
+                                                                "children": [
+                                                                  {
+                                                                    "nestedIndex": [
+                                                                      3,
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      0,
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      2,
+                                                                      2,
+                                                                      0
+                                                                    ],
+                                                                    "str": "</Head>",
+                                                                    "label": 0,
+                                                                    "name": "type_arguments",
+                                                                    "childrenLabels": [
+                                                                      0,
+                                                                      1
+                                                                    ],
+                                                                    "children": [
+                                                                      {
+                                                                        "nestedIndex": [
+                                                                          3,
+                                                                          0,
+                                                                          0,
+                                                                          1,
+                                                                          1,
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          2,
+                                                                          2,
+                                                                          0,
+                                                                          0
+                                                                        ],
+                                                                        "str": "/",
+                                                                        "label": 0,
+                                                                        "name": "ERROR"
+                                                                      },
+                                                                      {
+                                                                        "nestedIndex": [
+                                                                          3,
+                                                                          0,
+                                                                          0,
+                                                                          1,
+                                                                          1,
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          2,
+                                                                          2,
+                                                                          0,
+                                                                          1
+                                                                        ],
+                                                                        "str": "Head",
+                                                                        "label": 1,
+                                                                        "name": "type_identifier"
+                                                                      }
+                                                                    ]
+                                                                  },
+                                                                  {
+                                                                    "nestedIndex": [
+                                                                      3,
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      0,
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      2,
+                                                                      2,
+                                                                      1
+                                                                    ],
+                                                                    "str": "<main className=\"h-screen\">{children}</main>\n    </",
+                                                                    "label": 1,
+                                                                    "name": "type_assertion",
+                                                                    "childrenLabels": [
+                                                                      0,
+                                                                      1
+                                                                    ],
+                                                                    "children": [
+                                                                      {
+                                                                        "nestedIndex": [
+                                                                          3,
+                                                                          0,
+                                                                          0,
+                                                                          1,
+                                                                          1,
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          2,
+                                                                          2,
+                                                                          1,
+                                                                          0
+                                                                        ],
+                                                                        "str": "<main",
+                                                                        "label": 0,
+                                                                        "name": "type_arguments",
+                                                                        "childrenLabels": [
+                                                                          0
+                                                                        ],
+                                                                        "children": [
+                                                                          {
+                                                                            "nestedIndex": [
+                                                                              3,
+                                                                              0,
+                                                                              0,
+                                                                              1,
+                                                                              1,
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              2,
+                                                                              2,
+                                                                              1,
+                                                                              0,
+                                                                              0
+                                                                            ],
+                                                                            "str": "main",
+                                                                            "label": 0,
+                                                                            "name": "type_identifier"
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      {
+                                                                        "nestedIndex": [
+                                                                          3,
+                                                                          0,
+                                                                          0,
+                                                                          1,
+                                                                          1,
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          2,
+                                                                          2,
+                                                                          1,
+                                                                          1
+                                                                        ],
+                                                                        "str": "className=\"h-screen\">{children}</main>\n    </",
+                                                                        "label": 1,
+                                                                        "name": "assignment_expression",
+                                                                        "childrenLabels": [
+                                                                          "leftNode",
+                                                                          "rightNode"
+                                                                        ],
+                                                                        "children": [
+                                                                          {
+                                                                            "nestedIndex": [
+                                                                              3,
+                                                                              0,
+                                                                              0,
+                                                                              1,
+                                                                              1,
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              2,
+                                                                              2,
+                                                                              1,
+                                                                              1,
+                                                                              0
+                                                                            ],
+                                                                            "str": "className",
+                                                                            "label": "leftNode",
+                                                                            "name": "identifier"
+                                                                          },
+                                                                          {
+                                                                            "nestedIndex": [
+                                                                              3,
+                                                                              0,
+                                                                              0,
+                                                                              1,
+                                                                              1,
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              2,
+                                                                              2,
+                                                                              1,
+                                                                              1,
+                                                                              1
+                                                                            ],
+                                                                            "str": "\"h-screen\">{children}</main>\n    </",
+                                                                            "label": "rightNode",
+                                                                            "name": "binary_expression",
+                                                                            "childrenLabels": [
+                                                                              "leftNode",
+                                                                              "rightNode"
+                                                                            ],
+                                                                            "children": [
+                                                                              {
+                                                                                "nestedIndex": [
+                                                                                  3,
+                                                                                  0,
+                                                                                  0,
+                                                                                  1,
+                                                                                  1,
+                                                                                  0,
+                                                                                  0,
+                                                                                  0,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  2,
+                                                                                  2,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  0
+                                                                                ],
+                                                                                "str": "\"h-screen\"",
+                                                                                "label": "leftNode",
+                                                                                "name": "string",
+                                                                                "childrenLabels": [
+                                                                                  0
+                                                                                ],
+                                                                                "children": [
+                                                                                  {
+                                                                                    "nestedIndex": [
+                                                                                      3,
+                                                                                      0,
+                                                                                      0,
+                                                                                      1,
+                                                                                      1,
+                                                                                      0,
+                                                                                      0,
+                                                                                      0,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      2,
+                                                                                      2,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      0,
+                                                                                      0
+                                                                                    ],
+                                                                                    "str": "h-screen",
+                                                                                    "label": 0,
+                                                                                    "name": "string_fragment"
+                                                                                  }
+                                                                                ]
+                                                                              },
+                                                                              {
+                                                                                "nestedIndex": [
+                                                                                  3,
+                                                                                  0,
+                                                                                  0,
+                                                                                  1,
+                                                                                  1,
+                                                                                  0,
+                                                                                  0,
+                                                                                  0,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  2,
+                                                                                  2,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1
+                                                                                ],
+                                                                                "str": "{children}</main>\n    </",
+                                                                                "label": "rightNode",
+                                                                                "name": "binary_expression",
+                                                                                "childrenLabels": [
+                                                                                  "leftNode",
+                                                                                  "rightNode"
+                                                                                ],
+                                                                                "children": [
+                                                                                  {
+                                                                                    "nestedIndex": [
+                                                                                      3,
+                                                                                      0,
+                                                                                      0,
+                                                                                      1,
+                                                                                      1,
+                                                                                      0,
+                                                                                      0,
+                                                                                      0,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      2,
+                                                                                      2,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      0
+                                                                                    ],
+                                                                                    "str": "{children}",
+                                                                                    "label": "leftNode",
+                                                                                    "name": "object",
+                                                                                    "childrenLabels": [
+                                                                                      0
+                                                                                    ],
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "nestedIndex": [
+                                                                                          3,
+                                                                                          0,
+                                                                                          0,
+                                                                                          1,
+                                                                                          1,
+                                                                                          0,
+                                                                                          0,
+                                                                                          0,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          2,
+                                                                                          2,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          0,
+                                                                                          0
+                                                                                        ],
+                                                                                        "str": "children",
+                                                                                        "label": 0,
+                                                                                        "name": "shorthand_property_identifier"
+                                                                                      }
+                                                                                    ]
+                                                                                  },
+                                                                                  {
+                                                                                    "nestedIndex": [
+                                                                                      3,
+                                                                                      0,
+                                                                                      0,
+                                                                                      1,
+                                                                                      1,
+                                                                                      0,
+                                                                                      0,
+                                                                                      0,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      2,
+                                                                                      2,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1
+                                                                                    ],
+                                                                                    "str": "/main>\n    </",
+                                                                                    "label": "rightNode",
+                                                                                    "name": "regex",
+                                                                                    "childrenLabels": [
+                                                                                      "patternNode",
+                                                                                      1
+                                                                                    ],
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "nestedIndex": [
+                                                                                          3,
+                                                                                          0,
+                                                                                          0,
+                                                                                          1,
+                                                                                          1,
+                                                                                          0,
+                                                                                          0,
+                                                                                          0,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          2,
+                                                                                          2,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          0
+                                                                                        ],
+                                                                                        "str": "main>",
+                                                                                        "label": "patternNode",
+                                                                                        "name": "regex_pattern"
+                                                                                      },
+                                                                                      {
+                                                                                        "nestedIndex": [
+                                                                                          3,
+                                                                                          0,
+                                                                                          0,
+                                                                                          1,
+                                                                                          1,
+                                                                                          0,
+                                                                                          0,
+                                                                                          0,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          2,
+                                                                                          2,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1
+                                                                                        ],
+                                                                                        "str": "<",
+                                                                                        "label": 1,
+                                                                                        "name": "ERROR"
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            ]
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      3,
+                                      0,
+                                      0,
+                                      1,
+                                      1,
+                                      0,
+                                      0,
+                                      1
+                                    ],
+                                    "str": ">",
+                                    "label": 1,
+                                    "name": "ERROR"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "imports": [],
+  "filePath": "../example-todo-list/src/components/DefaultLayout.tsx",
+  "isTest": false,
+  "isConfig": false
+}

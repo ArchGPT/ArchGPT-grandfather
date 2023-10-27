@@ -1,0 +1,1847 @@
+{
+  "ast": {
+    "nestedIndex": [],
+    "label": "FILE",
+    "name": "root",
+    "str": "import Link from 'next/link';\n\nexport default function Custom404() {\n  return (\n    <div className=\"flex flex-col items-center justify-center h-screen text-center\">\n      <Link href=\"/\" className=\"text-gray-300 underline\">\n        Home\n      </Link>\n      <div className=\"flex flex-col\">\n        <h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div>\n    </div>\n  );\n}\n",
+    "childrenLabels": [
+      0,
+      1
+    ],
+    "children": [
+      {
+        "nestedIndex": [
+          0
+        ],
+        "str": "import Link from 'next/link';",
+        "label": 0,
+        "name": "import_statement",
+        "childrenLabels": [
+          0,
+          "sourceNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              0,
+              0
+            ],
+            "str": "Link",
+            "label": 0,
+            "name": "import_clause",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  0,
+                  0,
+                  0
+                ],
+                "str": "Link",
+                "label": 0,
+                "name": "identifier"
+              }
+            ]
+          },
+          {
+            "nestedIndex": [
+              0,
+              1
+            ],
+            "str": "'next/link'",
+            "label": "sourceNode",
+            "name": "string",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  0,
+                  1,
+                  0
+                ],
+                "str": "next/link",
+                "label": 0,
+                "name": "string_fragment"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          1
+        ],
+        "str": "export default function Custom404() {\n  return (\n    <div className=\"flex flex-col items-center justify-center h-screen text-center\">\n      <Link href=\"/\" className=\"text-gray-300 underline\">\n        Home\n      </Link>\n      <div className=\"flex flex-col\">\n        <h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div>\n    </div>\n  );\n}",
+        "label": 1,
+        "name": "export_statement",
+        "childrenLabels": [
+          "declarationNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              1,
+              0
+            ],
+            "str": "function Custom404() {\n  return (\n    <div className=\"flex flex-col items-center justify-center h-screen text-center\">\n      <Link href=\"/\" className=\"text-gray-300 underline\">\n        Home\n      </Link>\n      <div className=\"flex flex-col\">\n        <h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div>\n    </div>\n  );\n}",
+            "label": "declarationNode",
+            "name": "function_declaration",
+            "childrenLabels": [
+              "nameNode",
+              "parametersNode",
+              "bodyNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  0
+                ],
+                "str": "Custom404",
+                "label": "nameNode",
+                "name": "identifier"
+              },
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  1
+                ],
+                "str": "()",
+                "label": "parametersNode",
+                "name": "formal_parameters"
+              },
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  2
+                ],
+                "str": "{\n  return (\n    <div className=\"flex flex-col items-center justify-center h-screen text-center\">\n      <Link href=\"/\" className=\"text-gray-300 underline\">\n        Home\n      </Link>\n      <div className=\"flex flex-col\">\n        <h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div>\n    </div>\n  );\n}",
+                "label": "bodyNode",
+                "name": "statement_block",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      2,
+                      0
+                    ],
+                    "str": "return (\n    <div className=\"flex flex-col items-center justify-center h-screen text-center\">\n      <Link href=\"/\" className=\"text-gray-300 underline\">\n        Home\n      </Link>\n      <div className=\"flex flex-col\">\n        <h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div>\n    </div>\n  );",
+                    "label": 0,
+                    "name": "return_statement",
+                    "childrenLabels": [
+                      0
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          2,
+                          0,
+                          0
+                        ],
+                        "str": "(\n    <div className=\"flex flex-col items-center justify-center h-screen text-center\">\n      <Link href=\"/\" className=\"text-gray-300 underline\">\n        Home\n      </Link>\n      <div className=\"flex flex-col\">\n        <h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div>\n    </div>\n  )",
+                        "label": 0,
+                        "name": "parenthesized_expression",
+                        "childrenLabels": [
+                          0,
+                          1
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              2,
+                              0,
+                              0,
+                              0
+                            ],
+                            "str": "<div className=\"flex flex-col items-center justify-center h-screen text-center\">\n      <Link href=\"/\" className=\"text-gray-300 underline\">\n        Home\n      </Link>\n      <div className=\"flex flex-col\">\n        <h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                            "label": 0,
+                            "name": "type_assertion",
+                            "childrenLabels": [
+                              0,
+                              1
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  2,
+                                  0,
+                                  0,
+                                  0,
+                                  0
+                                ],
+                                "str": "<div",
+                                "label": 0,
+                                "name": "type_arguments",
+                                "childrenLabels": [
+                                  0
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      2,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "div",
+                                    "label": 0,
+                                    "name": "type_identifier"
+                                  }
+                                ]
+                              },
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  2,
+                                  0,
+                                  0,
+                                  0,
+                                  1
+                                ],
+                                "str": "className=\"flex flex-col items-center justify-center h-screen text-center\">\n      <Link href=\"/\" className=\"text-gray-300 underline\">\n        Home\n      </Link>\n      <div className=\"flex flex-col\">\n        <h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                                "label": 1,
+                                "name": "assignment_expression",
+                                "childrenLabels": [
+                                  "leftNode",
+                                  "rightNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      2,
+                                      0,
+                                      0,
+                                      0,
+                                      1,
+                                      0
+                                    ],
+                                    "str": "className",
+                                    "label": "leftNode",
+                                    "name": "identifier"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      2,
+                                      0,
+                                      0,
+                                      0,
+                                      1,
+                                      1
+                                    ],
+                                    "str": "\"flex flex-col items-center justify-center h-screen text-center\">\n      <Link href=\"/\" className=\"text-gray-300 underline\">\n        Home\n      </Link>\n      <div className=\"flex flex-col\">\n        <h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                                    "label": "rightNode",
+                                    "name": "binary_expression",
+                                    "childrenLabels": [
+                                      "leftNode",
+                                      1,
+                                      "rightNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          2,
+                                          0,
+                                          0,
+                                          0,
+                                          1,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "\"flex flex-col items-center justify-center h-screen text-center\"",
+                                        "label": "leftNode",
+                                        "name": "string",
+                                        "childrenLabels": [
+                                          0
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              2,
+                                              0,
+                                              0,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "flex flex-col items-center justify-center h-screen text-center",
+                                            "label": 0,
+                                            "name": "string_fragment"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          2,
+                                          0,
+                                          0,
+                                          0,
+                                          1,
+                                          1,
+                                          1
+                                        ],
+                                        "str": "<Link href=\"/\" className=\"text-gray-300 underline\">",
+                                        "label": 1,
+                                        "name": "ERROR",
+                                        "childrenLabels": [
+                                          0
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              2,
+                                              0,
+                                              0,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              0
+                                            ],
+                                            "str": "<Link href=\"/\" className=\"text-gray-300 underline\">",
+                                            "label": 0,
+                                            "name": "type_parameters",
+                                            "childrenLabels": [
+                                              0,
+                                              1
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  2,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "Link",
+                                                "label": 0,
+                                                "name": "ERROR",
+                                                "childrenLabels": [
+                                                  0
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      2,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      0
+                                                    ],
+                                                    "str": "Link",
+                                                    "label": 0,
+                                                    "name": "identifier"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  2,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  1
+                                                ],
+                                                "str": "href=\"/\" className=\"text-gray-300 underline\"",
+                                                "label": 1,
+                                                "name": "type_parameter",
+                                                "childrenLabels": [
+                                                  "nameNode",
+                                                  "valueNode"
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      2,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0
+                                                    ],
+                                                    "str": "href",
+                                                    "label": "nameNode",
+                                                    "name": "type_identifier"
+                                                  },
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      2,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      1
+                                                    ],
+                                                    "str": "=\"/\" className=\"text-gray-300 underline\"",
+                                                    "label": "valueNode",
+                                                    "name": "default_type",
+                                                    "childrenLabels": [
+                                                      0,
+                                                      1
+                                                    ],
+                                                    "children": [
+                                                      {
+                                                        "nestedIndex": [
+                                                          1,
+                                                          0,
+                                                          2,
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          0
+                                                        ],
+                                                        "str": "\"/\" className=",
+                                                        "label": 0,
+                                                        "name": "ERROR",
+                                                        "childrenLabels": [
+                                                          0,
+                                                          1
+                                                        ],
+                                                        "children": [
+                                                          {
+                                                            "nestedIndex": [
+                                                              1,
+                                                              0,
+                                                              2,
+                                                              0,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              0,
+                                                              0
+                                                            ],
+                                                            "str": "\"/\"",
+                                                            "label": 0,
+                                                            "name": "literal_type",
+                                                            "childrenLabels": [
+                                                              0
+                                                            ],
+                                                            "children": [
+                                                              {
+                                                                "nestedIndex": [
+                                                                  1,
+                                                                  0,
+                                                                  2,
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  0,
+                                                                  0
+                                                                ],
+                                                                "str": "\"/\"",
+                                                                "label": 0,
+                                                                "name": "string",
+                                                                "childrenLabels": [
+                                                                  0
+                                                                ],
+                                                                "children": [
+                                                                  {
+                                                                    "nestedIndex": [
+                                                                      1,
+                                                                      0,
+                                                                      2,
+                                                                      0,
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      0,
+                                                                      0,
+                                                                      0,
+                                                                      0
+                                                                    ],
+                                                                    "str": "/",
+                                                                    "label": 0,
+                                                                    "name": "string_fragment"
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "nestedIndex": [
+                                                              1,
+                                                              0,
+                                                              2,
+                                                              0,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              0,
+                                                              1
+                                                            ],
+                                                            "str": "className",
+                                                            "label": 1,
+                                                            "name": "identifier"
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "nestedIndex": [
+                                                          1,
+                                                          0,
+                                                          2,
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          1
+                                                        ],
+                                                        "str": "\"text-gray-300 underline\"",
+                                                        "label": 1,
+                                                        "name": "literal_type",
+                                                        "childrenLabels": [
+                                                          0
+                                                        ],
+                                                        "children": [
+                                                          {
+                                                            "nestedIndex": [
+                                                              1,
+                                                              0,
+                                                              2,
+                                                              0,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              0
+                                                            ],
+                                                            "str": "\"text-gray-300 underline\"",
+                                                            "label": 0,
+                                                            "name": "string",
+                                                            "childrenLabels": [
+                                                              0
+                                                            ],
+                                                            "children": [
+                                                              {
+                                                                "nestedIndex": [
+                                                                  1,
+                                                                  0,
+                                                                  2,
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  0
+                                                                ],
+                                                                "str": "text-gray-300 underline",
+                                                                "label": 0,
+                                                                "name": "string_fragment"
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          2,
+                                          0,
+                                          0,
+                                          0,
+                                          1,
+                                          1,
+                                          2
+                                        ],
+                                        "str": "Home\n      </Link>\n      <div className=\"flex flex-col\">\n        <h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                                        "label": "rightNode",
+                                        "name": "binary_expression",
+                                        "childrenLabels": [
+                                          "leftNode",
+                                          "rightNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              2,
+                                              0,
+                                              0,
+                                              0,
+                                              1,
+                                              1,
+                                              2,
+                                              0
+                                            ],
+                                            "str": "Home",
+                                            "label": "leftNode",
+                                            "name": "identifier"
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              2,
+                                              0,
+                                              0,
+                                              0,
+                                              1,
+                                              1,
+                                              2,
+                                              1
+                                            ],
+                                            "str": "/Link>\n      <div className=\"flex flex-col\">\n        <h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                                            "label": "rightNode",
+                                            "name": "binary_expression",
+                                            "childrenLabels": [
+                                              "leftNode",
+                                              1,
+                                              "rightNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  2,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  2,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "/Link>",
+                                                "label": "leftNode",
+                                                "name": "regex",
+                                                "childrenLabels": [
+                                                  "patternNode"
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      2,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      2,
+                                                      1,
+                                                      0,
+                                                      0
+                                                    ],
+                                                    "str": "Link>",
+                                                    "label": "patternNode",
+                                                    "name": "regex_pattern"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  2,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  2,
+                                                  1,
+                                                  1
+                                                ],
+                                                "str": "div",
+                                                "label": 1,
+                                                "name": "ERROR",
+                                                "childrenLabels": [
+                                                  0
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      2,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      2,
+                                                      1,
+                                                      1,
+                                                      0
+                                                    ],
+                                                    "str": "div",
+                                                    "label": 0,
+                                                    "name": "identifier"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  2,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  2,
+                                                  1,
+                                                  2
+                                                ],
+                                                "str": "className=\"flex flex-col\">\n        <h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                                                "label": "rightNode",
+                                                "name": "assignment_expression",
+                                                "childrenLabels": [
+                                                  "leftNode",
+                                                  "rightNode"
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      2,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      2,
+                                                      1,
+                                                      2,
+                                                      0
+                                                    ],
+                                                    "str": "className",
+                                                    "label": "leftNode",
+                                                    "name": "identifier"
+                                                  },
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      2,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      2,
+                                                      1,
+                                                      2,
+                                                      1
+                                                    ],
+                                                    "str": "\"flex flex-col\">\n        <h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                                                    "label": "rightNode",
+                                                    "name": "binary_expression",
+                                                    "childrenLabels": [
+                                                      "leftNode",
+                                                      "rightNode"
+                                                    ],
+                                                    "children": [
+                                                      {
+                                                        "nestedIndex": [
+                                                          1,
+                                                          0,
+                                                          2,
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          2,
+                                                          1,
+                                                          2,
+                                                          1,
+                                                          0
+                                                        ],
+                                                        "str": "\"flex flex-col\"",
+                                                        "label": "leftNode",
+                                                        "name": "string",
+                                                        "childrenLabels": [
+                                                          0
+                                                        ],
+                                                        "children": [
+                                                          {
+                                                            "nestedIndex": [
+                                                              1,
+                                                              0,
+                                                              2,
+                                                              0,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              2,
+                                                              1,
+                                                              2,
+                                                              1,
+                                                              0,
+                                                              0
+                                                            ],
+                                                            "str": "flex flex-col",
+                                                            "label": 0,
+                                                            "name": "string_fragment"
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "nestedIndex": [
+                                                          1,
+                                                          0,
+                                                          2,
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          2,
+                                                          1,
+                                                          2,
+                                                          1,
+                                                          1
+                                                        ],
+                                                        "str": "<h1 className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                                                        "label": "rightNode",
+                                                        "name": "type_assertion",
+                                                        "childrenLabels": [
+                                                          0,
+                                                          1
+                                                        ],
+                                                        "children": [
+                                                          {
+                                                            "nestedIndex": [
+                                                              1,
+                                                              0,
+                                                              2,
+                                                              0,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              2,
+                                                              1,
+                                                              2,
+                                                              1,
+                                                              1,
+                                                              0
+                                                            ],
+                                                            "str": "<h1",
+                                                            "label": 0,
+                                                            "name": "type_arguments",
+                                                            "childrenLabels": [
+                                                              0
+                                                            ],
+                                                            "children": [
+                                                              {
+                                                                "nestedIndex": [
+                                                                  1,
+                                                                  0,
+                                                                  2,
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  2,
+                                                                  1,
+                                                                  2,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  0
+                                                                ],
+                                                                "str": "h1",
+                                                                "label": 0,
+                                                                "name": "type_identifier"
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "nestedIndex": [
+                                                              1,
+                                                              0,
+                                                              2,
+                                                              0,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              2,
+                                                              1,
+                                                              2,
+                                                              1,
+                                                              1,
+                                                              1
+                                                            ],
+                                                            "str": "className=\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                                                            "label": 1,
+                                                            "name": "assignment_expression",
+                                                            "childrenLabels": [
+                                                              "leftNode",
+                                                              "rightNode"
+                                                            ],
+                                                            "children": [
+                                                              {
+                                                                "nestedIndex": [
+                                                                  1,
+                                                                  0,
+                                                                  2,
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  2,
+                                                                  1,
+                                                                  2,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  0
+                                                                ],
+                                                                "str": "className",
+                                                                "label": "leftNode",
+                                                                "name": "identifier"
+                                                              },
+                                                              {
+                                                                "nestedIndex": [
+                                                                  1,
+                                                                  0,
+                                                                  2,
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  2,
+                                                                  1,
+                                                                  2,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  1
+                                                                ],
+                                                                "str": "\"text-9xl font-bold\">404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                                                                "label": "rightNode",
+                                                                "name": "binary_expression",
+                                                                "childrenLabels": [
+                                                                  "leftNode",
+                                                                  "rightNode"
+                                                                ],
+                                                                "children": [
+                                                                  {
+                                                                    "nestedIndex": [
+                                                                      1,
+                                                                      0,
+                                                                      2,
+                                                                      0,
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      2,
+                                                                      1,
+                                                                      2,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      0
+                                                                    ],
+                                                                    "str": "\"text-9xl font-bold\"",
+                                                                    "label": "leftNode",
+                                                                    "name": "string",
+                                                                    "childrenLabels": [
+                                                                      0
+                                                                    ],
+                                                                    "children": [
+                                                                      {
+                                                                        "nestedIndex": [
+                                                                          1,
+                                                                          0,
+                                                                          2,
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          1,
+                                                                          1,
+                                                                          2,
+                                                                          1,
+                                                                          2,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          0,
+                                                                          0
+                                                                        ],
+                                                                        "str": "text-9xl font-bold",
+                                                                        "label": 0,
+                                                                        "name": "string_fragment"
+                                                                      }
+                                                                    ]
+                                                                  },
+                                                                  {
+                                                                    "nestedIndex": [
+                                                                      1,
+                                                                      0,
+                                                                      2,
+                                                                      0,
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      2,
+                                                                      1,
+                                                                      2,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      1,
+                                                                      1
+                                                                    ],
+                                                                    "str": "404</h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                                                                    "label": "rightNode",
+                                                                    "name": "binary_expression",
+                                                                    "childrenLabels": [
+                                                                      "leftNode",
+                                                                      "rightNode"
+                                                                    ],
+                                                                    "children": [
+                                                                      {
+                                                                        "nestedIndex": [
+                                                                          1,
+                                                                          0,
+                                                                          2,
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          1,
+                                                                          1,
+                                                                          2,
+                                                                          1,
+                                                                          2,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          0
+                                                                        ],
+                                                                        "str": "404",
+                                                                        "label": "leftNode",
+                                                                        "name": "number"
+                                                                      },
+                                                                      {
+                                                                        "nestedIndex": [
+                                                                          1,
+                                                                          0,
+                                                                          2,
+                                                                          0,
+                                                                          0,
+                                                                          0,
+                                                                          1,
+                                                                          1,
+                                                                          2,
+                                                                          1,
+                                                                          2,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1,
+                                                                          1
+                                                                        ],
+                                                                        "str": "/h1>\n        <h2 className=\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                                                                        "label": "rightNode",
+                                                                        "name": "binary_expression",
+                                                                        "childrenLabels": [
+                                                                          "leftNode",
+                                                                          1,
+                                                                          "rightNode"
+                                                                        ],
+                                                                        "children": [
+                                                                          {
+                                                                            "nestedIndex": [
+                                                                              1,
+                                                                              0,
+                                                                              2,
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              1,
+                                                                              1,
+                                                                              2,
+                                                                              1,
+                                                                              2,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              0
+                                                                            ],
+                                                                            "str": "/h1>",
+                                                                            "label": "leftNode",
+                                                                            "name": "regex",
+                                                                            "childrenLabels": [
+                                                                              "patternNode"
+                                                                            ],
+                                                                            "children": [
+                                                                              {
+                                                                                "nestedIndex": [
+                                                                                  1,
+                                                                                  0,
+                                                                                  2,
+                                                                                  0,
+                                                                                  0,
+                                                                                  0,
+                                                                                  1,
+                                                                                  1,
+                                                                                  2,
+                                                                                  1,
+                                                                                  2,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  0,
+                                                                                  0
+                                                                                ],
+                                                                                "str": "h1>",
+                                                                                "label": "patternNode",
+                                                                                "name": "regex_pattern"
+                                                                              }
+                                                                            ]
+                                                                          },
+                                                                          {
+                                                                            "nestedIndex": [
+                                                                              1,
+                                                                              0,
+                                                                              2,
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              1,
+                                                                              1,
+                                                                              2,
+                                                                              1,
+                                                                              2,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1
+                                                                            ],
+                                                                            "str": "h2",
+                                                                            "label": 1,
+                                                                            "name": "ERROR",
+                                                                            "childrenLabels": [
+                                                                              0
+                                                                            ],
+                                                                            "children": [
+                                                                              {
+                                                                                "nestedIndex": [
+                                                                                  1,
+                                                                                  0,
+                                                                                  2,
+                                                                                  0,
+                                                                                  0,
+                                                                                  0,
+                                                                                  1,
+                                                                                  1,
+                                                                                  2,
+                                                                                  1,
+                                                                                  2,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  0
+                                                                                ],
+                                                                                "str": "h2",
+                                                                                "label": 0,
+                                                                                "name": "identifier"
+                                                                              }
+                                                                            ]
+                                                                          },
+                                                                          {
+                                                                            "nestedIndex": [
+                                                                              1,
+                                                                              0,
+                                                                              2,
+                                                                              0,
+                                                                              0,
+                                                                              0,
+                                                                              1,
+                                                                              1,
+                                                                              2,
+                                                                              1,
+                                                                              2,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              1,
+                                                                              2
+                                                                            ],
+                                                                            "str": "className=\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                                                                            "label": "rightNode",
+                                                                            "name": "assignment_expression",
+                                                                            "childrenLabels": [
+                                                                              "leftNode",
+                                                                              "rightNode"
+                                                                            ],
+                                                                            "children": [
+                                                                              {
+                                                                                "nestedIndex": [
+                                                                                  1,
+                                                                                  0,
+                                                                                  2,
+                                                                                  0,
+                                                                                  0,
+                                                                                  0,
+                                                                                  1,
+                                                                                  1,
+                                                                                  2,
+                                                                                  1,
+                                                                                  2,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  2,
+                                                                                  0
+                                                                                ],
+                                                                                "str": "className",
+                                                                                "label": "leftNode",
+                                                                                "name": "identifier"
+                                                                              },
+                                                                              {
+                                                                                "nestedIndex": [
+                                                                                  1,
+                                                                                  0,
+                                                                                  2,
+                                                                                  0,
+                                                                                  0,
+                                                                                  0,
+                                                                                  1,
+                                                                                  1,
+                                                                                  2,
+                                                                                  1,
+                                                                                  2,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  1,
+                                                                                  2,
+                                                                                  1
+                                                                                ],
+                                                                                "str": "\"text-4xl font-bold\">Page not found</h2>\n      </div",
+                                                                                "label": "rightNode",
+                                                                                "name": "binary_expression",
+                                                                                "childrenLabels": [
+                                                                                  "leftNode",
+                                                                                  1,
+                                                                                  "rightNode"
+                                                                                ],
+                                                                                "children": [
+                                                                                  {
+                                                                                    "nestedIndex": [
+                                                                                      1,
+                                                                                      0,
+                                                                                      2,
+                                                                                      0,
+                                                                                      0,
+                                                                                      0,
+                                                                                      1,
+                                                                                      1,
+                                                                                      2,
+                                                                                      1,
+                                                                                      2,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      2,
+                                                                                      1,
+                                                                                      0
+                                                                                    ],
+                                                                                    "str": "\"text-4xl font-bold\"",
+                                                                                    "label": "leftNode",
+                                                                                    "name": "string",
+                                                                                    "childrenLabels": [
+                                                                                      0
+                                                                                    ],
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "nestedIndex": [
+                                                                                          1,
+                                                                                          0,
+                                                                                          2,
+                                                                                          0,
+                                                                                          0,
+                                                                                          0,
+                                                                                          1,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          0,
+                                                                                          0
+                                                                                        ],
+                                                                                        "str": "text-4xl font-bold",
+                                                                                        "label": 0,
+                                                                                        "name": "string_fragment"
+                                                                                      }
+                                                                                    ]
+                                                                                  },
+                                                                                  {
+                                                                                    "nestedIndex": [
+                                                                                      1,
+                                                                                      0,
+                                                                                      2,
+                                                                                      0,
+                                                                                      0,
+                                                                                      0,
+                                                                                      1,
+                                                                                      1,
+                                                                                      2,
+                                                                                      1,
+                                                                                      2,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      2,
+                                                                                      1,
+                                                                                      1
+                                                                                    ],
+                                                                                    "str": "Page not",
+                                                                                    "label": 1,
+                                                                                    "name": "ERROR",
+                                                                                    "childrenLabels": [
+                                                                                      0,
+                                                                                      1
+                                                                                    ],
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "nestedIndex": [
+                                                                                          1,
+                                                                                          0,
+                                                                                          2,
+                                                                                          0,
+                                                                                          0,
+                                                                                          0,
+                                                                                          1,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          1,
+                                                                                          0
+                                                                                        ],
+                                                                                        "str": "Page",
+                                                                                        "label": 0,
+                                                                                        "name": "identifier"
+                                                                                      },
+                                                                                      {
+                                                                                        "nestedIndex": [
+                                                                                          1,
+                                                                                          0,
+                                                                                          2,
+                                                                                          0,
+                                                                                          0,
+                                                                                          0,
+                                                                                          1,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1
+                                                                                        ],
+                                                                                        "str": "not",
+                                                                                        "label": 1,
+                                                                                        "name": "identifier"
+                                                                                      }
+                                                                                    ]
+                                                                                  },
+                                                                                  {
+                                                                                    "nestedIndex": [
+                                                                                      1,
+                                                                                      0,
+                                                                                      2,
+                                                                                      0,
+                                                                                      0,
+                                                                                      0,
+                                                                                      1,
+                                                                                      1,
+                                                                                      2,
+                                                                                      1,
+                                                                                      2,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      1,
+                                                                                      2,
+                                                                                      1,
+                                                                                      2
+                                                                                    ],
+                                                                                    "str": "found</h2>\n      </div",
+                                                                                    "label": "rightNode",
+                                                                                    "name": "binary_expression",
+                                                                                    "childrenLabels": [
+                                                                                      "leftNode",
+                                                                                      "rightNode"
+                                                                                    ],
+                                                                                    "children": [
+                                                                                      {
+                                                                                        "nestedIndex": [
+                                                                                          1,
+                                                                                          0,
+                                                                                          2,
+                                                                                          0,
+                                                                                          0,
+                                                                                          0,
+                                                                                          1,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          2,
+                                                                                          0
+                                                                                        ],
+                                                                                        "str": "found",
+                                                                                        "label": "leftNode",
+                                                                                        "name": "identifier"
+                                                                                      },
+                                                                                      {
+                                                                                        "nestedIndex": [
+                                                                                          1,
+                                                                                          0,
+                                                                                          2,
+                                                                                          0,
+                                                                                          0,
+                                                                                          0,
+                                                                                          1,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1,
+                                                                                          2,
+                                                                                          1
+                                                                                        ],
+                                                                                        "str": "/h2>\n      </div",
+                                                                                        "label": "rightNode",
+                                                                                        "name": "regex",
+                                                                                        "childrenLabels": [
+                                                                                          "patternNode",
+                                                                                          1,
+                                                                                          "flagsNode"
+                                                                                        ],
+                                                                                        "children": [
+                                                                                          {
+                                                                                            "nestedIndex": [
+                                                                                              1,
+                                                                                              0,
+                                                                                              2,
+                                                                                              0,
+                                                                                              0,
+                                                                                              0,
+                                                                                              1,
+                                                                                              1,
+                                                                                              2,
+                                                                                              1,
+                                                                                              2,
+                                                                                              1,
+                                                                                              1,
+                                                                                              1,
+                                                                                              1,
+                                                                                              1,
+                                                                                              1,
+                                                                                              2,
+                                                                                              1,
+                                                                                              2,
+                                                                                              1,
+                                                                                              0
+                                                                                            ],
+                                                                                            "str": "h2>",
+                                                                                            "label": "patternNode",
+                                                                                            "name": "regex_pattern"
+                                                                                          },
+                                                                                          {
+                                                                                            "nestedIndex": [
+                                                                                              1,
+                                                                                              0,
+                                                                                              2,
+                                                                                              0,
+                                                                                              0,
+                                                                                              0,
+                                                                                              1,
+                                                                                              1,
+                                                                                              2,
+                                                                                              1,
+                                                                                              2,
+                                                                                              1,
+                                                                                              1,
+                                                                                              1,
+                                                                                              1,
+                                                                                              1,
+                                                                                              1,
+                                                                                              2,
+                                                                                              1,
+                                                                                              2,
+                                                                                              1,
+                                                                                              1
+                                                                                            ],
+                                                                                            "str": "<",
+                                                                                            "label": 1,
+                                                                                            "name": "ERROR"
+                                                                                          },
+                                                                                          {
+                                                                                            "nestedIndex": [
+                                                                                              1,
+                                                                                              0,
+                                                                                              2,
+                                                                                              0,
+                                                                                              0,
+                                                                                              0,
+                                                                                              1,
+                                                                                              1,
+                                                                                              2,
+                                                                                              1,
+                                                                                              2,
+                                                                                              1,
+                                                                                              1,
+                                                                                              1,
+                                                                                              1,
+                                                                                              1,
+                                                                                              1,
+                                                                                              2,
+                                                                                              1,
+                                                                                              2,
+                                                                                              1,
+                                                                                              2
+                                                                                            ],
+                                                                                            "str": "div",
+                                                                                            "label": "flagsNode",
+                                                                                            "name": "regex_flags"
+                                                                                          }
+                                                                                        ]
+                                                                                      }
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            ]
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              2,
+                              0,
+                              0,
+                              1
+                            ],
+                            "str": ">\n    </div>",
+                            "label": 1,
+                            "name": "ERROR",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  2,
+                                  0,
+                                  0,
+                                  1,
+                                  0
+                                ],
+                                "str": "</div>",
+                                "label": 0,
+                                "name": "type_parameters",
+                                "childrenLabels": [
+                                  0,
+                                  1
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      2,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "/",
+                                    "label": 0,
+                                    "name": "ERROR"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      2,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "div",
+                                    "label": 1,
+                                    "name": "type_parameter",
+                                    "childrenLabels": [
+                                      "nameNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          2,
+                                          0,
+                                          0,
+                                          1,
+                                          0,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "div",
+                                        "label": "nameNode",
+                                        "name": "type_identifier"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "imports": [],
+  "filePath": "../example-todo-list/src/pages/404.tsx",
+  "isTest": false,
+  "isConfig": false
+}

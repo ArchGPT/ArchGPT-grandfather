@@ -8,7 +8,13 @@ import { initHypeEdges } from './readWrite';
 import { initDB, searchFiles, searchSegs } from './db';
 
 import OpenAI from "openai";
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+import { CallbackObj, localLLMs, runViaOllama } from './localLLM';
+import { APIPromise } from 'openai/core';
+import { Stream } from 'openai/streaming';
+import { ChatCompletionChunk } from 'openai/resources';
+import { runViaOpenAI } from './remoteLLM';
+
+export const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 
 export function applyMakeQueryToDir(folderPath: string, gitIgnoredFiles: string[] = []): ArST_withMetaInfo[] {
@@ -55,7 +61,7 @@ export function applyMakeQueryToDir(folderPath: string, gitIgnoredFiles: string[
 }
 
 type ArchGPTOption = {
-  converDBPathToMatchF_Path: (path: string) => string
+  converDBPathToMatchF_Path?: (path: string) => string
 }
 
 export const initArchGPT = async (folder: string = '../../example-todo-list/', option: ArchGPTOption) => {
@@ -80,15 +86,24 @@ export const initArchGPT = async (folder: string = '../../example-todo-list/', o
         config.description,
         config.basedOn
       )
-      const result = await openai.chat.completions.create({
-        model: config.llm,
-        messages: [
+
+      if (_.includes(localLLMs, config.llm)) {
+        await runViaOllama({
+          llm: config.llm,
+          prompt: mainMessage
+        }, config.intrepretStream)
+        return
+      }
+      await runViaOpenAI({
+        llm: config.llm,
+        prompt: [
           { role: 'system', content: systemMsg },
           { role: 'user', content: mainMessage }
-        ]
+        ],
+        gptConfig: config.gptConfig
+      }, config.intrepretStream)
 
-      });
-      return result.choices[0].message.content
+
     },
     composeMessage: async (purpose: string, config: PromptConfig): Promise<[string, string]> => {
       const [systemMsg, mainMessage] = await promptPurposeMap[purpose](
@@ -106,6 +121,8 @@ export type PromptConfig = {
   basedOn: ArST_withMetaInfo[]
   description: string
   llm: LLMType
+  gptConfig?: any
+  intrepretStream?: () => CallbackObj
 }
 
 

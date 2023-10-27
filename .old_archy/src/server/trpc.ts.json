@@ -1,0 +1,885 @@
+{
+  "ast": {
+    "nestedIndex": [],
+    "label": "FILE",
+    "name": "root",
+    "str": "/**\n * This is your entry point to setup the root configuration for tRPC on the server.\n * - `initTRPC` should only be used once per app.\n * - We export only the functionality that we use so we can enforce which base procedures should be used\n *\n * Learn how to create protected base procedures and other things below:\n * @see https://trpc.io/docs/v10/router\n * @see https://trpc.io/docs/v10/procedures\n */\n\n\n\n\n\nconst t = initTRPC.context<Context>().create({\n  /**\n   * @see https://trpc.io/docs/v10/data-transformers\n   */\n  transformer,\n  /**\n   * @see https://trpc.io/docs/v10/error-formatting\n   */\n  errorFormatter({ shape }) {\n    return shape;\n  },\n});\n\n/**\n * Create a router\n * @see https://trpc.io/docs/v10/router\n */\nexport const router = t.router;\n\n/**\n * Create an unprotected procedure\n * @see https://trpc.io/docs/v10/procedures\n **/\nexport const publicProcedure = t.procedure;\n\n/**\n * @see https://trpc.io/docs/v10/middlewares\n */\nexport const middleware = t.middleware;\n\n/**\n * @see https://trpc.io/docs/v10/merging-routers\n */\nexport const mergeRouters = t.mergeRouters;\n",
+    "childrenLabels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "children": [
+      {
+        "nestedIndex": [
+          0
+        ],
+        "str": "/**\n * This is your entry point to setup the root configuration for tRPC on the server.\n * - `initTRPC` should only be used once per app.\n * - We export only the functionality that we use so we can enforce which base procedures should be used\n *\n * Learn how to create protected base procedures and other things below:\n * @see https://trpc.io/docs/v10/router\n * @see https://trpc.io/docs/v10/procedures\n */",
+        "label": 0,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          1
+        ],
+        "str": "const t = initTRPC.context<Context>().create({\n  /**\n   * @see https://trpc.io/docs/v10/data-transformers\n   */\n  transformer,\n  /**\n   * @see https://trpc.io/docs/v10/error-formatting\n   */\n  errorFormatter({ shape }) {\n    return shape;\n  },\n});",
+        "label": 1,
+        "name": "lexical_declaration",
+        "childrenLabels": [
+          0
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              1,
+              0
+            ],
+            "str": "t = initTRPC.context<Context>().create({\n  /**\n   * @see https://trpc.io/docs/v10/data-transformers\n   */\n  transformer,\n  /**\n   * @see https://trpc.io/docs/v10/error-formatting\n   */\n  errorFormatter({ shape }) {\n    return shape;\n  },\n})",
+            "label": 0,
+            "name": "variable_declarator",
+            "childrenLabels": [
+              "nameNode",
+              "valueNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  0
+                ],
+                "str": "t",
+                "label": "nameNode",
+                "name": "identifier"
+              },
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  1
+                ],
+                "str": "initTRPC.context<Context>().create({\n  /**\n   * @see https://trpc.io/docs/v10/data-transformers\n   */\n  transformer,\n  /**\n   * @see https://trpc.io/docs/v10/error-formatting\n   */\n  errorFormatter({ shape }) {\n    return shape;\n  },\n})",
+                "label": "valueNode",
+                "name": "call_expression",
+                "childrenLabels": [
+                  "functionNode",
+                  "argumentsNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "initTRPC.context<Context>().create",
+                    "label": "functionNode",
+                    "name": "member_expression",
+                    "childrenLabels": [
+                      "objectNode",
+                      "propertyNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          0
+                        ],
+                        "str": "initTRPC.context<Context>()",
+                        "label": "objectNode",
+                        "name": "call_expression",
+                        "childrenLabels": [
+                          "functionNode",
+                          "typeArgumentsNode",
+                          "argumentsNode"
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              0,
+                              0,
+                              0
+                            ],
+                            "str": "initTRPC.context",
+                            "label": "functionNode",
+                            "name": "member_expression",
+                            "childrenLabels": [
+                              "objectNode",
+                              "propertyNode"
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                  0,
+                                  0
+                                ],
+                                "str": "initTRPC",
+                                "label": "objectNode",
+                                "name": "identifier"
+                              },
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                  0,
+                                  1
+                                ],
+                                "str": "context",
+                                "label": "propertyNode",
+                                "name": "property_identifier"
+                              }
+                            ]
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              0,
+                              0,
+                              1
+                            ],
+                            "str": "<Context>",
+                            "label": "typeArgumentsNode",
+                            "name": "type_arguments",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                  1,
+                                  0
+                                ],
+                                "str": "Context",
+                                "label": 0,
+                                "name": "type_identifier"
+                              }
+                            ]
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              0,
+                              0,
+                              2
+                            ],
+                            "str": "()",
+                            "label": "argumentsNode",
+                            "name": "arguments"
+                          }
+                        ]
+                      },
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          1
+                        ],
+                        "str": "create",
+                        "label": "propertyNode",
+                        "name": "property_identifier"
+                      }
+                    ]
+                  },
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      1,
+                      1
+                    ],
+                    "str": "({\n  /**\n   * @see https://trpc.io/docs/v10/data-transformers\n   */\n  transformer,\n  /**\n   * @see https://trpc.io/docs/v10/error-formatting\n   */\n  errorFormatter({ shape }) {\n    return shape;\n  },\n})",
+                    "label": "argumentsNode",
+                    "name": "arguments",
+                    "childrenLabels": [
+                      0
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          1,
+                          0
+                        ],
+                        "str": "{\n  /**\n   * @see https://trpc.io/docs/v10/data-transformers\n   */\n  transformer,\n  /**\n   * @see https://trpc.io/docs/v10/error-formatting\n   */\n  errorFormatter({ shape }) {\n    return shape;\n  },\n}",
+                        "label": 0,
+                        "name": "object",
+                        "childrenLabels": [
+                          0,
+                          1,
+                          2,
+                          3
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              1,
+                              0,
+                              0
+                            ],
+                            "str": "/**\n   * @see https://trpc.io/docs/v10/data-transformers\n   */",
+                            "label": 0,
+                            "name": "comment"
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              1,
+                              0,
+                              1
+                            ],
+                            "str": "transformer",
+                            "label": 1,
+                            "name": "shorthand_property_identifier"
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              1,
+                              0,
+                              2
+                            ],
+                            "str": "/**\n   * @see https://trpc.io/docs/v10/error-formatting\n   */",
+                            "label": 2,
+                            "name": "comment"
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              1,
+                              0,
+                              3
+                            ],
+                            "str": "errorFormatter({ shape }) {\n    return shape;\n  }",
+                            "label": 3,
+                            "name": "method_definition",
+                            "childrenLabels": [
+                              "nameNode",
+                              "parametersNode",
+                              "bodyNode"
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  1,
+                                  0,
+                                  3,
+                                  0
+                                ],
+                                "str": "errorFormatter",
+                                "label": "nameNode",
+                                "name": "property_identifier"
+                              },
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  1,
+                                  0,
+                                  3,
+                                  1
+                                ],
+                                "str": "({ shape })",
+                                "label": "parametersNode",
+                                "name": "formal_parameters",
+                                "childrenLabels": [
+                                  0
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      0,
+                                      3,
+                                      1,
+                                      0
+                                    ],
+                                    "str": "{ shape }",
+                                    "label": 0,
+                                    "name": "required_parameter",
+                                    "childrenLabels": [
+                                      "patternNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          3,
+                                          1,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "{ shape }",
+                                        "label": "patternNode",
+                                        "name": "object_pattern",
+                                        "childrenLabels": [
+                                          0
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              3,
+                                              1,
+                                              0,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "shape",
+                                            "label": 0,
+                                            "name": "shorthand_property_identifier_pattern"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  1,
+                                  0,
+                                  3,
+                                  2
+                                ],
+                                "str": "{\n    return shape;\n  }",
+                                "label": "bodyNode",
+                                "name": "statement_block",
+                                "childrenLabels": [
+                                  0
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      0,
+                                      3,
+                                      2,
+                                      0
+                                    ],
+                                    "str": "return shape;",
+                                    "label": 0,
+                                    "name": "return_statement",
+                                    "childrenLabels": [
+                                      0
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          3,
+                                          2,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "shape",
+                                        "label": 0,
+                                        "name": "identifier"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          2
+        ],
+        "str": "/**\n * Create a router\n * @see https://trpc.io/docs/v10/router\n */",
+        "label": 2,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          3
+        ],
+        "str": "export const router = t.router;",
+        "label": 3,
+        "name": "export_statement",
+        "childrenLabels": [
+          "declarationNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              3,
+              0
+            ],
+            "str": "const router = t.router;",
+            "label": "declarationNode",
+            "name": "lexical_declaration",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  3,
+                  0,
+                  0
+                ],
+                "str": "router = t.router",
+                "label": 0,
+                "name": "variable_declarator",
+                "childrenLabels": [
+                  "nameNode",
+                  "valueNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      3,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "router",
+                    "label": "nameNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      3,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "t.router",
+                    "label": "valueNode",
+                    "name": "member_expression",
+                    "childrenLabels": [
+                      "objectNode",
+                      "propertyNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          3,
+                          0,
+                          0,
+                          1,
+                          0
+                        ],
+                        "str": "t",
+                        "label": "objectNode",
+                        "name": "identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          3,
+                          0,
+                          0,
+                          1,
+                          1
+                        ],
+                        "str": "router",
+                        "label": "propertyNode",
+                        "name": "property_identifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          4
+        ],
+        "str": "/**\n * Create an unprotected procedure\n * @see https://trpc.io/docs/v10/procedures\n **/",
+        "label": 4,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          5
+        ],
+        "str": "export const publicProcedure = t.procedure;",
+        "label": 5,
+        "name": "export_statement",
+        "childrenLabels": [
+          "declarationNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              5,
+              0
+            ],
+            "str": "const publicProcedure = t.procedure;",
+            "label": "declarationNode",
+            "name": "lexical_declaration",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  5,
+                  0,
+                  0
+                ],
+                "str": "publicProcedure = t.procedure",
+                "label": 0,
+                "name": "variable_declarator",
+                "childrenLabels": [
+                  "nameNode",
+                  "valueNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      5,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "publicProcedure",
+                    "label": "nameNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      5,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "t.procedure",
+                    "label": "valueNode",
+                    "name": "member_expression",
+                    "childrenLabels": [
+                      "objectNode",
+                      "propertyNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          5,
+                          0,
+                          0,
+                          1,
+                          0
+                        ],
+                        "str": "t",
+                        "label": "objectNode",
+                        "name": "identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          5,
+                          0,
+                          0,
+                          1,
+                          1
+                        ],
+                        "str": "procedure",
+                        "label": "propertyNode",
+                        "name": "property_identifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          6
+        ],
+        "str": "/**\n * @see https://trpc.io/docs/v10/middlewares\n */",
+        "label": 6,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          7
+        ],
+        "str": "export const middleware = t.middleware;",
+        "label": 7,
+        "name": "export_statement",
+        "childrenLabels": [
+          "declarationNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              7,
+              0
+            ],
+            "str": "const middleware = t.middleware;",
+            "label": "declarationNode",
+            "name": "lexical_declaration",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  7,
+                  0,
+                  0
+                ],
+                "str": "middleware = t.middleware",
+                "label": 0,
+                "name": "variable_declarator",
+                "childrenLabels": [
+                  "nameNode",
+                  "valueNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      7,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "middleware",
+                    "label": "nameNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      7,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "t.middleware",
+                    "label": "valueNode",
+                    "name": "member_expression",
+                    "childrenLabels": [
+                      "objectNode",
+                      "propertyNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          7,
+                          0,
+                          0,
+                          1,
+                          0
+                        ],
+                        "str": "t",
+                        "label": "objectNode",
+                        "name": "identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          7,
+                          0,
+                          0,
+                          1,
+                          1
+                        ],
+                        "str": "middleware",
+                        "label": "propertyNode",
+                        "name": "property_identifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          8
+        ],
+        "str": "/**\n * @see https://trpc.io/docs/v10/merging-routers\n */",
+        "label": 8,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          9
+        ],
+        "str": "export const mergeRouters = t.mergeRouters;",
+        "label": 9,
+        "name": "export_statement",
+        "childrenLabels": [
+          "declarationNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              9,
+              0
+            ],
+            "str": "const mergeRouters = t.mergeRouters;",
+            "label": "declarationNode",
+            "name": "lexical_declaration",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  9,
+                  0,
+                  0
+                ],
+                "str": "mergeRouters = t.mergeRouters",
+                "label": 0,
+                "name": "variable_declarator",
+                "childrenLabels": [
+                  "nameNode",
+                  "valueNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      9,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "mergeRouters",
+                    "label": "nameNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      9,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "t.mergeRouters",
+                    "label": "valueNode",
+                    "name": "member_expression",
+                    "childrenLabels": [
+                      "objectNode",
+                      "propertyNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          9,
+                          0,
+                          0,
+                          1,
+                          0
+                        ],
+                        "str": "t",
+                        "label": "objectNode",
+                        "name": "identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          9,
+                          0,
+                          0,
+                          1,
+                          1
+                        ],
+                        "str": "mergeRouters",
+                        "label": "propertyNode",
+                        "name": "property_identifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "imports": [
+    "import { initTRPC } from '@trpc/server';",
+    "import { transformer } from '~/utils/transformer';",
+    "import { Context } from './context';"
+  ],
+  "filePath": "../example-todo-list/src/server/trpc.ts",
+  "isTest": false,
+  "isConfig": false
+}

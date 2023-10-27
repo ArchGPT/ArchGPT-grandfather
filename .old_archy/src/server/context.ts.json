@@ -1,0 +1,752 @@
+{
+  "ast": {
+    "nestedIndex": [],
+    "label": "FILE",
+    "name": "root",
+    "str": "/* eslint-disable @typescript-eslint/no-unused-vars */\n\n\n\n// eslint-disable-next-line @typescript-eslint/no-empty-interface\ninterface CreateContextOptions {\n  // session: Session | null\n}\n\n/**\n * Inner function for `createContext` where we create the context.\n * This is useful for testing when we don't want to mock Next.js' request/response\n */\nexport async function createContextInner(_opts: CreateContextOptions) {\n  return {};\n}\n\nexport type Context = trpc.inferAsyncReturnType<typeof createContextInner>;\n\n/**\n * Creates context for an incoming request\n * @link https://trpc.io/docs/context\n */\nexport async function createContext(\n  opts: trpcNext.CreateNextContextOptions,\n): Promise<Context> {\n  // for API-response caching see https://trpc.io/docs/caching\n\n  return await createContextInner({});\n}\n",
+    "childrenLabels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "children": [
+      {
+        "nestedIndex": [
+          0
+        ],
+        "str": "/* eslint-disable @typescript-eslint/no-unused-vars */",
+        "label": 0,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          1
+        ],
+        "str": "// eslint-disable-next-line @typescript-eslint/no-empty-interface",
+        "label": 1,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          2
+        ],
+        "str": "interface CreateContextOptions {\n  // session: Session | null\n}",
+        "label": 2,
+        "name": "interface_declaration",
+        "childrenLabels": [
+          "nameNode",
+          "bodyNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              2,
+              0
+            ],
+            "str": "CreateContextOptions",
+            "label": "nameNode",
+            "name": "type_identifier"
+          },
+          {
+            "nestedIndex": [
+              2,
+              1
+            ],
+            "str": "{\n  // session: Session | null\n}",
+            "label": "bodyNode",
+            "name": "object_type",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  2,
+                  1,
+                  0
+                ],
+                "str": "// session: Session | null",
+                "label": 0,
+                "name": "comment"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          3
+        ],
+        "str": "/**\n * Inner function for `createContext` where we create the context.\n * This is useful for testing when we don't want to mock Next.js' request/response\n */",
+        "label": 3,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          4
+        ],
+        "str": "export async function createContextInner(_opts: CreateContextOptions) {\n  return {};\n}",
+        "label": 4,
+        "name": "export_statement",
+        "childrenLabels": [
+          "declarationNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              4,
+              0
+            ],
+            "str": "async function createContextInner(_opts: CreateContextOptions) {\n  return {};\n}",
+            "label": "declarationNode",
+            "name": "function_declaration",
+            "childrenLabels": [
+              "nameNode",
+              "parametersNode",
+              "bodyNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  4,
+                  0,
+                  0
+                ],
+                "str": "createContextInner",
+                "label": "nameNode",
+                "name": "identifier"
+              },
+              {
+                "nestedIndex": [
+                  4,
+                  0,
+                  1
+                ],
+                "str": "(_opts: CreateContextOptions)",
+                "label": "parametersNode",
+                "name": "formal_parameters",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      4,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "_opts: CreateContextOptions",
+                    "label": 0,
+                    "name": "required_parameter",
+                    "childrenLabels": [
+                      "patternNode",
+                      "typeNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          4,
+                          0,
+                          1,
+                          0,
+                          0
+                        ],
+                        "str": "_opts",
+                        "label": "patternNode",
+                        "name": "identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          4,
+                          0,
+                          1,
+                          0,
+                          1
+                        ],
+                        "str": ": CreateContextOptions",
+                        "label": "typeNode",
+                        "name": "type_annotation",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              4,
+                              0,
+                              1,
+                              0,
+                              1,
+                              0
+                            ],
+                            "str": "CreateContextOptions",
+                            "label": 0,
+                            "name": "type_identifier"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "nestedIndex": [
+                  4,
+                  0,
+                  2
+                ],
+                "str": "{\n  return {};\n}",
+                "label": "bodyNode",
+                "name": "statement_block",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      4,
+                      0,
+                      2,
+                      0
+                    ],
+                    "str": "return {};",
+                    "label": 0,
+                    "name": "return_statement",
+                    "childrenLabels": [
+                      0
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          4,
+                          0,
+                          2,
+                          0,
+                          0
+                        ],
+                        "str": "{}",
+                        "label": 0,
+                        "name": "object"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          5
+        ],
+        "str": "export type Context = trpc.inferAsyncReturnType<typeof createContextInner>;",
+        "label": 5,
+        "name": "export_statement",
+        "childrenLabels": [
+          "declarationNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              5,
+              0
+            ],
+            "str": "type Context = trpc.inferAsyncReturnType<typeof createContextInner>;",
+            "label": "declarationNode",
+            "name": "type_alias_declaration",
+            "childrenLabels": [
+              "nameNode",
+              "valueNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  5,
+                  0,
+                  0
+                ],
+                "str": "Context",
+                "label": "nameNode",
+                "name": "type_identifier"
+              },
+              {
+                "nestedIndex": [
+                  5,
+                  0,
+                  1
+                ],
+                "str": "trpc.inferAsyncReturnType<typeof createContextInner>",
+                "label": "valueNode",
+                "name": "generic_type",
+                "childrenLabels": [
+                  "nameNode",
+                  "typeArgumentsNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      5,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "trpc.inferAsyncReturnType",
+                    "label": "nameNode",
+                    "name": "nested_type_identifier",
+                    "childrenLabels": [
+                      "moduleNode",
+                      "nameNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          5,
+                          0,
+                          1,
+                          0,
+                          0
+                        ],
+                        "str": "trpc",
+                        "label": "moduleNode",
+                        "name": "identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          5,
+                          0,
+                          1,
+                          0,
+                          1
+                        ],
+                        "str": "inferAsyncReturnType",
+                        "label": "nameNode",
+                        "name": "type_identifier"
+                      }
+                    ]
+                  },
+                  {
+                    "nestedIndex": [
+                      5,
+                      0,
+                      1,
+                      1
+                    ],
+                    "str": "<typeof createContextInner>",
+                    "label": "typeArgumentsNode",
+                    "name": "type_arguments",
+                    "childrenLabels": [
+                      0
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          5,
+                          0,
+                          1,
+                          1,
+                          0
+                        ],
+                        "str": "typeof createContextInner",
+                        "label": 0,
+                        "name": "type_query",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              5,
+                              0,
+                              1,
+                              1,
+                              0,
+                              0
+                            ],
+                            "str": "createContextInner",
+                            "label": 0,
+                            "name": "identifier"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          6
+        ],
+        "str": "/**\n * Creates context for an incoming request\n * @link https://trpc.io/docs/context\n */",
+        "label": 6,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          7
+        ],
+        "str": "export async function createContext(\n  opts: trpcNext.CreateNextContextOptions,\n): Promise<Context> {\n  // for API-response caching see https://trpc.io/docs/caching\n\n  return await createContextInner({});\n}",
+        "label": 7,
+        "name": "export_statement",
+        "childrenLabels": [
+          "declarationNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              7,
+              0
+            ],
+            "str": "async function createContext(\n  opts: trpcNext.CreateNextContextOptions,\n): Promise<Context> {\n  // for API-response caching see https://trpc.io/docs/caching\n\n  return await createContextInner({});\n}",
+            "label": "declarationNode",
+            "name": "function_declaration",
+            "childrenLabels": [
+              "nameNode",
+              "parametersNode",
+              "returnTypeNode",
+              "bodyNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  7,
+                  0,
+                  0
+                ],
+                "str": "createContext",
+                "label": "nameNode",
+                "name": "identifier"
+              },
+              {
+                "nestedIndex": [
+                  7,
+                  0,
+                  1
+                ],
+                "str": "(\n  opts: trpcNext.CreateNextContextOptions,\n)",
+                "label": "parametersNode",
+                "name": "formal_parameters",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      7,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "opts: trpcNext.CreateNextContextOptions",
+                    "label": 0,
+                    "name": "required_parameter",
+                    "childrenLabels": [
+                      "patternNode",
+                      "typeNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          7,
+                          0,
+                          1,
+                          0,
+                          0
+                        ],
+                        "str": "opts",
+                        "label": "patternNode",
+                        "name": "identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          7,
+                          0,
+                          1,
+                          0,
+                          1
+                        ],
+                        "str": ": trpcNext.CreateNextContextOptions",
+                        "label": "typeNode",
+                        "name": "type_annotation",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              7,
+                              0,
+                              1,
+                              0,
+                              1,
+                              0
+                            ],
+                            "str": "trpcNext.CreateNextContextOptions",
+                            "label": 0,
+                            "name": "nested_type_identifier",
+                            "childrenLabels": [
+                              "moduleNode",
+                              "nameNode"
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  7,
+                                  0,
+                                  1,
+                                  0,
+                                  1,
+                                  0,
+                                  0
+                                ],
+                                "str": "trpcNext",
+                                "label": "moduleNode",
+                                "name": "identifier"
+                              },
+                              {
+                                "nestedIndex": [
+                                  7,
+                                  0,
+                                  1,
+                                  0,
+                                  1,
+                                  0,
+                                  1
+                                ],
+                                "str": "CreateNextContextOptions",
+                                "label": "nameNode",
+                                "name": "type_identifier"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "nestedIndex": [
+                  7,
+                  0,
+                  2
+                ],
+                "str": ": Promise<Context>",
+                "label": "returnTypeNode",
+                "name": "type_annotation",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      7,
+                      0,
+                      2,
+                      0
+                    ],
+                    "str": "Promise<Context>",
+                    "label": 0,
+                    "name": "generic_type",
+                    "childrenLabels": [
+                      "nameNode",
+                      "typeArgumentsNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          7,
+                          0,
+                          2,
+                          0,
+                          0
+                        ],
+                        "str": "Promise",
+                        "label": "nameNode",
+                        "name": "type_identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          7,
+                          0,
+                          2,
+                          0,
+                          1
+                        ],
+                        "str": "<Context>",
+                        "label": "typeArgumentsNode",
+                        "name": "type_arguments",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              7,
+                              0,
+                              2,
+                              0,
+                              1,
+                              0
+                            ],
+                            "str": "Context",
+                            "label": 0,
+                            "name": "type_identifier"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "nestedIndex": [
+                  7,
+                  0,
+                  3
+                ],
+                "str": "{\n  // for API-response caching see https://trpc.io/docs/caching\n\n  return await createContextInner({});\n}",
+                "label": "bodyNode",
+                "name": "statement_block",
+                "childrenLabels": [
+                  0,
+                  1
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      7,
+                      0,
+                      3,
+                      0
+                    ],
+                    "str": "// for API-response caching see https://trpc.io/docs/caching",
+                    "label": 0,
+                    "name": "comment"
+                  },
+                  {
+                    "nestedIndex": [
+                      7,
+                      0,
+                      3,
+                      1
+                    ],
+                    "str": "return await createContextInner({});",
+                    "label": 1,
+                    "name": "return_statement",
+                    "childrenLabels": [
+                      0
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          7,
+                          0,
+                          3,
+                          1,
+                          0
+                        ],
+                        "str": "await createContextInner({})",
+                        "label": 0,
+                        "name": "await_expression",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              7,
+                              0,
+                              3,
+                              1,
+                              0,
+                              0
+                            ],
+                            "str": "createContextInner({})",
+                            "label": 0,
+                            "name": "call_expression",
+                            "childrenLabels": [
+                              "functionNode",
+                              "argumentsNode"
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  7,
+                                  0,
+                                  3,
+                                  1,
+                                  0,
+                                  0,
+                                  0
+                                ],
+                                "str": "createContextInner",
+                                "label": "functionNode",
+                                "name": "identifier"
+                              },
+                              {
+                                "nestedIndex": [
+                                  7,
+                                  0,
+                                  3,
+                                  1,
+                                  0,
+                                  0,
+                                  1
+                                ],
+                                "str": "({})",
+                                "label": "argumentsNode",
+                                "name": "arguments",
+                                "childrenLabels": [
+                                  0
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      7,
+                                      0,
+                                      3,
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      0
+                                    ],
+                                    "str": "{}",
+                                    "label": 0,
+                                    "name": "object"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "imports": [
+    "import * as trpc from '@trpc/server';",
+    "import * as trpcNext from '@trpc/server/adapters/next';"
+  ],
+  "filePath": "../example-todo-list/src/server/context.ts",
+  "isTest": false,
+  "isConfig": false
+}

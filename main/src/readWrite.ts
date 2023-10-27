@@ -54,9 +54,14 @@ export type HS_INIT_Option = {
 // init -> read from folder if not, otherwise call applyMakeQueryToDir
 export const initHypeEdges = (folder: string, initOption: HS_INIT_Option): ArST_withMetaInfo[] => {
   const hs: ArST_withMetaInfo[] = []
-  if (!initOption.fromScratch && fs.existsSync(path.join(folder, '.archy'))) {
+  const archyFolder = path.join(folder, '.archy')
+  const exist = fs.existsSync(archyFolder)
+
+  if (!initOption.fromScratch && exist && fs.readdirSync(archyFolder).filter((a) => !a.startsWith(".")).length > 0) {
     hs.push(...readFromFolder(path.join(folder, '.archy')))
   } else {
+    console.log("[applyMakeQueryToDir]");
+
     hs.push(...applyMakeQueryToDir(folder))
   }
   return hs

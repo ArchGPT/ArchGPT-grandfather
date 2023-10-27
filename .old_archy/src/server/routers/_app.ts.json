@@ -1,0 +1,479 @@
+{
+  "ast": {
+    "nestedIndex": [],
+    "label": "FILE",
+    "name": "root",
+    "str": "/**\n * This file contains the root router of your tRPC-backend\n */\n\n\n\nexport const appRouter = router({\n  healthcheck: publicProcedure.query(() => 'yay!'),\n\n  post: postRouter,\n});\n\nexport type AppRouter = typeof appRouter;\n",
+    "childrenLabels": [
+      0,
+      1,
+      2
+    ],
+    "children": [
+      {
+        "nestedIndex": [
+          0
+        ],
+        "str": "/**\n * This file contains the root router of your tRPC-backend\n */",
+        "label": 0,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          1
+        ],
+        "str": "export const appRouter = router({\n  healthcheck: publicProcedure.query(() => 'yay!'),\n\n  post: postRouter,\n});",
+        "label": 1,
+        "name": "export_statement",
+        "childrenLabels": [
+          "declarationNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              1,
+              0
+            ],
+            "str": "const appRouter = router({\n  healthcheck: publicProcedure.query(() => 'yay!'),\n\n  post: postRouter,\n});",
+            "label": "declarationNode",
+            "name": "lexical_declaration",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  0
+                ],
+                "str": "appRouter = router({\n  healthcheck: publicProcedure.query(() => 'yay!'),\n\n  post: postRouter,\n})",
+                "label": 0,
+                "name": "variable_declarator",
+                "childrenLabels": [
+                  "nameNode",
+                  "valueNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "appRouter",
+                    "label": "nameNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "router({\n  healthcheck: publicProcedure.query(() => 'yay!'),\n\n  post: postRouter,\n})",
+                    "label": "valueNode",
+                    "name": "call_expression",
+                    "childrenLabels": [
+                      "functionNode",
+                      "argumentsNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0
+                        ],
+                        "str": "router",
+                        "label": "functionNode",
+                        "name": "identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          0,
+                          1,
+                          1
+                        ],
+                        "str": "({\n  healthcheck: publicProcedure.query(() => 'yay!'),\n\n  post: postRouter,\n})",
+                        "label": "argumentsNode",
+                        "name": "arguments",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              0,
+                              1,
+                              1,
+                              0
+                            ],
+                            "str": "{\n  healthcheck: publicProcedure.query(() => 'yay!'),\n\n  post: postRouter,\n}",
+                            "label": 0,
+                            "name": "object",
+                            "childrenLabels": [
+                              0,
+                              1
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  0,
+                                  1,
+                                  1,
+                                  0,
+                                  0
+                                ],
+                                "str": "healthcheck: publicProcedure.query(() => 'yay!')",
+                                "label": 0,
+                                "name": "pair",
+                                "childrenLabels": [
+                                  "keyNode",
+                                  "valueNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      1,
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "healthcheck",
+                                    "label": "keyNode",
+                                    "name": "property_identifier"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      1,
+                                      0,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "publicProcedure.query(() => 'yay!')",
+                                    "label": "valueNode",
+                                    "name": "call_expression",
+                                    "childrenLabels": [
+                                      "functionNode",
+                                      "argumentsNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "publicProcedure.query",
+                                        "label": "functionNode",
+                                        "name": "member_expression",
+                                        "childrenLabels": [
+                                          "objectNode",
+                                          "propertyNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "publicProcedure",
+                                            "label": "objectNode",
+                                            "name": "identifier"
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              1
+                                            ],
+                                            "str": "query",
+                                            "label": "propertyNode",
+                                            "name": "property_identifier"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          1
+                                        ],
+                                        "str": "(() => 'yay!')",
+                                        "label": "argumentsNode",
+                                        "name": "arguments",
+                                        "childrenLabels": [
+                                          0
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              1,
+                                              0
+                                            ],
+                                            "str": "() => 'yay!'",
+                                            "label": 0,
+                                            "name": "arrow_function",
+                                            "childrenLabels": [
+                                              "parametersNode",
+                                              "bodyNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "()",
+                                                "label": "parametersNode",
+                                                "name": "formal_parameters"
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  1
+                                                ],
+                                                "str": "'yay!'",
+                                                "label": "bodyNode",
+                                                "name": "string",
+                                                "childrenLabels": [
+                                                  0
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0
+                                                    ],
+                                                    "str": "yay!",
+                                                    "label": 0,
+                                                    "name": "string_fragment"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  0,
+                                  1,
+                                  1,
+                                  0,
+                                  1
+                                ],
+                                "str": "post: postRouter",
+                                "label": 1,
+                                "name": "pair",
+                                "childrenLabels": [
+                                  "keyNode",
+                                  "valueNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      1,
+                                      0,
+                                      1,
+                                      0
+                                    ],
+                                    "str": "post",
+                                    "label": "keyNode",
+                                    "name": "property_identifier"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      1,
+                                      0,
+                                      1,
+                                      1
+                                    ],
+                                    "str": "postRouter",
+                                    "label": "valueNode",
+                                    "name": "identifier"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          2
+        ],
+        "str": "export type AppRouter = typeof appRouter;",
+        "label": 2,
+        "name": "export_statement",
+        "childrenLabels": [
+          "declarationNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              2,
+              0
+            ],
+            "str": "type AppRouter = typeof appRouter;",
+            "label": "declarationNode",
+            "name": "type_alias_declaration",
+            "childrenLabels": [
+              "nameNode",
+              "valueNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  2,
+                  0,
+                  0
+                ],
+                "str": "AppRouter",
+                "label": "nameNode",
+                "name": "type_identifier"
+              },
+              {
+                "nestedIndex": [
+                  2,
+                  0,
+                  1
+                ],
+                "str": "typeof appRouter",
+                "label": "valueNode",
+                "name": "type_query",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      2,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "appRouter",
+                    "label": 0,
+                    "name": "identifier"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "imports": [
+    "import { publicProcedure, router } from '../trpc';",
+    "import { postRouter } from './post';"
+  ],
+  "filePath": "../example-todo-list/src/server/routers/_app.ts",
+  "isTest": false,
+  "isConfig": false
+}

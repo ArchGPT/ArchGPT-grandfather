@@ -1,0 +1,318 @@
+{
+  "ast": {
+    "nestedIndex": [],
+    "label": "FILE",
+    "name": "root",
+    "str": "/**\n * Dynamic configuration available for the browser and server populated from your `next.config.js`.\n * Note: requires `ssr: true` or a `getInitialProps` in `_app.tsx`\n * @link https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration\n */\n\n\n\n/**\n * Inferred type from `publicRuntime` in `next.config.js`\n */\ntype PublicRuntimeConfig = typeof config.publicRuntimeConfig;\n\nconst nextConfig = getConfig();\n\nexport const publicRuntimeConfig =\n  nextConfig.publicRuntimeConfig as PublicRuntimeConfig;\n",
+    "childrenLabels": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "children": [
+      {
+        "nestedIndex": [
+          0
+        ],
+        "str": "/**\n * Dynamic configuration available for the browser and server populated from your `next.config.js`.\n * Note: requires `ssr: true` or a `getInitialProps` in `_app.tsx`\n * @link https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration\n */",
+        "label": 0,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          1
+        ],
+        "str": "/**\n * Inferred type from `publicRuntime` in `next.config.js`\n */",
+        "label": 1,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          2
+        ],
+        "str": "type PublicRuntimeConfig = typeof config.publicRuntimeConfig;",
+        "label": 2,
+        "name": "type_alias_declaration",
+        "childrenLabels": [
+          "nameNode",
+          "valueNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              2,
+              0
+            ],
+            "str": "PublicRuntimeConfig",
+            "label": "nameNode",
+            "name": "type_identifier"
+          },
+          {
+            "nestedIndex": [
+              2,
+              1
+            ],
+            "str": "typeof config.publicRuntimeConfig",
+            "label": "valueNode",
+            "name": "type_query",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  2,
+                  1,
+                  0
+                ],
+                "str": "config.publicRuntimeConfig",
+                "label": 0,
+                "name": "member_expression",
+                "childrenLabels": [
+                  "objectNode",
+                  "propertyNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      2,
+                      1,
+                      0,
+                      0
+                    ],
+                    "str": "config",
+                    "label": "objectNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      2,
+                      1,
+                      0,
+                      1
+                    ],
+                    "str": "publicRuntimeConfig",
+                    "label": "propertyNode",
+                    "name": "property_identifier"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          3
+        ],
+        "str": "const nextConfig = getConfig();",
+        "label": 3,
+        "name": "lexical_declaration",
+        "childrenLabels": [
+          0
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              3,
+              0
+            ],
+            "str": "nextConfig = getConfig()",
+            "label": 0,
+            "name": "variable_declarator",
+            "childrenLabels": [
+              "nameNode",
+              "valueNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  3,
+                  0,
+                  0
+                ],
+                "str": "nextConfig",
+                "label": "nameNode",
+                "name": "identifier"
+              },
+              {
+                "nestedIndex": [
+                  3,
+                  0,
+                  1
+                ],
+                "str": "getConfig()",
+                "label": "valueNode",
+                "name": "call_expression",
+                "childrenLabels": [
+                  "functionNode",
+                  "argumentsNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      3,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "getConfig",
+                    "label": "functionNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      3,
+                      0,
+                      1,
+                      1
+                    ],
+                    "str": "()",
+                    "label": "argumentsNode",
+                    "name": "arguments"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          4
+        ],
+        "str": "export const publicRuntimeConfig =\n  nextConfig.publicRuntimeConfig as PublicRuntimeConfig;",
+        "label": 4,
+        "name": "export_statement",
+        "childrenLabels": [
+          "declarationNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              4,
+              0
+            ],
+            "str": "const publicRuntimeConfig =\n  nextConfig.publicRuntimeConfig as PublicRuntimeConfig;",
+            "label": "declarationNode",
+            "name": "lexical_declaration",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  4,
+                  0,
+                  0
+                ],
+                "str": "publicRuntimeConfig =\n  nextConfig.publicRuntimeConfig as PublicRuntimeConfig",
+                "label": 0,
+                "name": "variable_declarator",
+                "childrenLabels": [
+                  "nameNode",
+                  "valueNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      4,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "publicRuntimeConfig",
+                    "label": "nameNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      4,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "nextConfig.publicRuntimeConfig as PublicRuntimeConfig",
+                    "label": "valueNode",
+                    "name": "as_expression",
+                    "childrenLabels": [
+                      0,
+                      1
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          4,
+                          0,
+                          0,
+                          1,
+                          0
+                        ],
+                        "str": "nextConfig.publicRuntimeConfig",
+                        "label": 0,
+                        "name": "member_expression",
+                        "childrenLabels": [
+                          "objectNode",
+                          "propertyNode"
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              4,
+                              0,
+                              0,
+                              1,
+                              0,
+                              0
+                            ],
+                            "str": "nextConfig",
+                            "label": "objectNode",
+                            "name": "identifier"
+                          },
+                          {
+                            "nestedIndex": [
+                              4,
+                              0,
+                              0,
+                              1,
+                              0,
+                              1
+                            ],
+                            "str": "publicRuntimeConfig",
+                            "label": "propertyNode",
+                            "name": "property_identifier"
+                          }
+                        ]
+                      },
+                      {
+                        "nestedIndex": [
+                          4,
+                          0,
+                          0,
+                          1,
+                          1
+                        ],
+                        "str": "PublicRuntimeConfig",
+                        "label": 1,
+                        "name": "type_identifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "imports": [
+    "import type * as config from '../../next.config';",
+    "import getConfig from 'next/config';"
+  ],
+  "filePath": "../example-todo-list/src/utils/publicRuntimeConfig.ts",
+  "isTest": false,
+  "isConfig": false
+}

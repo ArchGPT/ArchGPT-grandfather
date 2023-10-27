@@ -1,0 +1,787 @@
+{
+  "ast": {
+    "nestedIndex": [],
+    "label": "FILE",
+    "name": "root",
+    "str": "\n\n\nexport default defineConfig({\n  test: {\n    globals: true,\n    exclude: [...configDefaults.exclude, '**/playwright/**'],\n    alias: {\n      '~/': fileURLToPath(new URL('./src/', import.meta.url)),\n    },\n  },\n});\n",
+    "childrenLabels": [
+      0
+    ],
+    "children": [
+      {
+        "nestedIndex": [
+          0
+        ],
+        "str": "export default defineConfig({\n  test: {\n    globals: true,\n    exclude: [...configDefaults.exclude, '**/playwright/**'],\n    alias: {\n      '~/': fileURLToPath(new URL('./src/', import.meta.url)),\n    },\n  },\n});",
+        "label": 0,
+        "name": "export_statement",
+        "childrenLabels": [
+          "valueNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              0,
+              0
+            ],
+            "str": "defineConfig({\n  test: {\n    globals: true,\n    exclude: [...configDefaults.exclude, '**/playwright/**'],\n    alias: {\n      '~/': fileURLToPath(new URL('./src/', import.meta.url)),\n    },\n  },\n})",
+            "label": "valueNode",
+            "name": "call_expression",
+            "childrenLabels": [
+              "functionNode",
+              "argumentsNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  0,
+                  0,
+                  0
+                ],
+                "str": "defineConfig",
+                "label": "functionNode",
+                "name": "identifier"
+              },
+              {
+                "nestedIndex": [
+                  0,
+                  0,
+                  1
+                ],
+                "str": "({\n  test: {\n    globals: true,\n    exclude: [...configDefaults.exclude, '**/playwright/**'],\n    alias: {\n      '~/': fileURLToPath(new URL('./src/', import.meta.url)),\n    },\n  },\n})",
+                "label": "argumentsNode",
+                "name": "arguments",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      0,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "{\n  test: {\n    globals: true,\n    exclude: [...configDefaults.exclude, '**/playwright/**'],\n    alias: {\n      '~/': fileURLToPath(new URL('./src/', import.meta.url)),\n    },\n  },\n}",
+                    "label": 0,
+                    "name": "object",
+                    "childrenLabels": [
+                      0
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          0,
+                          0,
+                          1,
+                          0,
+                          0
+                        ],
+                        "str": "test: {\n    globals: true,\n    exclude: [...configDefaults.exclude, '**/playwright/**'],\n    alias: {\n      '~/': fileURLToPath(new URL('./src/', import.meta.url)),\n    },\n  }",
+                        "label": 0,
+                        "name": "pair",
+                        "childrenLabels": [
+                          "keyNode",
+                          "valueNode"
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                              0
+                            ],
+                            "str": "test",
+                            "label": "keyNode",
+                            "name": "property_identifier"
+                          },
+                          {
+                            "nestedIndex": [
+                              0,
+                              0,
+                              1,
+                              0,
+                              0,
+                              1
+                            ],
+                            "str": "{\n    globals: true,\n    exclude: [...configDefaults.exclude, '**/playwright/**'],\n    alias: {\n      '~/': fileURLToPath(new URL('./src/', import.meta.url)),\n    },\n  }",
+                            "label": "valueNode",
+                            "name": "object",
+                            "childrenLabels": [
+                              0,
+                              1,
+                              2
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                  1,
+                                  0
+                                ],
+                                "str": "globals: true",
+                                "label": 0,
+                                "name": "pair",
+                                "childrenLabels": [
+                                  "keyNode",
+                                  "valueNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "globals",
+                                    "label": "keyNode",
+                                    "name": "property_identifier"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "true",
+                                    "label": "valueNode",
+                                    "name": "true"
+                                  }
+                                ]
+                              },
+                              {
+                                "nestedIndex": [
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                  1,
+                                  1
+                                ],
+                                "str": "exclude: [...configDefaults.exclude, '**/playwright/**']",
+                                "label": 1,
+                                "name": "pair",
+                                "childrenLabels": [
+                                  "keyNode",
+                                  "valueNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      1,
+                                      0
+                                    ],
+                                    "str": "exclude",
+                                    "label": "keyNode",
+                                    "name": "property_identifier"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      1,
+                                      1
+                                    ],
+                                    "str": "[...configDefaults.exclude, '**/playwright/**']",
+                                    "label": "valueNode",
+                                    "name": "array",
+                                    "childrenLabels": [
+                                      0,
+                                      1
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          0,
+                                          0,
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          1,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "...configDefaults.exclude",
+                                        "label": 0,
+                                        "name": "spread_element",
+                                        "childrenLabels": [
+                                          0
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "configDefaults.exclude",
+                                            "label": 0,
+                                            "name": "member_expression",
+                                            "childrenLabels": [
+                                              "objectNode",
+                                              "propertyNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "configDefaults",
+                                                "label": "objectNode",
+                                                "name": "identifier"
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1
+                                                ],
+                                                "str": "exclude",
+                                                "label": "propertyNode",
+                                                "name": "property_identifier"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          0,
+                                          0,
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          1,
+                                          1,
+                                          1
+                                        ],
+                                        "str": "'**/playwright/**'",
+                                        "label": 1,
+                                        "name": "string",
+                                        "childrenLabels": [
+                                          0
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              1,
+                                              0
+                                            ],
+                                            "str": "**/playwright/**",
+                                            "label": 0,
+                                            "name": "string_fragment"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "nestedIndex": [
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  0,
+                                  1,
+                                  2
+                                ],
+                                "str": "alias: {\n      '~/': fileURLToPath(new URL('./src/', import.meta.url)),\n    }",
+                                "label": 2,
+                                "name": "pair",
+                                "childrenLabels": [
+                                  "keyNode",
+                                  "valueNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      2,
+                                      0
+                                    ],
+                                    "str": "alias",
+                                    "label": "keyNode",
+                                    "name": "property_identifier"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      2,
+                                      1
+                                    ],
+                                    "str": "{\n      '~/': fileURLToPath(new URL('./src/', import.meta.url)),\n    }",
+                                    "label": "valueNode",
+                                    "name": "object",
+                                    "childrenLabels": [
+                                      0
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          0,
+                                          0,
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          2,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "'~/': fileURLToPath(new URL('./src/', import.meta.url))",
+                                        "label": 0,
+                                        "name": "pair",
+                                        "childrenLabels": [
+                                          "keyNode",
+                                          "valueNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              2,
+                                              1,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "'~/'",
+                                            "label": "keyNode",
+                                            "name": "string",
+                                            "childrenLabels": [
+                                              0
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  2,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "~/",
+                                                "label": 0,
+                                                "name": "string_fragment"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              2,
+                                              1,
+                                              0,
+                                              1
+                                            ],
+                                            "str": "fileURLToPath(new URL('./src/', import.meta.url))",
+                                            "label": "valueNode",
+                                            "name": "call_expression",
+                                            "childrenLabels": [
+                                              "functionNode",
+                                              "argumentsNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  2,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "fileURLToPath",
+                                                "label": "functionNode",
+                                                "name": "identifier"
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  2,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1
+                                                ],
+                                                "str": "(new URL('./src/', import.meta.url))",
+                                                "label": "argumentsNode",
+                                                "name": "arguments",
+                                                "childrenLabels": [
+                                                  0
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      2,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0
+                                                    ],
+                                                    "str": "new URL('./src/', import.meta.url)",
+                                                    "label": 0,
+                                                    "name": "new_expression",
+                                                    "childrenLabels": [
+                                                      "constructorNode",
+                                                      "argumentsNode"
+                                                    ],
+                                                    "children": [
+                                                      {
+                                                        "nestedIndex": [
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          2,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          0
+                                                        ],
+                                                        "str": "URL",
+                                                        "label": "constructorNode",
+                                                        "name": "identifier"
+                                                      },
+                                                      {
+                                                        "nestedIndex": [
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          1,
+                                                          2,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          1
+                                                        ],
+                                                        "str": "('./src/', import.meta.url)",
+                                                        "label": "argumentsNode",
+                                                        "name": "arguments",
+                                                        "childrenLabels": [
+                                                          0,
+                                                          1
+                                                        ],
+                                                        "children": [
+                                                          {
+                                                            "nestedIndex": [
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              2,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              0
+                                                            ],
+                                                            "str": "'./src/'",
+                                                            "label": 0,
+                                                            "name": "string",
+                                                            "childrenLabels": [
+                                                              0
+                                                            ],
+                                                            "children": [
+                                                              {
+                                                                "nestedIndex": [
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  2,
+                                                                  1,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  1,
+                                                                  0,
+                                                                  0
+                                                                ],
+                                                                "str": "./src/",
+                                                                "label": 0,
+                                                                "name": "string_fragment"
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "nestedIndex": [
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              2,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              1
+                                                            ],
+                                                            "str": "import.meta.url",
+                                                            "label": 1,
+                                                            "name": "member_expression",
+                                                            "childrenLabels": [
+                                                              "objectNode",
+                                                              "propertyNode"
+                                                            ],
+                                                            "children": [
+                                                              {
+                                                                "nestedIndex": [
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  2,
+                                                                  1,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  0
+                                                                ],
+                                                                "str": "import.meta",
+                                                                "label": "objectNode",
+                                                                "name": "member_expression",
+                                                                "childrenLabels": [
+                                                                  "objectNode",
+                                                                  "propertyNode"
+                                                                ],
+                                                                "children": [
+                                                                  {
+                                                                    "nestedIndex": [
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      2,
+                                                                      1,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      0,
+                                                                      0
+                                                                    ],
+                                                                    "str": "import",
+                                                                    "label": "objectNode",
+                                                                    "name": "import"
+                                                                  },
+                                                                  {
+                                                                    "nestedIndex": [
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      0,
+                                                                      0,
+                                                                      1,
+                                                                      2,
+                                                                      1,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      0,
+                                                                      1,
+                                                                      1,
+                                                                      0,
+                                                                      1
+                                                                    ],
+                                                                    "str": "meta",
+                                                                    "label": "propertyNode",
+                                                                    "name": "property_identifier"
+                                                                  }
+                                                                ]
+                                                              },
+                                                              {
+                                                                "nestedIndex": [
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  2,
+                                                                  1,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  1
+                                                                ],
+                                                                "str": "url",
+                                                                "label": "propertyNode",
+                                                                "name": "property_identifier"
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "imports": [
+    "import { fileURLToPath } from 'url';",
+    "import { configDefaults, defineConfig } from 'vitest/config';"
+  ],
+  "filePath": "../example-todo-list/vitest.config.ts",
+  "isTest": false,
+  "isConfig": true
+}

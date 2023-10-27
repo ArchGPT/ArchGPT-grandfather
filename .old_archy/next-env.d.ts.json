@@ -1,0 +1,52 @@
+{
+  "ast": {
+    "nestedIndex": [],
+    "label": "FILE",
+    "name": "root",
+    "str": "/// <reference types=\"next\" />\n/// <reference types=\"next/image-types/global\" />\n\n// NOTE: This file should not be edited\n// see https://nextjs.org/docs/basic-features/typescript for more information.\n",
+    "childrenLabels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "children": [
+      {
+        "nestedIndex": [
+          0
+        ],
+        "str": "/// <reference types=\"next\" />",
+        "label": 0,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          1
+        ],
+        "str": "/// <reference types=\"next/image-types/global\" />",
+        "label": 1,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          2
+        ],
+        "str": "// NOTE: This file should not be edited",
+        "label": 2,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          3
+        ],
+        "str": "// see https://nextjs.org/docs/basic-features/typescript for more information.",
+        "label": 3,
+        "name": "comment"
+      }
+    ]
+  },
+  "imports": [],
+  "filePath": "../example-todo-list/next-env.d.ts",
+  "isTest": false,
+  "isConfig": false
+}

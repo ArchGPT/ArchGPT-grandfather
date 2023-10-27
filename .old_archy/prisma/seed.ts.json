@@ -1,0 +1,1588 @@
+{
+  "ast": {
+    "nestedIndex": [],
+    "label": "FILE",
+    "name": "root",
+    "str": "/**\n * Adds seed data to your db\n *\n * @link https://www.prisma.io/docs/guides/database/seed-database\n */\n\n\nconst prisma = new PrismaClient();\n\nasync function main() {\n  const firstPostId = '5c03994c-fc16-47e0-bd02-d218a370a078';\n  await prisma.post.upsert({\n    where: {\n      id: firstPostId,\n    },\n    create: {\n      id: firstPostId,\n      title: 'First Post',\n      text: 'This is an example post generated from `prisma/seed.ts`',\n    },\n    update: {},\n  });\n}\n\nmain()\n  .catch((e) => {\n    console.error(e);\n    process.exit(1);\n  })\n  .finally(async () => {\n    await prisma.$disconnect();\n  });\n",
+    "childrenLabels": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "children": [
+      {
+        "nestedIndex": [
+          0
+        ],
+        "str": "/**\n * Adds seed data to your db\n *\n * @link https://www.prisma.io/docs/guides/database/seed-database\n */",
+        "label": 0,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          1
+        ],
+        "str": "const prisma = new PrismaClient();",
+        "label": 1,
+        "name": "lexical_declaration",
+        "childrenLabels": [
+          0
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              1,
+              0
+            ],
+            "str": "prisma = new PrismaClient()",
+            "label": 0,
+            "name": "variable_declarator",
+            "childrenLabels": [
+              "nameNode",
+              "valueNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  0
+                ],
+                "str": "prisma",
+                "label": "nameNode",
+                "name": "identifier"
+              },
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  1
+                ],
+                "str": "new PrismaClient()",
+                "label": "valueNode",
+                "name": "new_expression",
+                "childrenLabels": [
+                  "constructorNode",
+                  "argumentsNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "PrismaClient",
+                    "label": "constructorNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      1,
+                      1
+                    ],
+                    "str": "()",
+                    "label": "argumentsNode",
+                    "name": "arguments"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          2
+        ],
+        "str": "async function main() {\n  const firstPostId = '5c03994c-fc16-47e0-bd02-d218a370a078';\n  await prisma.post.upsert({\n    where: {\n      id: firstPostId,\n    },\n    create: {\n      id: firstPostId,\n      title: 'First Post',\n      text: 'This is an example post generated from `prisma/seed.ts`',\n    },\n    update: {},\n  });\n}",
+        "label": 2,
+        "name": "function_declaration",
+        "childrenLabels": [
+          "nameNode",
+          "parametersNode",
+          "bodyNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              2,
+              0
+            ],
+            "str": "main",
+            "label": "nameNode",
+            "name": "identifier"
+          },
+          {
+            "nestedIndex": [
+              2,
+              1
+            ],
+            "str": "()",
+            "label": "parametersNode",
+            "name": "formal_parameters"
+          },
+          {
+            "nestedIndex": [
+              2,
+              2
+            ],
+            "str": "{\n  const firstPostId = '5c03994c-fc16-47e0-bd02-d218a370a078';\n  await prisma.post.upsert({\n    where: {\n      id: firstPostId,\n    },\n    create: {\n      id: firstPostId,\n      title: 'First Post',\n      text: 'This is an example post generated from `prisma/seed.ts`',\n    },\n    update: {},\n  });\n}",
+            "label": "bodyNode",
+            "name": "statement_block",
+            "childrenLabels": [
+              0,
+              1
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  2,
+                  2,
+                  0
+                ],
+                "str": "const firstPostId = '5c03994c-fc16-47e0-bd02-d218a370a078';",
+                "label": 0,
+                "name": "lexical_declaration",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      2,
+                      2,
+                      0,
+                      0
+                    ],
+                    "str": "firstPostId = '5c03994c-fc16-47e0-bd02-d218a370a078'",
+                    "label": 0,
+                    "name": "variable_declarator",
+                    "childrenLabels": [
+                      "nameNode",
+                      "valueNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          2,
+                          2,
+                          0,
+                          0,
+                          0
+                        ],
+                        "str": "firstPostId",
+                        "label": "nameNode",
+                        "name": "identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          2,
+                          2,
+                          0,
+                          0,
+                          1
+                        ],
+                        "str": "'5c03994c-fc16-47e0-bd02-d218a370a078'",
+                        "label": "valueNode",
+                        "name": "string",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              2,
+                              2,
+                              0,
+                              0,
+                              1,
+                              0
+                            ],
+                            "str": "5c03994c-fc16-47e0-bd02-d218a370a078",
+                            "label": 0,
+                            "name": "string_fragment"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "nestedIndex": [
+                  2,
+                  2,
+                  1
+                ],
+                "str": "await prisma.post.upsert({\n    where: {\n      id: firstPostId,\n    },\n    create: {\n      id: firstPostId,\n      title: 'First Post',\n      text: 'This is an example post generated from `prisma/seed.ts`',\n    },\n    update: {},\n  });",
+                "label": 1,
+                "name": "expression_statement",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      2,
+                      2,
+                      1,
+                      0
+                    ],
+                    "str": "await prisma.post.upsert({\n    where: {\n      id: firstPostId,\n    },\n    create: {\n      id: firstPostId,\n      title: 'First Post',\n      text: 'This is an example post generated from `prisma/seed.ts`',\n    },\n    update: {},\n  })",
+                    "label": 0,
+                    "name": "await_expression",
+                    "childrenLabels": [
+                      0
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          2,
+                          2,
+                          1,
+                          0,
+                          0
+                        ],
+                        "str": "prisma.post.upsert({\n    where: {\n      id: firstPostId,\n    },\n    create: {\n      id: firstPostId,\n      title: 'First Post',\n      text: 'This is an example post generated from `prisma/seed.ts`',\n    },\n    update: {},\n  })",
+                        "label": 0,
+                        "name": "call_expression",
+                        "childrenLabels": [
+                          "functionNode",
+                          "argumentsNode"
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              2,
+                              2,
+                              1,
+                              0,
+                              0,
+                              0
+                            ],
+                            "str": "prisma.post.upsert",
+                            "label": "functionNode",
+                            "name": "member_expression",
+                            "childrenLabels": [
+                              "objectNode",
+                              "propertyNode"
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  2,
+                                  2,
+                                  1,
+                                  0,
+                                  0,
+                                  0,
+                                  0
+                                ],
+                                "str": "prisma.post",
+                                "label": "objectNode",
+                                "name": "member_expression",
+                                "childrenLabels": [
+                                  "objectNode",
+                                  "propertyNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      2,
+                                      2,
+                                      1,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "prisma",
+                                    "label": "objectNode",
+                                    "name": "identifier"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      2,
+                                      2,
+                                      1,
+                                      0,
+                                      0,
+                                      0,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "post",
+                                    "label": "propertyNode",
+                                    "name": "property_identifier"
+                                  }
+                                ]
+                              },
+                              {
+                                "nestedIndex": [
+                                  2,
+                                  2,
+                                  1,
+                                  0,
+                                  0,
+                                  0,
+                                  1
+                                ],
+                                "str": "upsert",
+                                "label": "propertyNode",
+                                "name": "property_identifier"
+                              }
+                            ]
+                          },
+                          {
+                            "nestedIndex": [
+                              2,
+                              2,
+                              1,
+                              0,
+                              0,
+                              1
+                            ],
+                            "str": "({\n    where: {\n      id: firstPostId,\n    },\n    create: {\n      id: firstPostId,\n      title: 'First Post',\n      text: 'This is an example post generated from `prisma/seed.ts`',\n    },\n    update: {},\n  })",
+                            "label": "argumentsNode",
+                            "name": "arguments",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  2,
+                                  2,
+                                  1,
+                                  0,
+                                  0,
+                                  1,
+                                  0
+                                ],
+                                "str": "{\n    where: {\n      id: firstPostId,\n    },\n    create: {\n      id: firstPostId,\n      title: 'First Post',\n      text: 'This is an example post generated from `prisma/seed.ts`',\n    },\n    update: {},\n  }",
+                                "label": 0,
+                                "name": "object",
+                                "childrenLabels": [
+                                  0,
+                                  1,
+                                  2
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      2,
+                                      2,
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "where: {\n      id: firstPostId,\n    }",
+                                    "label": 0,
+                                    "name": "pair",
+                                    "childrenLabels": [
+                                      "keyNode",
+                                      "valueNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          2,
+                                          2,
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          0,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "where",
+                                        "label": "keyNode",
+                                        "name": "property_identifier"
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          2,
+                                          2,
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          0,
+                                          0,
+                                          1
+                                        ],
+                                        "str": "{\n      id: firstPostId,\n    }",
+                                        "label": "valueNode",
+                                        "name": "object",
+                                        "childrenLabels": [
+                                          0
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              2,
+                                              2,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              0
+                                            ],
+                                            "str": "id: firstPostId",
+                                            "label": 0,
+                                            "name": "pair",
+                                            "childrenLabels": [
+                                              "keyNode",
+                                              "valueNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  2,
+                                                  2,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "id",
+                                                "label": "keyNode",
+                                                "name": "property_identifier"
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  2,
+                                                  2,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1
+                                                ],
+                                                "str": "firstPostId",
+                                                "label": "valueNode",
+                                                "name": "identifier"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      2,
+                                      2,
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "create: {\n      id: firstPostId,\n      title: 'First Post',\n      text: 'This is an example post generated from `prisma/seed.ts`',\n    }",
+                                    "label": 1,
+                                    "name": "pair",
+                                    "childrenLabels": [
+                                      "keyNode",
+                                      "valueNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          2,
+                                          2,
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          0,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "create",
+                                        "label": "keyNode",
+                                        "name": "property_identifier"
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          2,
+                                          2,
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          0,
+                                          1,
+                                          1
+                                        ],
+                                        "str": "{\n      id: firstPostId,\n      title: 'First Post',\n      text: 'This is an example post generated from `prisma/seed.ts`',\n    }",
+                                        "label": "valueNode",
+                                        "name": "object",
+                                        "childrenLabels": [
+                                          0,
+                                          1,
+                                          2
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              2,
+                                              2,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              0
+                                            ],
+                                            "str": "id: firstPostId",
+                                            "label": 0,
+                                            "name": "pair",
+                                            "childrenLabels": [
+                                              "keyNode",
+                                              "valueNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  2,
+                                                  2,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "id",
+                                                "label": "keyNode",
+                                                "name": "property_identifier"
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  2,
+                                                  2,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  1
+                                                ],
+                                                "str": "firstPostId",
+                                                "label": "valueNode",
+                                                "name": "identifier"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              2,
+                                              2,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1
+                                            ],
+                                            "str": "title: 'First Post'",
+                                            "label": 1,
+                                            "name": "pair",
+                                            "childrenLabels": [
+                                              "keyNode",
+                                              "valueNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  2,
+                                                  2,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "title",
+                                                "label": "keyNode",
+                                                "name": "property_identifier"
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  2,
+                                                  2,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  1
+                                                ],
+                                                "str": "'First Post'",
+                                                "label": "valueNode",
+                                                "name": "string",
+                                                "childrenLabels": [
+                                                  0
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      2,
+                                                      2,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      0
+                                                    ],
+                                                    "str": "First Post",
+                                                    "label": 0,
+                                                    "name": "string_fragment"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              2,
+                                              2,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              2
+                                            ],
+                                            "str": "text: 'This is an example post generated from `prisma/seed.ts`'",
+                                            "label": 2,
+                                            "name": "pair",
+                                            "childrenLabels": [
+                                              "keyNode",
+                                              "valueNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  2,
+                                                  2,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  2,
+                                                  0
+                                                ],
+                                                "str": "text",
+                                                "label": "keyNode",
+                                                "name": "property_identifier"
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  2,
+                                                  2,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  2,
+                                                  1
+                                                ],
+                                                "str": "'This is an example post generated from `prisma/seed.ts`'",
+                                                "label": "valueNode",
+                                                "name": "string",
+                                                "childrenLabels": [
+                                                  0
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      2,
+                                                      2,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      2,
+                                                      1,
+                                                      0
+                                                    ],
+                                                    "str": "This is an example post generated from `prisma/seed.ts`",
+                                                    "label": 0,
+                                                    "name": "string_fragment"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      2,
+                                      2,
+                                      1,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      2
+                                    ],
+                                    "str": "update: {}",
+                                    "label": 2,
+                                    "name": "pair",
+                                    "childrenLabels": [
+                                      "keyNode",
+                                      "valueNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          2,
+                                          2,
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          0,
+                                          2,
+                                          0
+                                        ],
+                                        "str": "update",
+                                        "label": "keyNode",
+                                        "name": "property_identifier"
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          2,
+                                          2,
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          0,
+                                          2,
+                                          1
+                                        ],
+                                        "str": "{}",
+                                        "label": "valueNode",
+                                        "name": "object"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          3
+        ],
+        "str": "main()\n  .catch((e) => {\n    console.error(e);\n    process.exit(1);\n  })\n  .finally(async () => {\n    await prisma.$disconnect();\n  });",
+        "label": 3,
+        "name": "expression_statement",
+        "childrenLabels": [
+          0
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              3,
+              0
+            ],
+            "str": "main()\n  .catch((e) => {\n    console.error(e);\n    process.exit(1);\n  })\n  .finally(async () => {\n    await prisma.$disconnect();\n  })",
+            "label": 0,
+            "name": "call_expression",
+            "childrenLabels": [
+              "functionNode",
+              "argumentsNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  3,
+                  0,
+                  0
+                ],
+                "str": "main()\n  .catch((e) => {\n    console.error(e);\n    process.exit(1);\n  })\n  .finally",
+                "label": "functionNode",
+                "name": "member_expression",
+                "childrenLabels": [
+                  "objectNode",
+                  "propertyNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      3,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "main()\n  .catch((e) => {\n    console.error(e);\n    process.exit(1);\n  })",
+                    "label": "objectNode",
+                    "name": "call_expression",
+                    "childrenLabels": [
+                      "functionNode",
+                      "argumentsNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          3,
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "str": "main()\n  .catch",
+                        "label": "functionNode",
+                        "name": "member_expression",
+                        "childrenLabels": [
+                          "objectNode",
+                          "propertyNode"
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              3,
+                              0,
+                              0,
+                              0,
+                              0,
+                              0
+                            ],
+                            "str": "main()",
+                            "label": "objectNode",
+                            "name": "call_expression",
+                            "childrenLabels": [
+                              "functionNode",
+                              "argumentsNode"
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  3,
+                                  0,
+                                  0,
+                                  0,
+                                  0,
+                                  0,
+                                  0
+                                ],
+                                "str": "main",
+                                "label": "functionNode",
+                                "name": "identifier"
+                              },
+                              {
+                                "nestedIndex": [
+                                  3,
+                                  0,
+                                  0,
+                                  0,
+                                  0,
+                                  0,
+                                  1
+                                ],
+                                "str": "()",
+                                "label": "argumentsNode",
+                                "name": "arguments"
+                              }
+                            ]
+                          },
+                          {
+                            "nestedIndex": [
+                              3,
+                              0,
+                              0,
+                              0,
+                              0,
+                              1
+                            ],
+                            "str": "catch",
+                            "label": "propertyNode",
+                            "name": "property_identifier"
+                          }
+                        ]
+                      },
+                      {
+                        "nestedIndex": [
+                          3,
+                          0,
+                          0,
+                          0,
+                          1
+                        ],
+                        "str": "((e) => {\n    console.error(e);\n    process.exit(1);\n  })",
+                        "label": "argumentsNode",
+                        "name": "arguments",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              3,
+                              0,
+                              0,
+                              0,
+                              1,
+                              0
+                            ],
+                            "str": "(e) => {\n    console.error(e);\n    process.exit(1);\n  }",
+                            "label": 0,
+                            "name": "arrow_function",
+                            "childrenLabels": [
+                              "parametersNode",
+                              "bodyNode"
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  3,
+                                  0,
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  0
+                                ],
+                                "str": "(e)",
+                                "label": "parametersNode",
+                                "name": "formal_parameters",
+                                "childrenLabels": [
+                                  0
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      3,
+                                      0,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "e",
+                                    "label": 0,
+                                    "name": "required_parameter",
+                                    "childrenLabels": [
+                                      "patternNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          3,
+                                          0,
+                                          0,
+                                          0,
+                                          1,
+                                          0,
+                                          0,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "e",
+                                        "label": "patternNode",
+                                        "name": "identifier"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "nestedIndex": [
+                                  3,
+                                  0,
+                                  0,
+                                  0,
+                                  1,
+                                  0,
+                                  1
+                                ],
+                                "str": "{\n    console.error(e);\n    process.exit(1);\n  }",
+                                "label": "bodyNode",
+                                "name": "statement_block",
+                                "childrenLabels": [
+                                  0,
+                                  1
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      3,
+                                      0,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      1,
+                                      0
+                                    ],
+                                    "str": "console.error(e);",
+                                    "label": 0,
+                                    "name": "expression_statement",
+                                    "childrenLabels": [
+                                      0
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          3,
+                                          0,
+                                          0,
+                                          0,
+                                          1,
+                                          0,
+                                          1,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "console.error(e)",
+                                        "label": 0,
+                                        "name": "call_expression",
+                                        "childrenLabels": [
+                                          "functionNode",
+                                          "argumentsNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              3,
+                                              0,
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "console.error",
+                                            "label": "functionNode",
+                                            "name": "member_expression",
+                                            "childrenLabels": [
+                                              "objectNode",
+                                              "propertyNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  3,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "console",
+                                                "label": "objectNode",
+                                                "name": "identifier"
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  3,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1
+                                                ],
+                                                "str": "error",
+                                                "label": "propertyNode",
+                                                "name": "property_identifier"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              3,
+                                              0,
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              0,
+                                              1
+                                            ],
+                                            "str": "(e)",
+                                            "label": "argumentsNode",
+                                            "name": "arguments",
+                                            "childrenLabels": [
+                                              0
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  3,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "e",
+                                                "label": 0,
+                                                "name": "identifier"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      3,
+                                      0,
+                                      0,
+                                      0,
+                                      1,
+                                      0,
+                                      1,
+                                      1
+                                    ],
+                                    "str": "process.exit(1);",
+                                    "label": 1,
+                                    "name": "expression_statement",
+                                    "childrenLabels": [
+                                      0
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          3,
+                                          0,
+                                          0,
+                                          0,
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "process.exit(1)",
+                                        "label": 0,
+                                        "name": "call_expression",
+                                        "childrenLabels": [
+                                          "functionNode",
+                                          "argumentsNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              3,
+                                              0,
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "process.exit",
+                                            "label": "functionNode",
+                                            "name": "member_expression",
+                                            "childrenLabels": [
+                                              "objectNode",
+                                              "propertyNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  3,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "process",
+                                                "label": "objectNode",
+                                                "name": "identifier"
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  3,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1
+                                                ],
+                                                "str": "exit",
+                                                "label": "propertyNode",
+                                                "name": "property_identifier"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              3,
+                                              0,
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              1
+                                            ],
+                                            "str": "(1)",
+                                            "label": "argumentsNode",
+                                            "name": "arguments",
+                                            "childrenLabels": [
+                                              0
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  3,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "1",
+                                                "label": 0,
+                                                "name": "number"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "nestedIndex": [
+                      3,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "finally",
+                    "label": "propertyNode",
+                    "name": "property_identifier"
+                  }
+                ]
+              },
+              {
+                "nestedIndex": [
+                  3,
+                  0,
+                  1
+                ],
+                "str": "(async () => {\n    await prisma.$disconnect();\n  })",
+                "label": "argumentsNode",
+                "name": "arguments",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      3,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "async () => {\n    await prisma.$disconnect();\n  }",
+                    "label": 0,
+                    "name": "arrow_function",
+                    "childrenLabels": [
+                      "parametersNode",
+                      "bodyNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          3,
+                          0,
+                          1,
+                          0,
+                          0
+                        ],
+                        "str": "()",
+                        "label": "parametersNode",
+                        "name": "formal_parameters"
+                      },
+                      {
+                        "nestedIndex": [
+                          3,
+                          0,
+                          1,
+                          0,
+                          1
+                        ],
+                        "str": "{\n    await prisma.$disconnect();\n  }",
+                        "label": "bodyNode",
+                        "name": "statement_block",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              3,
+                              0,
+                              1,
+                              0,
+                              1,
+                              0
+                            ],
+                            "str": "await prisma.$disconnect();",
+                            "label": 0,
+                            "name": "expression_statement",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  3,
+                                  0,
+                                  1,
+                                  0,
+                                  1,
+                                  0,
+                                  0
+                                ],
+                                "str": "await prisma.$disconnect()",
+                                "label": 0,
+                                "name": "await_expression",
+                                "childrenLabels": [
+                                  0
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      3,
+                                      0,
+                                      1,
+                                      0,
+                                      1,
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "prisma.$disconnect()",
+                                    "label": 0,
+                                    "name": "call_expression",
+                                    "childrenLabels": [
+                                      "functionNode",
+                                      "argumentsNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          3,
+                                          0,
+                                          1,
+                                          0,
+                                          1,
+                                          0,
+                                          0,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "prisma.$disconnect",
+                                        "label": "functionNode",
+                                        "name": "member_expression",
+                                        "childrenLabels": [
+                                          "objectNode",
+                                          "propertyNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              3,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              0,
+                                              0,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "prisma",
+                                            "label": "objectNode",
+                                            "name": "identifier"
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              3,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              0,
+                                              0,
+                                              0,
+                                              1
+                                            ],
+                                            "str": "$disconnect",
+                                            "label": "propertyNode",
+                                            "name": "property_identifier"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          3,
+                                          0,
+                                          1,
+                                          0,
+                                          1,
+                                          0,
+                                          0,
+                                          0,
+                                          1
+                                        ],
+                                        "str": "()",
+                                        "label": "argumentsNode",
+                                        "name": "arguments"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "imports": [
+    "import { PrismaClient } from '@prisma/client';"
+  ],
+  "filePath": "../example-todo-list/prisma/seed.ts",
+  "isTest": false,
+  "isConfig": false
+}

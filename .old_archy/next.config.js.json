@@ -1,0 +1,826 @@
+{
+  "ast": {
+    "nestedIndex": [],
+    "label": "FILE",
+    "name": "root",
+    "str": "// @ts-check\n/* eslint-disable @typescript-eslint/no-var-requires */\nconst { env } = require('./src/server/env');\n\n/**\n * Don't be scared of the generics here.\n * All they do is to give us autocompletion when using this.\n *\n * @template {import('next').NextConfig} T\n * @param {T} config - A generic parameter that flows through to the return type\n * @constraint {{import('next').NextConfig}}\n */\nfunction getConfig(config) {\n  return config;\n}\n\n/**\n * @link https://nextjs.org/docs/api-reference/next.config.js/introduction\n */\nmodule.exports = getConfig({\n  /**\n   * Dynamic configuration available for the browser and server.\n   * Note: requires `ssr: true` or a `getInitialProps` in `_app.tsx`\n   * @link https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration\n   */\n  publicRuntimeConfig: {\n    NODE_ENV: env.NODE_ENV,\n  },\n  /** We run eslint as a separate task in CI */\n  eslint: { ignoreDuringBuilds: !!process.env.CI },\n});\n",
+    "childrenLabels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "children": [
+      {
+        "nestedIndex": [
+          0
+        ],
+        "str": "// @ts-check",
+        "label": 0,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          1
+        ],
+        "str": "/* eslint-disable @typescript-eslint/no-var-requires */",
+        "label": 1,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          2
+        ],
+        "str": "const { env } = require('./src/server/env');",
+        "label": 2,
+        "name": "lexical_declaration",
+        "childrenLabels": [
+          0
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              2,
+              0
+            ],
+            "str": "{ env } = require('./src/server/env')",
+            "label": 0,
+            "name": "variable_declarator",
+            "childrenLabels": [
+              "nameNode",
+              "valueNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  2,
+                  0,
+                  0
+                ],
+                "str": "{ env }",
+                "label": "nameNode",
+                "name": "object_pattern",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      2,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "env",
+                    "label": 0,
+                    "name": "shorthand_property_identifier_pattern"
+                  }
+                ]
+              },
+              {
+                "nestedIndex": [
+                  2,
+                  0,
+                  1
+                ],
+                "str": "require('./src/server/env')",
+                "label": "valueNode",
+                "name": "call_expression",
+                "childrenLabels": [
+                  "functionNode",
+                  "argumentsNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      2,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "require",
+                    "label": "functionNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      2,
+                      0,
+                      1,
+                      1
+                    ],
+                    "str": "('./src/server/env')",
+                    "label": "argumentsNode",
+                    "name": "arguments",
+                    "childrenLabels": [
+                      0
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          2,
+                          0,
+                          1,
+                          1,
+                          0
+                        ],
+                        "str": "'./src/server/env'",
+                        "label": 0,
+                        "name": "string",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              2,
+                              0,
+                              1,
+                              1,
+                              0,
+                              0
+                            ],
+                            "str": "./src/server/env",
+                            "label": 0,
+                            "name": "string_fragment"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          3
+        ],
+        "str": "/**\n * Don't be scared of the generics here.\n * All they do is to give us autocompletion when using this.\n *\n * @template {import('next').NextConfig} T\n * @param {T} config - A generic parameter that flows through to the return type\n * @constraint {{import('next').NextConfig}}\n */",
+        "label": 3,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          4
+        ],
+        "str": "function getConfig(config) {\n  return config;\n}",
+        "label": 4,
+        "name": "function_declaration",
+        "childrenLabels": [
+          "nameNode",
+          "parametersNode",
+          "bodyNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              4,
+              0
+            ],
+            "str": "getConfig",
+            "label": "nameNode",
+            "name": "identifier"
+          },
+          {
+            "nestedIndex": [
+              4,
+              1
+            ],
+            "str": "(config)",
+            "label": "parametersNode",
+            "name": "formal_parameters",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  4,
+                  1,
+                  0
+                ],
+                "str": "config",
+                "label": 0,
+                "name": "required_parameter",
+                "childrenLabels": [
+                  "patternNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      4,
+                      1,
+                      0,
+                      0
+                    ],
+                    "str": "config",
+                    "label": "patternNode",
+                    "name": "identifier"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nestedIndex": [
+              4,
+              2
+            ],
+            "str": "{\n  return config;\n}",
+            "label": "bodyNode",
+            "name": "statement_block",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  4,
+                  2,
+                  0
+                ],
+                "str": "return config;",
+                "label": 0,
+                "name": "return_statement",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      4,
+                      2,
+                      0,
+                      0
+                    ],
+                    "str": "config",
+                    "label": 0,
+                    "name": "identifier"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          5
+        ],
+        "str": "/**\n * @link https://nextjs.org/docs/api-reference/next.config.js/introduction\n */",
+        "label": 5,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          6
+        ],
+        "str": "module.exports = getConfig({\n  /**\n   * Dynamic configuration available for the browser and server.\n   * Note: requires `ssr: true` or a `getInitialProps` in `_app.tsx`\n   * @link https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration\n   */\n  publicRuntimeConfig: {\n    NODE_ENV: env.NODE_ENV,\n  },\n  /** We run eslint as a separate task in CI */\n  eslint: { ignoreDuringBuilds: !!process.env.CI },\n});",
+        "label": 6,
+        "name": "expression_statement",
+        "childrenLabels": [
+          0
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              6,
+              0
+            ],
+            "str": "module.exports = getConfig({\n  /**\n   * Dynamic configuration available for the browser and server.\n   * Note: requires `ssr: true` or a `getInitialProps` in `_app.tsx`\n   * @link https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration\n   */\n  publicRuntimeConfig: {\n    NODE_ENV: env.NODE_ENV,\n  },\n  /** We run eslint as a separate task in CI */\n  eslint: { ignoreDuringBuilds: !!process.env.CI },\n})",
+            "label": 0,
+            "name": "assignment_expression",
+            "childrenLabels": [
+              "leftNode",
+              "rightNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  6,
+                  0,
+                  0
+                ],
+                "str": "module.exports",
+                "label": "leftNode",
+                "name": "member_expression",
+                "childrenLabels": [
+                  "objectNode",
+                  "propertyNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      6,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "module",
+                    "label": "objectNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      6,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "exports",
+                    "label": "propertyNode",
+                    "name": "property_identifier"
+                  }
+                ]
+              },
+              {
+                "nestedIndex": [
+                  6,
+                  0,
+                  1
+                ],
+                "str": "getConfig({\n  /**\n   * Dynamic configuration available for the browser and server.\n   * Note: requires `ssr: true` or a `getInitialProps` in `_app.tsx`\n   * @link https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration\n   */\n  publicRuntimeConfig: {\n    NODE_ENV: env.NODE_ENV,\n  },\n  /** We run eslint as a separate task in CI */\n  eslint: { ignoreDuringBuilds: !!process.env.CI },\n})",
+                "label": "rightNode",
+                "name": "call_expression",
+                "childrenLabels": [
+                  "functionNode",
+                  "argumentsNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      6,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "getConfig",
+                    "label": "functionNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      6,
+                      0,
+                      1,
+                      1
+                    ],
+                    "str": "({\n  /**\n   * Dynamic configuration available for the browser and server.\n   * Note: requires `ssr: true` or a `getInitialProps` in `_app.tsx`\n   * @link https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration\n   */\n  publicRuntimeConfig: {\n    NODE_ENV: env.NODE_ENV,\n  },\n  /** We run eslint as a separate task in CI */\n  eslint: { ignoreDuringBuilds: !!process.env.CI },\n})",
+                    "label": "argumentsNode",
+                    "name": "arguments",
+                    "childrenLabels": [
+                      0
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          6,
+                          0,
+                          1,
+                          1,
+                          0
+                        ],
+                        "str": "{\n  /**\n   * Dynamic configuration available for the browser and server.\n   * Note: requires `ssr: true` or a `getInitialProps` in `_app.tsx`\n   * @link https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration\n   */\n  publicRuntimeConfig: {\n    NODE_ENV: env.NODE_ENV,\n  },\n  /** We run eslint as a separate task in CI */\n  eslint: { ignoreDuringBuilds: !!process.env.CI },\n}",
+                        "label": 0,
+                        "name": "object",
+                        "childrenLabels": [
+                          0,
+                          1,
+                          2,
+                          3
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              6,
+                              0,
+                              1,
+                              1,
+                              0,
+                              0
+                            ],
+                            "str": "/**\n   * Dynamic configuration available for the browser and server.\n   * Note: requires `ssr: true` or a `getInitialProps` in `_app.tsx`\n   * @link https://nextjs.org/docs/api-reference/next.config.js/runtime-configuration\n   */",
+                            "label": 0,
+                            "name": "comment"
+                          },
+                          {
+                            "nestedIndex": [
+                              6,
+                              0,
+                              1,
+                              1,
+                              0,
+                              1
+                            ],
+                            "str": "publicRuntimeConfig: {\n    NODE_ENV: env.NODE_ENV,\n  }",
+                            "label": 1,
+                            "name": "pair",
+                            "childrenLabels": [
+                              "keyNode",
+                              "valueNode"
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  6,
+                                  0,
+                                  1,
+                                  1,
+                                  0,
+                                  1,
+                                  0
+                                ],
+                                "str": "publicRuntimeConfig",
+                                "label": "keyNode",
+                                "name": "property_identifier"
+                              },
+                              {
+                                "nestedIndex": [
+                                  6,
+                                  0,
+                                  1,
+                                  1,
+                                  0,
+                                  1,
+                                  1
+                                ],
+                                "str": "{\n    NODE_ENV: env.NODE_ENV,\n  }",
+                                "label": "valueNode",
+                                "name": "object",
+                                "childrenLabels": [
+                                  0
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      6,
+                                      0,
+                                      1,
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      0
+                                    ],
+                                    "str": "NODE_ENV: env.NODE_ENV",
+                                    "label": 0,
+                                    "name": "pair",
+                                    "childrenLabels": [
+                                      "keyNode",
+                                      "valueNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          6,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "NODE_ENV",
+                                        "label": "keyNode",
+                                        "name": "property_identifier"
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          6,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          1
+                                        ],
+                                        "str": "env.NODE_ENV",
+                                        "label": "valueNode",
+                                        "name": "member_expression",
+                                        "childrenLabels": [
+                                          "objectNode",
+                                          "propertyNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              6,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              1,
+                                              0
+                                            ],
+                                            "str": "env",
+                                            "label": "objectNode",
+                                            "name": "identifier"
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              6,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              1,
+                                              1
+                                            ],
+                                            "str": "NODE_ENV",
+                                            "label": "propertyNode",
+                                            "name": "property_identifier"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "nestedIndex": [
+                              6,
+                              0,
+                              1,
+                              1,
+                              0,
+                              2
+                            ],
+                            "str": "/** We run eslint as a separate task in CI */",
+                            "label": 2,
+                            "name": "comment"
+                          },
+                          {
+                            "nestedIndex": [
+                              6,
+                              0,
+                              1,
+                              1,
+                              0,
+                              3
+                            ],
+                            "str": "eslint: { ignoreDuringBuilds: !!process.env.CI }",
+                            "label": 3,
+                            "name": "pair",
+                            "childrenLabels": [
+                              "keyNode",
+                              "valueNode"
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  6,
+                                  0,
+                                  1,
+                                  1,
+                                  0,
+                                  3,
+                                  0
+                                ],
+                                "str": "eslint",
+                                "label": "keyNode",
+                                "name": "property_identifier"
+                              },
+                              {
+                                "nestedIndex": [
+                                  6,
+                                  0,
+                                  1,
+                                  1,
+                                  0,
+                                  3,
+                                  1
+                                ],
+                                "str": "{ ignoreDuringBuilds: !!process.env.CI }",
+                                "label": "valueNode",
+                                "name": "object",
+                                "childrenLabels": [
+                                  0
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      6,
+                                      0,
+                                      1,
+                                      1,
+                                      0,
+                                      3,
+                                      1,
+                                      0
+                                    ],
+                                    "str": "ignoreDuringBuilds: !!process.env.CI",
+                                    "label": 0,
+                                    "name": "pair",
+                                    "childrenLabels": [
+                                      "keyNode",
+                                      "valueNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          6,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          3,
+                                          1,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "ignoreDuringBuilds",
+                                        "label": "keyNode",
+                                        "name": "property_identifier"
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          6,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          3,
+                                          1,
+                                          0,
+                                          1
+                                        ],
+                                        "str": "!!process.env.CI",
+                                        "label": "valueNode",
+                                        "name": "unary_expression",
+                                        "childrenLabels": [
+                                          "argumentNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              6,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              3,
+                                              1,
+                                              0,
+                                              1,
+                                              0
+                                            ],
+                                            "str": "!process.env.CI",
+                                            "label": "argumentNode",
+                                            "name": "unary_expression",
+                                            "childrenLabels": [
+                                              "argumentNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  6,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  3,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "process.env.CI",
+                                                "label": "argumentNode",
+                                                "name": "member_expression",
+                                                "childrenLabels": [
+                                                  "objectNode",
+                                                  "propertyNode"
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      6,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      3,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      0
+                                                    ],
+                                                    "str": "process.env",
+                                                    "label": "objectNode",
+                                                    "name": "member_expression",
+                                                    "childrenLabels": [
+                                                      "objectNode",
+                                                      "propertyNode"
+                                                    ],
+                                                    "children": [
+                                                      {
+                                                        "nestedIndex": [
+                                                          6,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          3,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          0
+                                                        ],
+                                                        "str": "process",
+                                                        "label": "objectNode",
+                                                        "name": "identifier"
+                                                      },
+                                                      {
+                                                        "nestedIndex": [
+                                                          6,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          3,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          0,
+                                                          1
+                                                        ],
+                                                        "str": "env",
+                                                        "label": "propertyNode",
+                                                        "name": "property_identifier"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "nestedIndex": [
+                                                      6,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      3,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      1
+                                                    ],
+                                                    "str": "CI",
+                                                    "label": "propertyNode",
+                                                    "name": "property_identifier"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "imports": [],
+  "filePath": "../example-todo-list/next.config.js",
+  "isTest": false,
+  "isConfig": true
+}

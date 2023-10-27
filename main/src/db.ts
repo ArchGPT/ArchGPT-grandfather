@@ -74,8 +74,12 @@ const schema = new Schema(
 const getTable = async (db: Connection, option, tableName = 'code'): Promise<[Table<EmbeddingEntry>, boolean, Connection]> => {
 
   if (option.fromScratch) {
-    await db.dropTable(tableName)
-    console.log("DROP TABLE.. & retart", tableName);
+    try {
+      await db.dropTable(tableName)
+      console.log("DROP TABLE.. & retart", tableName);
+    } catch {
+
+    }
   }
 
 
@@ -119,7 +123,7 @@ export const initDB = async (folderPath: string, hs: ArST_withMetaInfo[], option
     )
     await table.add([...embeddingEntries, ...metaEntries])
     const endTime = Date.now()
-    console.log(`Embedding ${ArSTs.length} ArSTs took ${endTime - startTime} ms`);
+    console.log(`[All] Embedded ${ArSTs.length} ArSTs took ${endTime - startTime} ms`);
   } else {
     console.log("HAS INITED");
 
@@ -158,7 +162,7 @@ const createSegsTables = async (db: Connection, hs: ArST_withMetaInfo[]) => {
     )
     await table.add([...embeddingEntries, ...metaEntries])
     const endTime = Date.now()
-    console.log(`Embedding ${segs.length} ArSTs took ${endTime - startTime} ms`);
+    console.log(`[SEG] Embedding ${segs.length} ArSTs took ${endTime - startTime} ms`);
   } else {
     console.log("HAS INITED");
   }
@@ -199,6 +203,8 @@ type RankOption = {
 export const searchFiles = (files: ArST_withMetaInfo[], transformFilePath = (a) => a) => async (table: Table<EmbeddingEntry>, searchText: string, rankOption: RankOption) => {
 
   const result = await rankEntry(table, searchText, "labels='FILE'", rankOption)
+
+  console.log("X", result, files);
 
 
   return result[0].map((a) =>

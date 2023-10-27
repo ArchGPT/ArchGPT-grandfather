@@ -38,7 +38,7 @@
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.2.2",
-    "vectordb": "^0.3.0",
+    "vectordb": "^0.3.5",
     "web-tree-sitter": "^0.20.8"
   }
 }

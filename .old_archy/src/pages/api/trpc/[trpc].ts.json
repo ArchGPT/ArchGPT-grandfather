@@ -1,0 +1,890 @@
+{
+  "ast": {
+    "nestedIndex": [],
+    "label": "FILE",
+    "name": "root",
+    "str": "/**\n * This file contains tRPC's HTTP response handler\n */\n\n\n\n\nexport default trpcNext.createNextApiHandler({\n  router: appRouter,\n  /**\n   * @link https://trpc.io/docs/context\n   */\n  createContext,\n  /**\n   * @link https://trpc.io/docs/error-handling\n   */\n  onError({ error }) {\n    if (error.code === 'INTERNAL_SERVER_ERROR') {\n      // send to bug reporting\n      console.error('Something went wrong', error);\n    }\n  },\n  /**\n   * Enable query batching\n   */\n  batching: {\n    enabled: true,\n  },\n  /**\n   * @link https://trpc.io/docs/caching#api-response-caching\n   */\n  // responseMeta() {\n  //   // ...\n  // },\n});\n",
+    "childrenLabels": [
+      0,
+      1
+    ],
+    "children": [
+      {
+        "nestedIndex": [
+          0
+        ],
+        "str": "/**\n * This file contains tRPC's HTTP response handler\n */",
+        "label": 0,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          1
+        ],
+        "str": "export default trpcNext.createNextApiHandler({\n  router: appRouter,\n  /**\n   * @link https://trpc.io/docs/context\n   */\n  createContext,\n  /**\n   * @link https://trpc.io/docs/error-handling\n   */\n  onError({ error }) {\n    if (error.code === 'INTERNAL_SERVER_ERROR') {\n      // send to bug reporting\n      console.error('Something went wrong', error);\n    }\n  },\n  /**\n   * Enable query batching\n   */\n  batching: {\n    enabled: true,\n  },\n  /**\n   * @link https://trpc.io/docs/caching#api-response-caching\n   */\n  // responseMeta() {\n  //   // ...\n  // },\n});",
+        "label": 1,
+        "name": "export_statement",
+        "childrenLabels": [
+          "valueNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              1,
+              0
+            ],
+            "str": "trpcNext.createNextApiHandler({\n  router: appRouter,\n  /**\n   * @link https://trpc.io/docs/context\n   */\n  createContext,\n  /**\n   * @link https://trpc.io/docs/error-handling\n   */\n  onError({ error }) {\n    if (error.code === 'INTERNAL_SERVER_ERROR') {\n      // send to bug reporting\n      console.error('Something went wrong', error);\n    }\n  },\n  /**\n   * Enable query batching\n   */\n  batching: {\n    enabled: true,\n  },\n  /**\n   * @link https://trpc.io/docs/caching#api-response-caching\n   */\n  // responseMeta() {\n  //   // ...\n  // },\n})",
+            "label": "valueNode",
+            "name": "call_expression",
+            "childrenLabels": [
+              "functionNode",
+              "argumentsNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  0
+                ],
+                "str": "trpcNext.createNextApiHandler",
+                "label": "functionNode",
+                "name": "member_expression",
+                "childrenLabels": [
+                  "objectNode",
+                  "propertyNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "trpcNext",
+                    "label": "objectNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "createNextApiHandler",
+                    "label": "propertyNode",
+                    "name": "property_identifier"
+                  }
+                ]
+              },
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  1
+                ],
+                "str": "({\n  router: appRouter,\n  /**\n   * @link https://trpc.io/docs/context\n   */\n  createContext,\n  /**\n   * @link https://trpc.io/docs/error-handling\n   */\n  onError({ error }) {\n    if (error.code === 'INTERNAL_SERVER_ERROR') {\n      // send to bug reporting\n      console.error('Something went wrong', error);\n    }\n  },\n  /**\n   * Enable query batching\n   */\n  batching: {\n    enabled: true,\n  },\n  /**\n   * @link https://trpc.io/docs/caching#api-response-caching\n   */\n  // responseMeta() {\n  //   // ...\n  // },\n})",
+                "label": "argumentsNode",
+                "name": "arguments",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "{\n  router: appRouter,\n  /**\n   * @link https://trpc.io/docs/context\n   */\n  createContext,\n  /**\n   * @link https://trpc.io/docs/error-handling\n   */\n  onError({ error }) {\n    if (error.code === 'INTERNAL_SERVER_ERROR') {\n      // send to bug reporting\n      console.error('Something went wrong', error);\n    }\n  },\n  /**\n   * Enable query batching\n   */\n  batching: {\n    enabled: true,\n  },\n  /**\n   * @link https://trpc.io/docs/caching#api-response-caching\n   */\n  // responseMeta() {\n  //   // ...\n  // },\n}",
+                    "label": 0,
+                    "name": "object",
+                    "childrenLabels": [
+                      0,
+                      1,
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7,
+                      8,
+                      9,
+                      10
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          0
+                        ],
+                        "str": "router: appRouter",
+                        "label": 0,
+                        "name": "pair",
+                        "childrenLabels": [
+                          "keyNode",
+                          "valueNode"
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              0,
+                              0,
+                              0
+                            ],
+                            "str": "router",
+                            "label": "keyNode",
+                            "name": "property_identifier"
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              0,
+                              0,
+                              1
+                            ],
+                            "str": "appRouter",
+                            "label": "valueNode",
+                            "name": "identifier"
+                          }
+                        ]
+                      },
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          1
+                        ],
+                        "str": "/**\n   * @link https://trpc.io/docs/context\n   */",
+                        "label": 1,
+                        "name": "comment"
+                      },
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          2
+                        ],
+                        "str": "createContext",
+                        "label": 2,
+                        "name": "shorthand_property_identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          3
+                        ],
+                        "str": "/**\n   * @link https://trpc.io/docs/error-handling\n   */",
+                        "label": 3,
+                        "name": "comment"
+                      },
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          4
+                        ],
+                        "str": "onError({ error }) {\n    if (error.code === 'INTERNAL_SERVER_ERROR') {\n      // send to bug reporting\n      console.error('Something went wrong', error);\n    }\n  }",
+                        "label": 4,
+                        "name": "method_definition",
+                        "childrenLabels": [
+                          "nameNode",
+                          "parametersNode",
+                          "bodyNode"
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              0,
+                              4,
+                              0
+                            ],
+                            "str": "onError",
+                            "label": "nameNode",
+                            "name": "property_identifier"
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              0,
+                              4,
+                              1
+                            ],
+                            "str": "({ error })",
+                            "label": "parametersNode",
+                            "name": "formal_parameters",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  0,
+                                  4,
+                                  1,
+                                  0
+                                ],
+                                "str": "{ error }",
+                                "label": 0,
+                                "name": "required_parameter",
+                                "childrenLabels": [
+                                  "patternNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      0,
+                                      4,
+                                      1,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "{ error }",
+                                    "label": "patternNode",
+                                    "name": "object_pattern",
+                                    "childrenLabels": [
+                                      0
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          0,
+                                          4,
+                                          1,
+                                          0,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "error",
+                                        "label": 0,
+                                        "name": "shorthand_property_identifier_pattern"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              0,
+                              4,
+                              2
+                            ],
+                            "str": "{\n    if (error.code === 'INTERNAL_SERVER_ERROR') {\n      // send to bug reporting\n      console.error('Something went wrong', error);\n    }\n  }",
+                            "label": "bodyNode",
+                            "name": "statement_block",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  0,
+                                  4,
+                                  2,
+                                  0
+                                ],
+                                "str": "if (error.code === 'INTERNAL_SERVER_ERROR') {\n      // send to bug reporting\n      console.error('Something went wrong', error);\n    }",
+                                "label": 0,
+                                "name": "if_statement",
+                                "childrenLabels": [
+                                  "conditionNode",
+                                  "consequenceNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      0,
+                                      4,
+                                      2,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "(error.code === 'INTERNAL_SERVER_ERROR')",
+                                    "label": "conditionNode",
+                                    "name": "parenthesized_expression",
+                                    "childrenLabels": [
+                                      0
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          0,
+                                          4,
+                                          2,
+                                          0,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "error.code === 'INTERNAL_SERVER_ERROR'",
+                                        "label": 0,
+                                        "name": "binary_expression",
+                                        "childrenLabels": [
+                                          "leftNode",
+                                          "rightNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              4,
+                                              2,
+                                              0,
+                                              0,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "error.code",
+                                            "label": "leftNode",
+                                            "name": "member_expression",
+                                            "childrenLabels": [
+                                              "objectNode",
+                                              "propertyNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  4,
+                                                  2,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "error",
+                                                "label": "objectNode",
+                                                "name": "identifier"
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  4,
+                                                  2,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1
+                                                ],
+                                                "str": "code",
+                                                "label": "propertyNode",
+                                                "name": "property_identifier"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              4,
+                                              2,
+                                              0,
+                                              0,
+                                              0,
+                                              1
+                                            ],
+                                            "str": "'INTERNAL_SERVER_ERROR'",
+                                            "label": "rightNode",
+                                            "name": "string",
+                                            "childrenLabels": [
+                                              0
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  4,
+                                                  2,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "INTERNAL_SERVER_ERROR",
+                                                "label": 0,
+                                                "name": "string_fragment"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      0,
+                                      4,
+                                      2,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "{\n      // send to bug reporting\n      console.error('Something went wrong', error);\n    }",
+                                    "label": "consequenceNode",
+                                    "name": "statement_block",
+                                    "childrenLabels": [
+                                      0,
+                                      1
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          0,
+                                          4,
+                                          2,
+                                          0,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "// send to bug reporting",
+                                        "label": 0,
+                                        "name": "comment"
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          0,
+                                          4,
+                                          2,
+                                          0,
+                                          1,
+                                          1
+                                        ],
+                                        "str": "console.error('Something went wrong', error);",
+                                        "label": 1,
+                                        "name": "expression_statement",
+                                        "childrenLabels": [
+                                          0
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              4,
+                                              2,
+                                              0,
+                                              1,
+                                              1,
+                                              0
+                                            ],
+                                            "str": "console.error('Something went wrong', error)",
+                                            "label": 0,
+                                            "name": "call_expression",
+                                            "childrenLabels": [
+                                              "functionNode",
+                                              "argumentsNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  4,
+                                                  2,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "console.error",
+                                                "label": "functionNode",
+                                                "name": "member_expression",
+                                                "childrenLabels": [
+                                                  "objectNode",
+                                                  "propertyNode"
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      4,
+                                                      2,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      0
+                                                    ],
+                                                    "str": "console",
+                                                    "label": "objectNode",
+                                                    "name": "identifier"
+                                                  },
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      4,
+                                                      2,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      1
+                                                    ],
+                                                    "str": "error",
+                                                    "label": "propertyNode",
+                                                    "name": "property_identifier"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  4,
+                                                  2,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  1
+                                                ],
+                                                "str": "('Something went wrong', error)",
+                                                "label": "argumentsNode",
+                                                "name": "arguments",
+                                                "childrenLabels": [
+                                                  0,
+                                                  1
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      4,
+                                                      2,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0
+                                                    ],
+                                                    "str": "'Something went wrong'",
+                                                    "label": 0,
+                                                    "name": "string",
+                                                    "childrenLabels": [
+                                                      0
+                                                    ],
+                                                    "children": [
+                                                      {
+                                                        "nestedIndex": [
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          4,
+                                                          2,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          0
+                                                        ],
+                                                        "str": "Something went wrong",
+                                                        "label": 0,
+                                                        "name": "string_fragment"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      4,
+                                                      2,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      1
+                                                    ],
+                                                    "str": "error",
+                                                    "label": 1,
+                                                    "name": "identifier"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          5
+                        ],
+                        "str": "/**\n   * Enable query batching\n   */",
+                        "label": 5,
+                        "name": "comment"
+                      },
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          6
+                        ],
+                        "str": "batching: {\n    enabled: true,\n  }",
+                        "label": 6,
+                        "name": "pair",
+                        "childrenLabels": [
+                          "keyNode",
+                          "valueNode"
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              0,
+                              6,
+                              0
+                            ],
+                            "str": "batching",
+                            "label": "keyNode",
+                            "name": "property_identifier"
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              0,
+                              6,
+                              1
+                            ],
+                            "str": "{\n    enabled: true,\n  }",
+                            "label": "valueNode",
+                            "name": "object",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  0,
+                                  6,
+                                  1,
+                                  0
+                                ],
+                                "str": "enabled: true",
+                                "label": 0,
+                                "name": "pair",
+                                "childrenLabels": [
+                                  "keyNode",
+                                  "valueNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      0,
+                                      6,
+                                      1,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "enabled",
+                                    "label": "keyNode",
+                                    "name": "property_identifier"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      0,
+                                      6,
+                                      1,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "true",
+                                    "label": "valueNode",
+                                    "name": "true"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          7
+                        ],
+                        "str": "/**\n   * @link https://trpc.io/docs/caching#api-response-caching\n   */",
+                        "label": 7,
+                        "name": "comment"
+                      },
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          8
+                        ],
+                        "str": "// responseMeta() {",
+                        "label": 8,
+                        "name": "comment"
+                      },
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          9
+                        ],
+                        "str": "//   // ...",
+                        "label": 9,
+                        "name": "comment"
+                      },
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          10
+                        ],
+                        "str": "// },",
+                        "label": 10,
+                        "name": "comment"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "imports": [
+    "import * as trpcNext from '@trpc/server/adapters/next';",
+    "import { createContext } from '~/server/context';",
+    "import { appRouter } from '~/server/routers/_app';"
+  ],
+  "filePath": "../example-todo-list/src/pages/api/trpc/[trpc].ts",
+  "isTest": false,
+  "isConfig": false
+}

@@ -1,0 +1,1793 @@
+{
+  "ast": {
+    "nestedIndex": [],
+    "label": "FILE",
+    "name": "root",
+    "str": "/**\n * Integration test example for the `post` router\n */\n\n\n\n\ntest('add and get post', async () => {\n  const ctx = await createContextInner({});\n  const caller = appRouter.createCaller(ctx);\n\n  const input: inferProcedureInput<AppRouter['post']['add']> = {\n    text: 'hello test',\n    title: 'hello test',\n  };\n\n  const post = await caller.post.add(input);\n  const byId = await caller.post.byId({ id: post.id });\n\n  expect(byId).toMatchObject(input);\n});\n",
+    "childrenLabels": [
+      0,
+      1
+    ],
+    "children": [
+      {
+        "nestedIndex": [
+          0
+        ],
+        "str": "/**\n * Integration test example for the `post` router\n */",
+        "label": 0,
+        "name": "comment"
+      },
+      {
+        "nestedIndex": [
+          1
+        ],
+        "str": "test('add and get post', async () => {\n  const ctx = await createContextInner({});\n  const caller = appRouter.createCaller(ctx);\n\n  const input: inferProcedureInput<AppRouter['post']['add']> = {\n    text: 'hello test',\n    title: 'hello test',\n  };\n\n  const post = await caller.post.add(input);\n  const byId = await caller.post.byId({ id: post.id });\n\n  expect(byId).toMatchObject(input);\n});",
+        "label": 1,
+        "name": "expression_statement",
+        "childrenLabels": [
+          0
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              1,
+              0
+            ],
+            "str": "test('add and get post', async () => {\n  const ctx = await createContextInner({});\n  const caller = appRouter.createCaller(ctx);\n\n  const input: inferProcedureInput<AppRouter['post']['add']> = {\n    text: 'hello test',\n    title: 'hello test',\n  };\n\n  const post = await caller.post.add(input);\n  const byId = await caller.post.byId({ id: post.id });\n\n  expect(byId).toMatchObject(input);\n})",
+            "label": 0,
+            "name": "call_expression",
+            "childrenLabels": [
+              "functionNode",
+              "argumentsNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  0
+                ],
+                "str": "test",
+                "label": "functionNode",
+                "name": "identifier"
+              },
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  1
+                ],
+                "str": "('add and get post', async () => {\n  const ctx = await createContextInner({});\n  const caller = appRouter.createCaller(ctx);\n\n  const input: inferProcedureInput<AppRouter['post']['add']> = {\n    text: 'hello test',\n    title: 'hello test',\n  };\n\n  const post = await caller.post.add(input);\n  const byId = await caller.post.byId({ id: post.id });\n\n  expect(byId).toMatchObject(input);\n})",
+                "label": "argumentsNode",
+                "name": "arguments",
+                "childrenLabels": [
+                  0,
+                  1
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "'add and get post'",
+                    "label": 0,
+                    "name": "string",
+                    "childrenLabels": [
+                      0
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          0,
+                          0
+                        ],
+                        "str": "add and get post",
+                        "label": 0,
+                        "name": "string_fragment"
+                      }
+                    ]
+                  },
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      1,
+                      1
+                    ],
+                    "str": "async () => {\n  const ctx = await createContextInner({});\n  const caller = appRouter.createCaller(ctx);\n\n  const input: inferProcedureInput<AppRouter['post']['add']> = {\n    text: 'hello test',\n    title: 'hello test',\n  };\n\n  const post = await caller.post.add(input);\n  const byId = await caller.post.byId({ id: post.id });\n\n  expect(byId).toMatchObject(input);\n}",
+                    "label": 1,
+                    "name": "arrow_function",
+                    "childrenLabels": [
+                      "parametersNode",
+                      "bodyNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          1,
+                          0
+                        ],
+                        "str": "()",
+                        "label": "parametersNode",
+                        "name": "formal_parameters"
+                      },
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          1,
+                          1,
+                          1
+                        ],
+                        "str": "{\n  const ctx = await createContextInner({});\n  const caller = appRouter.createCaller(ctx);\n\n  const input: inferProcedureInput<AppRouter['post']['add']> = {\n    text: 'hello test',\n    title: 'hello test',\n  };\n\n  const post = await caller.post.add(input);\n  const byId = await caller.post.byId({ id: post.id });\n\n  expect(byId).toMatchObject(input);\n}",
+                        "label": "bodyNode",
+                        "name": "statement_block",
+                        "childrenLabels": [
+                          0,
+                          1,
+                          2,
+                          3,
+                          4,
+                          5
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              1,
+                              1,
+                              0
+                            ],
+                            "str": "const ctx = await createContextInner({});",
+                            "label": 0,
+                            "name": "lexical_declaration",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  1,
+                                  1,
+                                  0,
+                                  0
+                                ],
+                                "str": "ctx = await createContextInner({})",
+                                "label": 0,
+                                "name": "variable_declarator",
+                                "childrenLabels": [
+                                  "nameNode",
+                                  "valueNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      1,
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "ctx",
+                                    "label": "nameNode",
+                                    "name": "identifier"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      1,
+                                      0,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "await createContextInner({})",
+                                    "label": "valueNode",
+                                    "name": "await_expression",
+                                    "childrenLabels": [
+                                      0
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          1,
+                                          0,
+                                          0,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "createContextInner({})",
+                                        "label": 0,
+                                        "name": "call_expression",
+                                        "childrenLabels": [
+                                          "functionNode",
+                                          "argumentsNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "createContextInner",
+                                            "label": "functionNode",
+                                            "name": "identifier"
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              0,
+                                              0,
+                                              1,
+                                              0,
+                                              1
+                                            ],
+                                            "str": "({})",
+                                            "label": "argumentsNode",
+                                            "name": "arguments",
+                                            "childrenLabels": [
+                                              0
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "{}",
+                                                "label": 0,
+                                                "name": "object"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              1,
+                              1,
+                              1
+                            ],
+                            "str": "const caller = appRouter.createCaller(ctx);",
+                            "label": 1,
+                            "name": "lexical_declaration",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  1,
+                                  1,
+                                  1,
+                                  0
+                                ],
+                                "str": "caller = appRouter.createCaller(ctx)",
+                                "label": 0,
+                                "name": "variable_declarator",
+                                "childrenLabels": [
+                                  "nameNode",
+                                  "valueNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      1,
+                                      1,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "caller",
+                                    "label": "nameNode",
+                                    "name": "identifier"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      1,
+                                      1,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "appRouter.createCaller(ctx)",
+                                    "label": "valueNode",
+                                    "name": "call_expression",
+                                    "childrenLabels": [
+                                      "functionNode",
+                                      "argumentsNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          1,
+                                          1,
+                                          0,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "appRouter.createCaller",
+                                        "label": "functionNode",
+                                        "name": "member_expression",
+                                        "childrenLabels": [
+                                          "objectNode",
+                                          "propertyNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "appRouter",
+                                            "label": "objectNode",
+                                            "name": "identifier"
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              1
+                                            ],
+                                            "str": "createCaller",
+                                            "label": "propertyNode",
+                                            "name": "property_identifier"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          1,
+                                          1,
+                                          0,
+                                          1,
+                                          1
+                                        ],
+                                        "str": "(ctx)",
+                                        "label": "argumentsNode",
+                                        "name": "arguments",
+                                        "childrenLabels": [
+                                          0
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              0
+                                            ],
+                                            "str": "ctx",
+                                            "label": 0,
+                                            "name": "identifier"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              1,
+                              1,
+                              2
+                            ],
+                            "str": "const input: inferProcedureInput<AppRouter['post']['add']> = {\n    text: 'hello test',\n    title: 'hello test',\n  };",
+                            "label": 2,
+                            "name": "lexical_declaration",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  1,
+                                  1,
+                                  2,
+                                  0
+                                ],
+                                "str": "input: inferProcedureInput<AppRouter['post']['add']> = {\n    text: 'hello test',\n    title: 'hello test',\n  }",
+                                "label": 0,
+                                "name": "variable_declarator",
+                                "childrenLabels": [
+                                  "nameNode",
+                                  "typeNode",
+                                  "valueNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      1,
+                                      2,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "input",
+                                    "label": "nameNode",
+                                    "name": "identifier"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      1,
+                                      2,
+                                      0,
+                                      1
+                                    ],
+                                    "str": ": inferProcedureInput<AppRouter['post']['add']>",
+                                    "label": "typeNode",
+                                    "name": "type_annotation",
+                                    "childrenLabels": [
+                                      0
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          1,
+                                          2,
+                                          0,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "inferProcedureInput<AppRouter['post']['add']>",
+                                        "label": 0,
+                                        "name": "generic_type",
+                                        "childrenLabels": [
+                                          "nameNode",
+                                          "typeArgumentsNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              2,
+                                              0,
+                                              1,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "inferProcedureInput",
+                                            "label": "nameNode",
+                                            "name": "type_identifier"
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              2,
+                                              0,
+                                              1,
+                                              0,
+                                              1
+                                            ],
+                                            "str": "<AppRouter['post']['add']>",
+                                            "label": "typeArgumentsNode",
+                                            "name": "type_arguments",
+                                            "childrenLabels": [
+                                              0
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  2,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "AppRouter['post']['add']",
+                                                "label": 0,
+                                                "name": "lookup_type",
+                                                "childrenLabels": [
+                                                  0,
+                                                  1
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      2,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      0
+                                                    ],
+                                                    "str": "AppRouter['post']",
+                                                    "label": 0,
+                                                    "name": "lookup_type",
+                                                    "childrenLabels": [
+                                                      0,
+                                                      1
+                                                    ],
+                                                    "children": [
+                                                      {
+                                                        "nestedIndex": [
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          2,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          0
+                                                        ],
+                                                        "str": "AppRouter",
+                                                        "label": 0,
+                                                        "name": "type_identifier"
+                                                      },
+                                                      {
+                                                        "nestedIndex": [
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          2,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          1
+                                                        ],
+                                                        "str": "'post'",
+                                                        "label": 1,
+                                                        "name": "literal_type",
+                                                        "childrenLabels": [
+                                                          0
+                                                        ],
+                                                        "children": [
+                                                          {
+                                                            "nestedIndex": [
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              2,
+                                                              0,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              0
+                                                            ],
+                                                            "str": "'post'",
+                                                            "label": 0,
+                                                            "name": "string",
+                                                            "childrenLabels": [
+                                                              0
+                                                            ],
+                                                            "children": [
+                                                              {
+                                                                "nestedIndex": [
+                                                                  1,
+                                                                  0,
+                                                                  1,
+                                                                  1,
+                                                                  1,
+                                                                  2,
+                                                                  0,
+                                                                  1,
+                                                                  0,
+                                                                  1,
+                                                                  0,
+                                                                  0,
+                                                                  1,
+                                                                  0,
+                                                                  0
+                                                                ],
+                                                                "str": "post",
+                                                                "label": 0,
+                                                                "name": "string_fragment"
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      2,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      1
+                                                    ],
+                                                    "str": "'add'",
+                                                    "label": 1,
+                                                    "name": "literal_type",
+                                                    "childrenLabels": [
+                                                      0
+                                                    ],
+                                                    "children": [
+                                                      {
+                                                        "nestedIndex": [
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          2,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          0
+                                                        ],
+                                                        "str": "'add'",
+                                                        "label": 0,
+                                                        "name": "string",
+                                                        "childrenLabels": [
+                                                          0
+                                                        ],
+                                                        "children": [
+                                                          {
+                                                            "nestedIndex": [
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              2,
+                                                              0,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              0,
+                                                              0
+                                                            ],
+                                                            "str": "add",
+                                                            "label": 0,
+                                                            "name": "string_fragment"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      1,
+                                      2,
+                                      0,
+                                      2
+                                    ],
+                                    "str": "{\n    text: 'hello test',\n    title: 'hello test',\n  }",
+                                    "label": "valueNode",
+                                    "name": "object",
+                                    "childrenLabels": [
+                                      0,
+                                      1
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          1,
+                                          2,
+                                          0,
+                                          2,
+                                          0
+                                        ],
+                                        "str": "text: 'hello test'",
+                                        "label": 0,
+                                        "name": "pair",
+                                        "childrenLabels": [
+                                          "keyNode",
+                                          "valueNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              2,
+                                              0,
+                                              2,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "text",
+                                            "label": "keyNode",
+                                            "name": "property_identifier"
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              2,
+                                              0,
+                                              2,
+                                              0,
+                                              1
+                                            ],
+                                            "str": "'hello test'",
+                                            "label": "valueNode",
+                                            "name": "string",
+                                            "childrenLabels": [
+                                              0
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  2,
+                                                  0,
+                                                  2,
+                                                  0,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "hello test",
+                                                "label": 0,
+                                                "name": "string_fragment"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          1,
+                                          2,
+                                          0,
+                                          2,
+                                          1
+                                        ],
+                                        "str": "title: 'hello test'",
+                                        "label": 1,
+                                        "name": "pair",
+                                        "childrenLabels": [
+                                          "keyNode",
+                                          "valueNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              2,
+                                              0,
+                                              2,
+                                              1,
+                                              0
+                                            ],
+                                            "str": "title",
+                                            "label": "keyNode",
+                                            "name": "property_identifier"
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              2,
+                                              0,
+                                              2,
+                                              1,
+                                              1
+                                            ],
+                                            "str": "'hello test'",
+                                            "label": "valueNode",
+                                            "name": "string",
+                                            "childrenLabels": [
+                                              0
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  2,
+                                                  0,
+                                                  2,
+                                                  1,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "hello test",
+                                                "label": 0,
+                                                "name": "string_fragment"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              1,
+                              1,
+                              3
+                            ],
+                            "str": "const post = await caller.post.add(input);",
+                            "label": 3,
+                            "name": "lexical_declaration",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  1,
+                                  1,
+                                  3,
+                                  0
+                                ],
+                                "str": "post = await caller.post.add(input)",
+                                "label": 0,
+                                "name": "variable_declarator",
+                                "childrenLabels": [
+                                  "nameNode",
+                                  "valueNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      1,
+                                      3,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "post",
+                                    "label": "nameNode",
+                                    "name": "identifier"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      1,
+                                      3,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "await caller.post.add(input)",
+                                    "label": "valueNode",
+                                    "name": "await_expression",
+                                    "childrenLabels": [
+                                      0
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          1,
+                                          3,
+                                          0,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "caller.post.add(input)",
+                                        "label": 0,
+                                        "name": "call_expression",
+                                        "childrenLabels": [
+                                          "functionNode",
+                                          "argumentsNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              3,
+                                              0,
+                                              1,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "caller.post.add",
+                                            "label": "functionNode",
+                                            "name": "member_expression",
+                                            "childrenLabels": [
+                                              "objectNode",
+                                              "propertyNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  3,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "caller.post",
+                                                "label": "objectNode",
+                                                "name": "member_expression",
+                                                "childrenLabels": [
+                                                  "objectNode",
+                                                  "propertyNode"
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      3,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      0
+                                                    ],
+                                                    "str": "caller",
+                                                    "label": "objectNode",
+                                                    "name": "identifier"
+                                                  },
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      3,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      1
+                                                    ],
+                                                    "str": "post",
+                                                    "label": "propertyNode",
+                                                    "name": "property_identifier"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  3,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1
+                                                ],
+                                                "str": "add",
+                                                "label": "propertyNode",
+                                                "name": "property_identifier"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              3,
+                                              0,
+                                              1,
+                                              0,
+                                              1
+                                            ],
+                                            "str": "(input)",
+                                            "label": "argumentsNode",
+                                            "name": "arguments",
+                                            "childrenLabels": [
+                                              0
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  3,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "input",
+                                                "label": 0,
+                                                "name": "identifier"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              1,
+                              1,
+                              4
+                            ],
+                            "str": "const byId = await caller.post.byId({ id: post.id });",
+                            "label": 4,
+                            "name": "lexical_declaration",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  1,
+                                  1,
+                                  4,
+                                  0
+                                ],
+                                "str": "byId = await caller.post.byId({ id: post.id })",
+                                "label": 0,
+                                "name": "variable_declarator",
+                                "childrenLabels": [
+                                  "nameNode",
+                                  "valueNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      1,
+                                      4,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "byId",
+                                    "label": "nameNode",
+                                    "name": "identifier"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      1,
+                                      4,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "await caller.post.byId({ id: post.id })",
+                                    "label": "valueNode",
+                                    "name": "await_expression",
+                                    "childrenLabels": [
+                                      0
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          1,
+                                          4,
+                                          0,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "caller.post.byId({ id: post.id })",
+                                        "label": 0,
+                                        "name": "call_expression",
+                                        "childrenLabels": [
+                                          "functionNode",
+                                          "argumentsNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              4,
+                                              0,
+                                              1,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "caller.post.byId",
+                                            "label": "functionNode",
+                                            "name": "member_expression",
+                                            "childrenLabels": [
+                                              "objectNode",
+                                              "propertyNode"
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  4,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  0
+                                                ],
+                                                "str": "caller.post",
+                                                "label": "objectNode",
+                                                "name": "member_expression",
+                                                "childrenLabels": [
+                                                  "objectNode",
+                                                  "propertyNode"
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      4,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      0
+                                                    ],
+                                                    "str": "caller",
+                                                    "label": "objectNode",
+                                                    "name": "identifier"
+                                                  },
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      4,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      0,
+                                                      0,
+                                                      1
+                                                    ],
+                                                    "str": "post",
+                                                    "label": "propertyNode",
+                                                    "name": "property_identifier"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  4,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  1
+                                                ],
+                                                "str": "byId",
+                                                "label": "propertyNode",
+                                                "name": "property_identifier"
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              4,
+                                              0,
+                                              1,
+                                              0,
+                                              1
+                                            ],
+                                            "str": "({ id: post.id })",
+                                            "label": "argumentsNode",
+                                            "name": "arguments",
+                                            "childrenLabels": [
+                                              0
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  4,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "{ id: post.id }",
+                                                "label": 0,
+                                                "name": "object",
+                                                "childrenLabels": [
+                                                  0
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      1,
+                                                      4,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      0
+                                                    ],
+                                                    "str": "id: post.id",
+                                                    "label": 0,
+                                                    "name": "pair",
+                                                    "childrenLabels": [
+                                                      "keyNode",
+                                                      "valueNode"
+                                                    ],
+                                                    "children": [
+                                                      {
+                                                        "nestedIndex": [
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          4,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          0
+                                                        ],
+                                                        "str": "id",
+                                                        "label": "keyNode",
+                                                        "name": "property_identifier"
+                                                      },
+                                                      {
+                                                        "nestedIndex": [
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          1,
+                                                          4,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          1
+                                                        ],
+                                                        "str": "post.id",
+                                                        "label": "valueNode",
+                                                        "name": "member_expression",
+                                                        "childrenLabels": [
+                                                          "objectNode",
+                                                          "propertyNode"
+                                                        ],
+                                                        "children": [
+                                                          {
+                                                            "nestedIndex": [
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              4,
+                                                              0,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              0
+                                                            ],
+                                                            "str": "post",
+                                                            "label": "objectNode",
+                                                            "name": "identifier"
+                                                          },
+                                                          {
+                                                            "nestedIndex": [
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              1,
+                                                              4,
+                                                              0,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              0,
+                                                              0,
+                                                              1,
+                                                              1
+                                                            ],
+                                                            "str": "id",
+                                                            "label": "propertyNode",
+                                                            "name": "property_identifier"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "nestedIndex": [
+                              1,
+                              0,
+                              1,
+                              1,
+                              1,
+                              5
+                            ],
+                            "str": "expect(byId).toMatchObject(input);",
+                            "label": 5,
+                            "name": "expression_statement",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  1,
+                                  0,
+                                  1,
+                                  1,
+                                  1,
+                                  5,
+                                  0
+                                ],
+                                "str": "expect(byId).toMatchObject(input)",
+                                "label": 0,
+                                "name": "call_expression",
+                                "childrenLabels": [
+                                  "functionNode",
+                                  "argumentsNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      1,
+                                      5,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "expect(byId).toMatchObject",
+                                    "label": "functionNode",
+                                    "name": "member_expression",
+                                    "childrenLabels": [
+                                      "objectNode",
+                                      "propertyNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          1,
+                                          5,
+                                          0,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "expect(byId)",
+                                        "label": "objectNode",
+                                        "name": "call_expression",
+                                        "childrenLabels": [
+                                          "functionNode",
+                                          "argumentsNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              5,
+                                              0,
+                                              0,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "expect",
+                                            "label": "functionNode",
+                                            "name": "identifier"
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1,
+                                              5,
+                                              0,
+                                              0,
+                                              0,
+                                              1
+                                            ],
+                                            "str": "(byId)",
+                                            "label": "argumentsNode",
+                                            "name": "arguments",
+                                            "childrenLabels": [
+                                              0
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  1,
+                                                  5,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "byId",
+                                                "label": 0,
+                                                "name": "identifier"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          1,
+                                          5,
+                                          0,
+                                          0,
+                                          1
+                                        ],
+                                        "str": "toMatchObject",
+                                        "label": "propertyNode",
+                                        "name": "property_identifier"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      1,
+                                      0,
+                                      1,
+                                      1,
+                                      1,
+                                      5,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "(input)",
+                                    "label": "argumentsNode",
+                                    "name": "arguments",
+                                    "childrenLabels": [
+                                      0
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          1,
+                                          0,
+                                          1,
+                                          1,
+                                          1,
+                                          5,
+                                          0,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "input",
+                                        "label": 0,
+                                        "name": "identifier"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "imports": [
+    "import { createContextInner } from '../context';",
+    "import { AppRouter, appRouter } from './_app';",
+    "import { inferProcedureInput } from '@trpc/server';"
+  ],
+  "filePath": "../example-todo-list/src/server/routers/post.test.ts",
+  "isTest": true,
+  "isConfig": false
+}

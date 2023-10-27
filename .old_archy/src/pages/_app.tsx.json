@@ -1,0 +1,2047 @@
+{
+  "ast": {
+    "nestedIndex": [],
+    "label": "FILE",
+    "name": "root",
+    "str": "import type { NextPage } from 'next';\nimport type { AppType, AppProps } from 'next/app';\nimport type { ReactElement, ReactNode } from 'react';\n\nimport { DefaultLayout } from '~/components/DefaultLayout';\nimport { trpc } from '~/utils/trpc';\nimport '~/styles/globals.css';\n\nexport type NextPageWithLayout<\n  TProps = Record<string, unknown>,\n  TInitialProps = TProps,\n> = NextPage<TProps, TInitialProps> & {\n  getLayout?: (page: ReactElement) => ReactNode;\n};\n\ntype AppPropsWithLayout = AppProps & {\n  Component: NextPageWithLayout;\n};\n\nconst MyApp = (({ Component, pageProps }: AppPropsWithLayout) => {\n  const getLayout =\n    Component.getLayout ?? ((page) => <DefaultLayout>{page}</DefaultLayout>);\n\n  return getLayout(<Component {...pageProps} />);\n}) as AppType;\n\nexport default trpc.withTRPC(MyApp);\n",
+    "childrenLabels": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "children": [
+      {
+        "nestedIndex": [
+          0
+        ],
+        "str": "import type { NextPage } from 'next';",
+        "label": 0,
+        "name": "import_statement",
+        "childrenLabels": [
+          0,
+          "sourceNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              0,
+              0
+            ],
+            "str": "{ NextPage }",
+            "label": 0,
+            "name": "import_clause",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  0,
+                  0,
+                  0
+                ],
+                "str": "{ NextPage }",
+                "label": 0,
+                "name": "named_imports",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "NextPage",
+                    "label": 0,
+                    "name": "import_specifier",
+                    "childrenLabels": [
+                      "nameNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          0,
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "str": "NextPage",
+                        "label": "nameNode",
+                        "name": "identifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nestedIndex": [
+              0,
+              1
+            ],
+            "str": "'next'",
+            "label": "sourceNode",
+            "name": "string",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  0,
+                  1,
+                  0
+                ],
+                "str": "next",
+                "label": 0,
+                "name": "string_fragment"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          1
+        ],
+        "str": "import type { AppType, AppProps } from 'next/app';",
+        "label": 1,
+        "name": "import_statement",
+        "childrenLabels": [
+          0,
+          "sourceNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              1,
+              0
+            ],
+            "str": "{ AppType, AppProps }",
+            "label": 0,
+            "name": "import_clause",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  1,
+                  0,
+                  0
+                ],
+                "str": "{ AppType, AppProps }",
+                "label": 0,
+                "name": "named_imports",
+                "childrenLabels": [
+                  0,
+                  1
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "AppType",
+                    "label": 0,
+                    "name": "import_specifier",
+                    "childrenLabels": [
+                      "nameNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "str": "AppType",
+                        "label": "nameNode",
+                        "name": "identifier"
+                      }
+                    ]
+                  },
+                  {
+                    "nestedIndex": [
+                      1,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "AppProps",
+                    "label": 1,
+                    "name": "import_specifier",
+                    "childrenLabels": [
+                      "nameNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          1,
+                          0,
+                          0,
+                          1,
+                          0
+                        ],
+                        "str": "AppProps",
+                        "label": "nameNode",
+                        "name": "identifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nestedIndex": [
+              1,
+              1
+            ],
+            "str": "'next/app'",
+            "label": "sourceNode",
+            "name": "string",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  1,
+                  1,
+                  0
+                ],
+                "str": "next/app",
+                "label": 0,
+                "name": "string_fragment"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          2
+        ],
+        "str": "import type { ReactElement, ReactNode } from 'react';",
+        "label": 2,
+        "name": "import_statement",
+        "childrenLabels": [
+          0,
+          "sourceNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              2,
+              0
+            ],
+            "str": "{ ReactElement, ReactNode }",
+            "label": 0,
+            "name": "import_clause",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  2,
+                  0,
+                  0
+                ],
+                "str": "{ ReactElement, ReactNode }",
+                "label": 0,
+                "name": "named_imports",
+                "childrenLabels": [
+                  0,
+                  1
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      2,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "ReactElement",
+                    "label": 0,
+                    "name": "import_specifier",
+                    "childrenLabels": [
+                      "nameNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          2,
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "str": "ReactElement",
+                        "label": "nameNode",
+                        "name": "identifier"
+                      }
+                    ]
+                  },
+                  {
+                    "nestedIndex": [
+                      2,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "ReactNode",
+                    "label": 1,
+                    "name": "import_specifier",
+                    "childrenLabels": [
+                      "nameNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          2,
+                          0,
+                          0,
+                          1,
+                          0
+                        ],
+                        "str": "ReactNode",
+                        "label": "nameNode",
+                        "name": "identifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nestedIndex": [
+              2,
+              1
+            ],
+            "str": "'react'",
+            "label": "sourceNode",
+            "name": "string",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  2,
+                  1,
+                  0
+                ],
+                "str": "react",
+                "label": 0,
+                "name": "string_fragment"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          3
+        ],
+        "str": "import { DefaultLayout } from '~/components/DefaultLayout';",
+        "label": 3,
+        "name": "import_statement",
+        "childrenLabels": [
+          0,
+          "sourceNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              3,
+              0
+            ],
+            "str": "{ DefaultLayout }",
+            "label": 0,
+            "name": "import_clause",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  3,
+                  0,
+                  0
+                ],
+                "str": "{ DefaultLayout }",
+                "label": 0,
+                "name": "named_imports",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      3,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "DefaultLayout",
+                    "label": 0,
+                    "name": "import_specifier",
+                    "childrenLabels": [
+                      "nameNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          3,
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "str": "DefaultLayout",
+                        "label": "nameNode",
+                        "name": "identifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nestedIndex": [
+              3,
+              1
+            ],
+            "str": "'~/components/DefaultLayout'",
+            "label": "sourceNode",
+            "name": "string",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  3,
+                  1,
+                  0
+                ],
+                "str": "~/components/DefaultLayout",
+                "label": 0,
+                "name": "string_fragment"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          4
+        ],
+        "str": "import { trpc } from '~/utils/trpc';",
+        "label": 4,
+        "name": "import_statement",
+        "childrenLabels": [
+          0,
+          "sourceNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              4,
+              0
+            ],
+            "str": "{ trpc }",
+            "label": 0,
+            "name": "import_clause",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  4,
+                  0,
+                  0
+                ],
+                "str": "{ trpc }",
+                "label": 0,
+                "name": "named_imports",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      4,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "trpc",
+                    "label": 0,
+                    "name": "import_specifier",
+                    "childrenLabels": [
+                      "nameNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          4,
+                          0,
+                          0,
+                          0,
+                          0
+                        ],
+                        "str": "trpc",
+                        "label": "nameNode",
+                        "name": "identifier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nestedIndex": [
+              4,
+              1
+            ],
+            "str": "'~/utils/trpc'",
+            "label": "sourceNode",
+            "name": "string",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  4,
+                  1,
+                  0
+                ],
+                "str": "~/utils/trpc",
+                "label": 0,
+                "name": "string_fragment"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          5
+        ],
+        "str": "import '~/styles/globals.css';",
+        "label": 5,
+        "name": "import_statement",
+        "childrenLabels": [
+          "sourceNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              5,
+              0
+            ],
+            "str": "'~/styles/globals.css'",
+            "label": "sourceNode",
+            "name": "string",
+            "childrenLabels": [
+              0
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  5,
+                  0,
+                  0
+                ],
+                "str": "~/styles/globals.css",
+                "label": 0,
+                "name": "string_fragment"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          6
+        ],
+        "str": "export type NextPageWithLayout<\n  TProps = Record<string, unknown>,\n  TInitialProps = TProps,\n> = NextPage<TProps, TInitialProps> & {\n  getLayout?: (page: ReactElement) => ReactNode;\n};",
+        "label": 6,
+        "name": "export_statement",
+        "childrenLabels": [
+          "declarationNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              6,
+              0
+            ],
+            "str": "type NextPageWithLayout<\n  TProps = Record<string, unknown>,\n  TInitialProps = TProps,\n> = NextPage<TProps, TInitialProps> & {\n  getLayout?: (page: ReactElement) => ReactNode;\n};",
+            "label": "declarationNode",
+            "name": "type_alias_declaration",
+            "childrenLabels": [
+              "nameNode",
+              "typeParametersNode",
+              "valueNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  6,
+                  0,
+                  0
+                ],
+                "str": "NextPageWithLayout",
+                "label": "nameNode",
+                "name": "type_identifier"
+              },
+              {
+                "nestedIndex": [
+                  6,
+                  0,
+                  1
+                ],
+                "str": "<\n  TProps = Record<string, unknown>,\n  TInitialProps = TProps,\n>",
+                "label": "typeParametersNode",
+                "name": "type_parameters",
+                "childrenLabels": [
+                  0,
+                  1
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      6,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "TProps = Record<string, unknown>",
+                    "label": 0,
+                    "name": "type_parameter",
+                    "childrenLabels": [
+                      "nameNode",
+                      "valueNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          6,
+                          0,
+                          1,
+                          0,
+                          0
+                        ],
+                        "str": "TProps",
+                        "label": "nameNode",
+                        "name": "type_identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          6,
+                          0,
+                          1,
+                          0,
+                          1
+                        ],
+                        "str": "= Record<string, unknown>",
+                        "label": "valueNode",
+                        "name": "default_type",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              6,
+                              0,
+                              1,
+                              0,
+                              1,
+                              0
+                            ],
+                            "str": "Record<string, unknown>",
+                            "label": 0,
+                            "name": "generic_type",
+                            "childrenLabels": [
+                              "nameNode",
+                              "typeArgumentsNode"
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  6,
+                                  0,
+                                  1,
+                                  0,
+                                  1,
+                                  0,
+                                  0
+                                ],
+                                "str": "Record",
+                                "label": "nameNode",
+                                "name": "type_identifier"
+                              },
+                              {
+                                "nestedIndex": [
+                                  6,
+                                  0,
+                                  1,
+                                  0,
+                                  1,
+                                  0,
+                                  1
+                                ],
+                                "str": "<string, unknown>",
+                                "label": "typeArgumentsNode",
+                                "name": "type_arguments",
+                                "childrenLabels": [
+                                  0,
+                                  1
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      6,
+                                      0,
+                                      1,
+                                      0,
+                                      1,
+                                      0,
+                                      1,
+                                      0
+                                    ],
+                                    "str": "string",
+                                    "label": 0,
+                                    "name": "predefined_type"
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      6,
+                                      0,
+                                      1,
+                                      0,
+                                      1,
+                                      0,
+                                      1,
+                                      1
+                                    ],
+                                    "str": "unknown",
+                                    "label": 1,
+                                    "name": "predefined_type"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "nestedIndex": [
+                      6,
+                      0,
+                      1,
+                      1
+                    ],
+                    "str": "TInitialProps = TProps",
+                    "label": 1,
+                    "name": "type_parameter",
+                    "childrenLabels": [
+                      "nameNode",
+                      "valueNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          6,
+                          0,
+                          1,
+                          1,
+                          0
+                        ],
+                        "str": "TInitialProps",
+                        "label": "nameNode",
+                        "name": "type_identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          6,
+                          0,
+                          1,
+                          1,
+                          1
+                        ],
+                        "str": "= TProps",
+                        "label": "valueNode",
+                        "name": "default_type",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              6,
+                              0,
+                              1,
+                              1,
+                              1,
+                              0
+                            ],
+                            "str": "TProps",
+                            "label": 0,
+                            "name": "type_identifier"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "nestedIndex": [
+                  6,
+                  0,
+                  2
+                ],
+                "str": "NextPage<TProps, TInitialProps> & {\n  getLayout?: (page: ReactElement) => ReactNode;\n}",
+                "label": "valueNode",
+                "name": "intersection_type",
+                "childrenLabels": [
+                  0,
+                  1
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      6,
+                      0,
+                      2,
+                      0
+                    ],
+                    "str": "NextPage<TProps, TInitialProps>",
+                    "label": 0,
+                    "name": "generic_type",
+                    "childrenLabels": [
+                      "nameNode",
+                      "typeArgumentsNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          6,
+                          0,
+                          2,
+                          0,
+                          0
+                        ],
+                        "str": "NextPage",
+                        "label": "nameNode",
+                        "name": "type_identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          6,
+                          0,
+                          2,
+                          0,
+                          1
+                        ],
+                        "str": "<TProps, TInitialProps>",
+                        "label": "typeArgumentsNode",
+                        "name": "type_arguments",
+                        "childrenLabels": [
+                          0,
+                          1
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              6,
+                              0,
+                              2,
+                              0,
+                              1,
+                              0
+                            ],
+                            "str": "TProps",
+                            "label": 0,
+                            "name": "type_identifier"
+                          },
+                          {
+                            "nestedIndex": [
+                              6,
+                              0,
+                              2,
+                              0,
+                              1,
+                              1
+                            ],
+                            "str": "TInitialProps",
+                            "label": 1,
+                            "name": "type_identifier"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "nestedIndex": [
+                      6,
+                      0,
+                      2,
+                      1
+                    ],
+                    "str": "{\n  getLayout?: (page: ReactElement) => ReactNode;\n}",
+                    "label": 1,
+                    "name": "object_type",
+                    "childrenLabels": [
+                      0
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          6,
+                          0,
+                          2,
+                          1,
+                          0
+                        ],
+                        "str": "getLayout?: (page: ReactElement) => ReactNode",
+                        "label": 0,
+                        "name": "property_signature",
+                        "childrenLabels": [
+                          "nameNode",
+                          "typeNode"
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              6,
+                              0,
+                              2,
+                              1,
+                              0,
+                              0
+                            ],
+                            "str": "getLayout",
+                            "label": "nameNode",
+                            "name": "property_identifier"
+                          },
+                          {
+                            "nestedIndex": [
+                              6,
+                              0,
+                              2,
+                              1,
+                              0,
+                              1
+                            ],
+                            "str": ": (page: ReactElement) => ReactNode",
+                            "label": "typeNode",
+                            "name": "type_annotation",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  6,
+                                  0,
+                                  2,
+                                  1,
+                                  0,
+                                  1,
+                                  0
+                                ],
+                                "str": "(page: ReactElement) => ReactNode",
+                                "label": 0,
+                                "name": "function_type",
+                                "childrenLabels": [
+                                  "parametersNode",
+                                  "returnTypeNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      6,
+                                      0,
+                                      2,
+                                      1,
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "(page: ReactElement)",
+                                    "label": "parametersNode",
+                                    "name": "formal_parameters",
+                                    "childrenLabels": [
+                                      0
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          6,
+                                          0,
+                                          2,
+                                          1,
+                                          0,
+                                          1,
+                                          0,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "page: ReactElement",
+                                        "label": 0,
+                                        "name": "required_parameter",
+                                        "childrenLabels": [
+                                          "patternNode",
+                                          "typeNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              6,
+                                              0,
+                                              2,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              0,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "page",
+                                            "label": "patternNode",
+                                            "name": "identifier"
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              6,
+                                              0,
+                                              2,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              0,
+                                              0,
+                                              1
+                                            ],
+                                            "str": ": ReactElement",
+                                            "label": "typeNode",
+                                            "name": "type_annotation",
+                                            "childrenLabels": [
+                                              0
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  6,
+                                                  0,
+                                                  2,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  0,
+                                                  0,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "ReactElement",
+                                                "label": 0,
+                                                "name": "type_identifier"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      6,
+                                      0,
+                                      2,
+                                      1,
+                                      0,
+                                      1,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "ReactNode",
+                                    "label": "returnTypeNode",
+                                    "name": "type_identifier"
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          7
+        ],
+        "str": "type AppPropsWithLayout = AppProps & {\n  Component: NextPageWithLayout;\n};",
+        "label": 7,
+        "name": "type_alias_declaration",
+        "childrenLabels": [
+          "nameNode",
+          "valueNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              7,
+              0
+            ],
+            "str": "AppPropsWithLayout",
+            "label": "nameNode",
+            "name": "type_identifier"
+          },
+          {
+            "nestedIndex": [
+              7,
+              1
+            ],
+            "str": "AppProps & {\n  Component: NextPageWithLayout;\n}",
+            "label": "valueNode",
+            "name": "intersection_type",
+            "childrenLabels": [
+              0,
+              1
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  7,
+                  1,
+                  0
+                ],
+                "str": "AppProps",
+                "label": 0,
+                "name": "type_identifier"
+              },
+              {
+                "nestedIndex": [
+                  7,
+                  1,
+                  1
+                ],
+                "str": "{\n  Component: NextPageWithLayout;\n}",
+                "label": 1,
+                "name": "object_type",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      7,
+                      1,
+                      1,
+                      0
+                    ],
+                    "str": "Component: NextPageWithLayout",
+                    "label": 0,
+                    "name": "property_signature",
+                    "childrenLabels": [
+                      "nameNode",
+                      "typeNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          7,
+                          1,
+                          1,
+                          0,
+                          0
+                        ],
+                        "str": "Component",
+                        "label": "nameNode",
+                        "name": "property_identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          7,
+                          1,
+                          1,
+                          0,
+                          1
+                        ],
+                        "str": ": NextPageWithLayout",
+                        "label": "typeNode",
+                        "name": "type_annotation",
+                        "childrenLabels": [
+                          0
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              7,
+                              1,
+                              1,
+                              0,
+                              1,
+                              0
+                            ],
+                            "str": "NextPageWithLayout",
+                            "label": 0,
+                            "name": "type_identifier"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          8
+        ],
+        "str": "MyApp",
+        "label": 8,
+        "name": "identifier"
+      },
+      {
+        "nestedIndex": [
+          9
+        ],
+        "str": "({ Component, pageProps }: AppPropsWithLayout)",
+        "label": 9,
+        "name": "formal_parameters",
+        "childrenLabels": [
+          0
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              9,
+              0
+            ],
+            "str": "{ Component, pageProps }: AppPropsWithLayout",
+            "label": 0,
+            "name": "required_parameter",
+            "childrenLabels": [
+              "patternNode",
+              "typeNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  9,
+                  0,
+                  0
+                ],
+                "str": "{ Component, pageProps }",
+                "label": "patternNode",
+                "name": "object_pattern",
+                "childrenLabels": [
+                  0,
+                  1
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      9,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "Component",
+                    "label": 0,
+                    "name": "shorthand_property_identifier_pattern"
+                  },
+                  {
+                    "nestedIndex": [
+                      9,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "pageProps",
+                    "label": 1,
+                    "name": "shorthand_property_identifier_pattern"
+                  }
+                ]
+              },
+              {
+                "nestedIndex": [
+                  9,
+                  0,
+                  1
+                ],
+                "str": ": AppPropsWithLayout",
+                "label": "typeNode",
+                "name": "type_annotation",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      9,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "AppPropsWithLayout",
+                    "label": 0,
+                    "name": "type_identifier"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          10
+        ],
+        "str": "const getLayout =\n    Component.getLayout ?? ((page) => <DefaultLayout>{page}</DefaultLayout>);\n\n  return getLayout(<Component {...pageProps} />);\n}) as AppType;",
+        "label": 10,
+        "name": "lexical_declaration",
+        "childrenLabels": [
+          0
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              10,
+              0
+            ],
+            "str": "getLayout =\n    Component.getLayout ?? ((page) => <DefaultLayout>{page}</DefaultLayout>);\n\n  return getLayout(<Component {...pageProps} />);\n}) as AppType",
+            "label": 0,
+            "name": "variable_declarator",
+            "childrenLabels": [
+              "nameNode",
+              "valueNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  10,
+                  0,
+                  0
+                ],
+                "str": "getLayout",
+                "label": "nameNode",
+                "name": "identifier"
+              },
+              {
+                "nestedIndex": [
+                  10,
+                  0,
+                  1
+                ],
+                "str": "Component.getLayout ?? ((page) => <DefaultLayout>{page}</DefaultLayout>);\n\n  return getLayout(<Component {...pageProps} />);\n}) as AppType",
+                "label": "valueNode",
+                "name": "binary_expression",
+                "childrenLabels": [
+                  "leftNode",
+                  "rightNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      10,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "Component.getLayout",
+                    "label": "leftNode",
+                    "name": "member_expression",
+                    "childrenLabels": [
+                      "objectNode",
+                      "propertyNode"
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          10,
+                          0,
+                          1,
+                          0,
+                          0
+                        ],
+                        "str": "Component",
+                        "label": "objectNode",
+                        "name": "identifier"
+                      },
+                      {
+                        "nestedIndex": [
+                          10,
+                          0,
+                          1,
+                          0,
+                          1
+                        ],
+                        "str": "getLayout",
+                        "label": "propertyNode",
+                        "name": "property_identifier"
+                      }
+                    ]
+                  },
+                  {
+                    "nestedIndex": [
+                      10,
+                      0,
+                      1,
+                      1
+                    ],
+                    "str": "((page) => <DefaultLayout>{page}</DefaultLayout>);\n\n  return getLayout(<Component {...pageProps} />);\n}) as AppType",
+                    "label": "rightNode",
+                    "name": "parenthesized_expression",
+                    "childrenLabels": [
+                      0
+                    ],
+                    "children": [
+                      {
+                        "nestedIndex": [
+                          10,
+                          0,
+                          1,
+                          1,
+                          0
+                        ],
+                        "str": "(page) => <DefaultLayout>{page}</DefaultLayout>);\n\n  return getLayout(<Component {...pageProps} />);\n}) as AppType",
+                        "label": 0,
+                        "name": "arrow_function",
+                        "childrenLabels": [
+                          "parametersNode",
+                          "bodyNode"
+                        ],
+                        "children": [
+                          {
+                            "nestedIndex": [
+                              10,
+                              0,
+                              1,
+                              1,
+                              0,
+                              0
+                            ],
+                            "str": "(page)",
+                            "label": "parametersNode",
+                            "name": "formal_parameters",
+                            "childrenLabels": [
+                              0
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  10,
+                                  0,
+                                  1,
+                                  1,
+                                  0,
+                                  0,
+                                  0
+                                ],
+                                "str": "page",
+                                "label": 0,
+                                "name": "required_parameter",
+                                "childrenLabels": [
+                                  "patternNode"
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      10,
+                                      0,
+                                      1,
+                                      1,
+                                      0,
+                                      0,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "page",
+                                    "label": "patternNode",
+                                    "name": "identifier"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "nestedIndex": [
+                              10,
+                              0,
+                              1,
+                              1,
+                              0,
+                              1
+                            ],
+                            "str": "<DefaultLayout>{page}</DefaultLayout>);\n\n  return getLayout(<Component {...pageProps} />);\n}) as AppType",
+                            "label": "bodyNode",
+                            "name": "as_expression",
+                            "childrenLabels": [
+                              0,
+                              1
+                            ],
+                            "children": [
+                              {
+                                "nestedIndex": [
+                                  10,
+                                  0,
+                                  1,
+                                  1,
+                                  0,
+                                  1,
+                                  0
+                                ],
+                                "str": "<DefaultLayout>{page}</DefaultLayout>);\n\n  return getLayout(<Component {...pageProps} />);\n})",
+                                "label": 0,
+                                "name": "type_assertion",
+                                "childrenLabels": [
+                                  0,
+                                  1
+                                ],
+                                "children": [
+                                  {
+                                    "nestedIndex": [
+                                      10,
+                                      0,
+                                      1,
+                                      1,
+                                      0,
+                                      1,
+                                      0,
+                                      0
+                                    ],
+                                    "str": "<DefaultLayout>",
+                                    "label": 0,
+                                    "name": "type_arguments",
+                                    "childrenLabels": [
+                                      0
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          10,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          1,
+                                          0,
+                                          0,
+                                          0
+                                        ],
+                                        "str": "DefaultLayout",
+                                        "label": 0,
+                                        "name": "type_identifier"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "nestedIndex": [
+                                      10,
+                                      0,
+                                      1,
+                                      1,
+                                      0,
+                                      1,
+                                      0,
+                                      1
+                                    ],
+                                    "str": "{page}</DefaultLayout>);\n\n  return getLayout(<Component {...pageProps} />);\n})",
+                                    "label": 1,
+                                    "name": "binary_expression",
+                                    "childrenLabels": [
+                                      "leftNode",
+                                      1,
+                                      "rightNode"
+                                    ],
+                                    "children": [
+                                      {
+                                        "nestedIndex": [
+                                          10,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          1,
+                                          0,
+                                          1,
+                                          0
+                                        ],
+                                        "str": "{page}",
+                                        "label": "leftNode",
+                                        "name": "object",
+                                        "childrenLabels": [
+                                          0
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              10,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              0
+                                            ],
+                                            "str": "page",
+                                            "label": 0,
+                                            "name": "shorthand_property_identifier"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          10,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          1,
+                                          0,
+                                          1,
+                                          1
+                                        ],
+                                        "str": "/DefaultLayout>);\n\n  return",
+                                        "label": 1,
+                                        "name": "ERROR",
+                                        "childrenLabels": [
+                                          0,
+                                          1
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              10,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              0
+                                            ],
+                                            "str": "DefaultLayout>);",
+                                            "label": 0,
+                                            "name": "regex_pattern"
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              10,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              1,
+                                              1
+                                            ],
+                                            "str": "return",
+                                            "label": 1,
+                                            "name": "identifier"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "nestedIndex": [
+                                          10,
+                                          0,
+                                          1,
+                                          1,
+                                          0,
+                                          1,
+                                          0,
+                                          1,
+                                          2
+                                        ],
+                                        "str": "getLayout(<Component {...pageProps} />);\n})",
+                                        "label": "rightNode",
+                                        "name": "call_expression",
+                                        "childrenLabels": [
+                                          "functionNode",
+                                          "argumentsNode"
+                                        ],
+                                        "children": [
+                                          {
+                                            "nestedIndex": [
+                                              10,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              2,
+                                              0
+                                            ],
+                                            "str": "getLayout",
+                                            "label": "functionNode",
+                                            "name": "identifier"
+                                          },
+                                          {
+                                            "nestedIndex": [
+                                              10,
+                                              0,
+                                              1,
+                                              1,
+                                              0,
+                                              1,
+                                              0,
+                                              1,
+                                              2,
+                                              1
+                                            ],
+                                            "str": "(<Component {...pageProps} />);\n})",
+                                            "label": "argumentsNode",
+                                            "name": "arguments",
+                                            "childrenLabels": [
+                                              0,
+                                              1
+                                            ],
+                                            "children": [
+                                              {
+                                                "nestedIndex": [
+                                                  10,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  2,
+                                                  1,
+                                                  0
+                                                ],
+                                                "str": "<Component {...pageProps}",
+                                                "label": 0,
+                                                "name": "type_assertion",
+                                                "childrenLabels": [
+                                                  0,
+                                                  1
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "nestedIndex": [
+                                                      10,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      2,
+                                                      1,
+                                                      0,
+                                                      0
+                                                    ],
+                                                    "str": "<Component",
+                                                    "label": 0,
+                                                    "name": "type_arguments",
+                                                    "childrenLabels": [
+                                                      0
+                                                    ],
+                                                    "children": [
+                                                      {
+                                                        "nestedIndex": [
+                                                          10,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          2,
+                                                          1,
+                                                          0,
+                                                          0,
+                                                          0
+                                                        ],
+                                                        "str": "Component",
+                                                        "label": 0,
+                                                        "name": "type_identifier"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "nestedIndex": [
+                                                      10,
+                                                      0,
+                                                      1,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      0,
+                                                      1,
+                                                      2,
+                                                      1,
+                                                      0,
+                                                      1
+                                                    ],
+                                                    "str": "{...pageProps}",
+                                                    "label": 1,
+                                                    "name": "object",
+                                                    "childrenLabels": [
+                                                      0
+                                                    ],
+                                                    "children": [
+                                                      {
+                                                        "nestedIndex": [
+                                                          10,
+                                                          0,
+                                                          1,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          2,
+                                                          1,
+                                                          0,
+                                                          1,
+                                                          0
+                                                        ],
+                                                        "str": "...pageProps",
+                                                        "label": 0,
+                                                        "name": "spread_element",
+                                                        "childrenLabels": [
+                                                          0
+                                                        ],
+                                                        "children": [
+                                                          {
+                                                            "nestedIndex": [
+                                                              10,
+                                                              0,
+                                                              1,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              2,
+                                                              1,
+                                                              0,
+                                                              1,
+                                                              0,
+                                                              0
+                                                            ],
+                                                            "str": "pageProps",
+                                                            "label": 0,
+                                                            "name": "identifier"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "nestedIndex": [
+                                                  10,
+                                                  0,
+                                                  1,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  0,
+                                                  1,
+                                                  2,
+                                                  1,
+                                                  1
+                                                ],
+                                                "str": "/>);\n}",
+                                                "label": 1,
+                                                "name": "ERROR"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "nestedIndex": [
+                                  10,
+                                  0,
+                                  1,
+                                  1,
+                                  0,
+                                  1,
+                                  1
+                                ],
+                                "str": "AppType",
+                                "label": 1,
+                                "name": "type_identifier"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "nestedIndex": [
+          11
+        ],
+        "str": "export default trpc.withTRPC(MyApp);",
+        "label": 11,
+        "name": "export_statement",
+        "childrenLabels": [
+          "valueNode"
+        ],
+        "children": [
+          {
+            "nestedIndex": [
+              11,
+              0
+            ],
+            "str": "trpc.withTRPC(MyApp)",
+            "label": "valueNode",
+            "name": "call_expression",
+            "childrenLabels": [
+              "functionNode",
+              "argumentsNode"
+            ],
+            "children": [
+              {
+                "nestedIndex": [
+                  11,
+                  0,
+                  0
+                ],
+                "str": "trpc.withTRPC",
+                "label": "functionNode",
+                "name": "member_expression",
+                "childrenLabels": [
+                  "objectNode",
+                  "propertyNode"
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      11,
+                      0,
+                      0,
+                      0
+                    ],
+                    "str": "trpc",
+                    "label": "objectNode",
+                    "name": "identifier"
+                  },
+                  {
+                    "nestedIndex": [
+                      11,
+                      0,
+                      0,
+                      1
+                    ],
+                    "str": "withTRPC",
+                    "label": "propertyNode",
+                    "name": "property_identifier"
+                  }
+                ]
+              },
+              {
+                "nestedIndex": [
+                  11,
+                  0,
+                  1
+                ],
+                "str": "(MyApp)",
+                "label": "argumentsNode",
+                "name": "arguments",
+                "childrenLabels": [
+                  0
+                ],
+                "children": [
+                  {
+                    "nestedIndex": [
+                      11,
+                      0,
+                      1,
+                      0
+                    ],
+                    "str": "MyApp",
+                    "label": 0,
+                    "name": "identifier"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "imports": [],
+  "filePath": "../example-todo-list/src/pages/_app.tsx",
+  "isTest": false,
+  "isConfig": false
+}
