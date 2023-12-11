@@ -8,9 +8,11 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "typeRoots": ["./node_modules/@types"],
-    "lib": ["ES2021.String"],
+    "lib": ["ES2021.String", "es2015", "dom"],
     "outDir": "./dist",
-    "noEmitOnError": false
+    "noEmitOnError": false,
+    "declaration": true,
+    "strict": true
   },
 
   "include": ["*", "src/*.ts", "src/**/*.ts"],

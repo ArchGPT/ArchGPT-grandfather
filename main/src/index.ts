@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { ArST, makeQuery, ArST_withMetaInfo } from './parser';
+import { ArST, ArST_withMetaInfo, initializeParpser, TreeSitterParser, TreeSitterQuery, TreeSitterLangs } from './parser';
 import _ from 'lodash';
 import parseGI from 'parse-gitignore'
 import { minimatch } from 'minimatch'
@@ -11,11 +11,14 @@ import OpenAI from "openai";
 import { CallbackObj, localLLMs, runViaOllama } from './localLLM';
 import { APIPromise } from 'openai/core';
 import { Stream } from 'openai/streaming';
-import { ChatCompletionChunk } from 'openai/resources';
+import { ChatCompletionChunk, ChatCompletionMessageParam } from 'openai/resources';
+
+import { defaultTemplates } from './defaultTemplates';
+import { ChatCompletionCreateParamsBase } from 'openai/resources/chat/completions';
 import { runViaOpenAI } from './remoteLLM';
 
-export const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
+export const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY, dangerouslyAllowBrowser: true, });
 
 export function applyMakeQueryToDir(folderPath: string, gitIgnoredFiles: string[] = []): ArST_withMetaInfo[] {
   const files = fs.readdirSync(folderPath)
@@ -64,14 +67,30 @@ type ArchGPTOption = {
   converDBPathToMatchF_Path?: (path: string) => string
 }
 
-export const initArchGPT = async (folder: string = '../../example-todo-list/', option: ArchGPTOption) => {
-
-  const hs = initHypeEdges(folder, { fromScratch: false })
-
-  const { db, tables } = await initDB(folder, hs, { fromScratch: false })
+export const initArchGPT = (option: ArchGPTOption = {}) => {
 
 
-  const fns = {
+  let hs = []
+  let db = null
+  let tables = []
+
+  console.log("initalizing initArchGPT..");
+
+  const archGPT = {
+    history: {},
+
+    initHypeEdges: async (folder: string): Promise<void> => {
+      hs = initHypeEdges(folder, { fromScratch: false })
+    },
+    initParser: (Parser: TreeSitterParser, Query: TreeSitterQuery, langs: TreeSitterLangs) => {
+
+      return initializeParpser(Parser, Query, langs)
+    },
+    initDB: async (folder: string): Promise<void> => {
+      const r = await initDB(folder, hs, { fromScratch: false })
+      db = r.db
+      tables.push(r.tables)
+    },
     searchFiles: async (query: string, options: { nameOnly?: boolean } = {}): Promise<ArST_withMetaInfo[]> => {
 
 
@@ -81,28 +100,83 @@ export const initArchGPT = async (folder: string = '../../example-todo-list/', o
     searchSegs: async (query: string, options: { nameOnly?: boolean } = {}) => {
       return await searchSegs(hs)(tables[1], query, options)
     },
-    runPrompt: async (purpose: string, config: PromptConfig): Promise<string> => {
-      const [systemMsg, mainMessage] = await promptPurposeMap[purpose](
-        config.description,
-        config.basedOn
-      )
+    runPrompt: async (purpose: string, _config: PromptConfig | PromptConfigToUseTemplate,): Promise<string> => {
+
+      const id: string = _config.id || "default_id"
+      const streamInterpreter = _config.intrepretStream?.()
+
+
+      const toLoad = (_config as PromptConfigToUseTemplate).loadPromptTemplate
+      const config: PromptConfig = toLoad ? defaultTemplates![toLoad]((_config as PromptConfigToUseTemplate).promptTemplateData) : _config as PromptConfig
+
+      console.log("config.llm", config.llm);
+
+
+      if (!streamInterpreter && !_config.filePath) {
+        console.log("config.intrepretStream is not defined, we will not stream");
+        throw "TO BE IMPLEMENTED"
+      }
+
+      let historyIndex
+
+      if (_config.savedToHistory) {
+        if (!archGPT.history[id]) { archGPT.history[id] = [] }
+        historyIndex = archGPT.history[id].length
+        archGPT.history[id].push("")
+      }
+
+      if (_config.filePath) {
+        // if file doesn't exist, create it
+        // (and if folder doesn't exist, create it)
+        if (!fs.existsSync(_config.filePath)) {
+          fs.mkdirSync(path.dirname(_config.filePath), { recursive: true })
+          fs.writeFileSync(_config.filePath, "")
+        }
+      }
+
+      const interpreter: CallbackObj = {
+        take: (str: string) => {
+          if (!_.isString(str)) return
+          if (streamInterpreter)
+            streamInterpreter.take?.(str)
+          if (_config.savedToHistory) {
+            archGPT.history[id][historyIndex] += str
+          }
+          if (_config.filePath) {
+            console.log("_config.filePath", _config.filePath);
+
+            fs.appendFileSync(_config.filePath, str)
+          }
+
+        }, shouldContinue: () => {
+          if (streamInterpreter)
+            return streamInterpreter.shouldContinue()
+          return true
+        }
+      }
+
+
 
       if (_.includes(localLLMs, config.llm)) {
+        const stringPrompt = config.prompt as string
         await runViaOllama({
           llm: config.llm,
-          prompt: mainMessage
-        }, config.intrepretStream)
-        return
-      }
-      await runViaOpenAI({
-        llm: config.llm,
-        prompt: [
-          { role: 'system', content: systemMsg },
-          { role: 'user', content: mainMessage }
-        ],
-        gptConfig: config.gptConfig
-      }, config.intrepretStream)
+          prompt: stringPrompt
+        }, interpreter)
+      } else {
 
+        const fullPrompt = config.prompt as Array<ChatCompletionMessageParam>
+
+        console.log("[fullPrompt] - runViaOpenAI", fullPrompt);
+
+        await runViaOpenAI({
+          llm: config.llm,
+          prompt: fullPrompt,
+          gptConfig: config.gptConfig
+        }, interpreter)
+      }
+
+      return ""
 
     },
     composeMessage: async (purpose: string, config: PromptConfig): Promise<[string, string]> => {
@@ -114,17 +188,40 @@ export const initArchGPT = async (folder: string = '../../example-todo-list/', o
     }
   }
 
-  return fns
+  return archGPT
+}
+
+export const furtherExtendPromptByPurpose = async () => {
+  // const [systemMsg, mainMessage] = await promptPurposeMap[purpose](
+  //   config.description,
+  //   config.basedOn
+  // )
 }
 
 export type PromptConfig = {
+
   basedOn: ArST_withMetaInfo[]
   description: string
   llm: LLMType
-  gptConfig?: any
+
+  prompt: String | Array<ChatCompletionMessageParam>,
+  gptConfig?: Partial<ChatCompletionCreateParamsBase>
+
+} & PromptConfigBased
+
+export type PromptConfigToUseTemplate = {
+  loadPromptTemplate: string
+  promptTemplateData: any
+} & PromptConfigBased
+
+
+export type PromptConfigBased = {
+  id?: string
+  savedToHistory?: boolean
+  filePath?: string
+
   intrepretStream?: () => CallbackObj
 }
-
 
 
 export type LLMType = "gpt-4" | "gpt-3.5-turbo" | "codellama"

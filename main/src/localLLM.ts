@@ -8,11 +8,12 @@ type OlamaConfig = {
 }
 export type CallbackObj = {
   shouldContinue: () => boolean,
-  take: (str: string) => void
+  take?: (str: string) => void
 }
-export const runViaOllama = async (config: OlamaConfig, makeCallBackObj: () => CallbackObj) => {
 
-  const obj = makeCallBackObj()
+export const runViaOllama = async (config: OlamaConfig, callbackObj: CallbackObj) => {
+
+  const obj = callbackObj
 
   const { llm, prompt } = config
   const url = `http://localhost:11434/api/generate`
@@ -68,7 +69,7 @@ export const runViaOllama = async (config: OlamaConfig, makeCallBackObj: () => C
     if (done) break
     const str = JSON.parse(decoder.decode(value, { stream: true })).response
     buffer += str
-    obj.take(buffer)
+    obj.take?.(buffer)
   }
 
 

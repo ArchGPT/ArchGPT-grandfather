@@ -9,8 +9,8 @@ type OpenAIConfig = {
   gptConfig: any
 }
 
-export const runViaOpenAI = async (config: OpenAIConfig, makeCallBackObj: () => CallbackObj) => {
-  const obj = makeCallBackObj()
+export const runViaOpenAI = async (config: OpenAIConfig, callbackObj: CallbackObj) => {
+  const obj = callbackObj
 
   const stream: any = await openai.chat.completions.create({
     model: config.llm,
@@ -23,7 +23,7 @@ export const runViaOpenAI = async (config: OpenAIConfig, makeCallBackObj: () => 
     if (obj.shouldContinue() === false) {
       break
     }
-    obj.take(part.choices[0]?.delta?.content)
+    obj.take?.(part.choices[0]?.delta?.content)
   }
 
 };

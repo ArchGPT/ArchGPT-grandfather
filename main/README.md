@@ -1,23 +1,13 @@
-# archgpt-prisma-backend
-
-https://bun.sh/guides/ecosystem/prisma ->
-
-<!-- bunx prisma init --datasource-provider sqlite -->
-
-
--------------
+---
 
 To install dependencies:
 
-
 ```bash
-bun install
+npn install
 ```
 
-To run:
+To test:
 
 ```bash
-bun run index.ts
+npm run test
 ```
-
-This project was created using `bun init` in bun v1.0.2. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.

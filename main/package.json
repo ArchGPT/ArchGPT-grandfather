@@ -3,10 +3,16 @@
   "module": "index.ts",
   "version": "0.0.1",
   "main": "dist/index.js",
+  "types": "dist/index.ts",
   "scripts": {
     "tsnode": "ts-node --project ./tsconfig.tsnode.json --transpile-only",
     "test": "yarn jest --no-watchman",
-    "clean-db": "rm -rf vector_db"
+    "clean-db": "rm -rf vector_db",
+    "build": "tsc --skipLibCheck"
+  },
+  "engines": {
+    "node": ">=18.18.2",
+    "npm": ">=8.19.0"
   },
   "devDependencies": {
     "@apache-arrow/ts": "^12.0.0",
@@ -33,11 +39,9 @@
     "openai": "^4.12.1",
     "parse-gitignore": "^2.0.0",
     "prisma": "^5.4.1",
-    "tree-sitter": "^0.20.5",
-    "tree-sitter-typescript": "^0.20.3",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.2.2",
+    "typescript": "^5.0.0",
     "vectordb": "^0.3.5",
     "web-tree-sitter": "^0.20.8"
   }

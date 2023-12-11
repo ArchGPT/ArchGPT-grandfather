@@ -1,6 +1,6 @@
 import { describe, expect, jest, test } from '@jest/globals';
 import { initDB } from './db';
-import { flattenArST, makeQuery } from './parser';
+import { flattenArST } from './parser';
 import { applyMakeQueryToDir, initArchGPT, openai } from '.'
 import fs, {
   readFileSync, writeFileSync,
@@ -39,36 +39,36 @@ import { runViaOpenAI } from './remoteLLM';
 //   }, 10_000)
 // })
 
-describe('test GPT simple ', () => {
-  test('simple', async () => {
+// describe('test GPT simple ', () => {
+//   test('simple', async () => {
 
 
-    let shouldGo = true
-    let buffer = ''
-    setTimeout(() => {
-      shouldGo = false
-    }, 3000)
+//     let shouldGo = true
+//     let buffer = ''
+//     setTimeout(() => {
+//       shouldGo = false
+//     }, 3000)
 
-    await runViaOpenAI({
-      llm: "gpt-3.5-turbo",
-      prompt: [
-        { role: 'system', content: "hello give me a poem about cats" },
-      ],
-      gptConfig: {
-        max_tokens: 200
-      }
-    }, () => {
-      return {
-        shouldContinue: () => shouldGo,
-        take: (str) => {
-          buffer += str
-        }
-      }
-    })
-    console.log(buffer);
+//     await runViaOpenAI({
+//       llm: "gpt-3.5-turbo",
+//       prompt: [
+//         { role: 'system', content: "hello give me a poem about cats" },
+//       ],
+//       gptConfig: {
+//         max_tokens: 200
+//       }
+//     }, () => {
+//       return {
+//         shouldContinue: () => shouldGo,
+//         take: (str) => {
+//           buffer += str
+//         }
+//       }
+//     })
+//     console.log(buffer);
 
-  }, 10_000)
-})
+//   }, 10_000)
+// })
 
 const folder = path.join(__dirname, '../../example-todo-list/')
 console.log("folder", folder);
@@ -120,4 +120,78 @@ let ArSTs
 //   }, 100_000);
 // });
 
+
+
+
+describe('test archGPT template - gpt4-react-tailwind', () => {
+  // test('init', async () => {
+
+
+  //   const archGPT = initArchGPT()
+
+  //   let buffer = ''
+
+  //   const json = { "hello": 4 }
+
+  //   await archGPT.runPrompt("CREATE_FILE", {
+  //     id: "test",
+  //     savedToHistory: true,
+  //     loadPromptTemplate: "gpt4-react-tailwind",
+  //     promptTemplateData: {
+  //       json
+  //     },
+  //     gptConfig: {
+  //       max_tokens: 20
+  //     },
+  //     intrepretStream: () => {
+  //       return {
+  //         shouldContinue: () => true,
+  //         take: (str) => {
+  //           if (str) {
+  //             buffer += str
+  //             console.log("[S]", buffer)
+
+  //           }
+  //         }
+  //       }
+  //     }
+  //   })
+  //   expect(archGPT.history["test"][0].length).toBeGreaterThan(0)
+  //   console.log(archGPT.history);
+
+  // }, 100_000)
+  test("create file", async () => {
+
+
+    const archGPT = initArchGPT()
+
+
+    const json = { "hello": 4 }
+
+    await archGPT.runPrompt("CREATE_FILE", {
+      id: "test",
+      filePath: "../test-output/hello.tsx",
+      savedToHistory: true,
+      loadPromptTemplate: "gpt4-react-tailwind",
+      promptTemplateData: {
+        json
+      },
+      gptConfig: {
+        max_tokens: 20
+      }
+    })
+    // expect file to exist 
+    expect(fs.existsSync("../test-output/hello.tsx")).toBe(true)
+
+    // read file and get length
+    const fileLength = readFileSync("../test-output/hello.tsx").length
+    expect(fileLength).toBeGreaterThan(0)
+
+    // rm file completely 
+    fs.unlinkSync("../test-output/hello.tsx")
+    // expect file to not exist
+    expect(fs.existsSync("../test-output/hello.tsx")).toBe(false)
+
+  }, 100_000)
+})
 

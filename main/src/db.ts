@@ -21,6 +21,7 @@ export class OpenAIEmbeddingFunction implements EmbeddingFunction<string> {
 
     this.sourceColumn = sourceColumn
     this._openai = new OpenAI({
+      dangerouslyAllowBrowser: true,
       apiKey: openAIKey
     })
     this._modelName = modelName
