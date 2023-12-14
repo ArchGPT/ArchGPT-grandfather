@@ -5,7 +5,7 @@ import h = require('./')
 // Show usage and exit with code
 function help(code: number) {
   console.log(`Usage:
-  archgpt install [dir] (default: .archy)
+  archgpt install [dir] (default: .archgpt)
   archgpt uninstall
   archgpt set|add <file> [cmd]`)
   process.exit(code)

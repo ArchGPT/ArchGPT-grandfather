@@ -22,7 +22,10 @@
     "@types/node": "^20.8.4",
     "bun-types": "latest",
     "jest": "^29.7.0",
-    "ts-jest": "^29.1.1"
+    "tree-sitter": "^0.20.6",
+    "tree-sitter-typescript": "^0.20.3",
+    "ts-jest": "^29.1.1",
+    "web-tree-sitter": "^0.20.8"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -43,7 +46,6 @@
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.0",
-    "vectordb": "^0.3.5",
-    "web-tree-sitter": "^0.20.8"
+    "vectordb": "^0.3.5"
   }
 }

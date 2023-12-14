@@ -2,13 +2,16 @@
 
 ## Command not found
 
-If you're running Git from an app and the command can be found in your terminal, this means that the `PATH` in your app is different from your terminal.
+If you're running Git from an app and the command can be found in your terminal, this means
+that the `PATH` in your app is different from your terminal.
 
 You can `echo $PATH` in your terminal and configure your app to use the same value.
 
-If you've installed your command using `brew`, see the [Homebrew FAQ](https://docs.brew.sh/FAQ) to make your command available to your app.
+If you've installed your command using `brew`, see the
+[Homebrew FAQ](https://docs.brew.sh/FAQ) to make your command available to your app.
 
-Finally, if you're using a script for managing versions like `nvm`, `n`, `rbenv`, `pyenv`, ... you can use `~/.huskyrc` to load the necessary before running hooks.
+Finally, if you're using a script for managing versions like `nvm`, `n`, `rbenv`, `pyenv`,
+... you can use `~/.huskyrc` to load the necessary before running hooks.
 
 For example, for `nvm` that would be:
 
@@ -28,28 +31,34 @@ fi
 
 :::
 
-::: info
-For some apps (e.g., VS Code), you can resolve this simply by restarting the app. Try this before following any of these steps above!\*\*
-:::
+::: info For some apps (e.g., VS Code), you can resolve this simply by restarting the app.
+Try this before following any of these steps above!\*\* :::
 
 ## Hooks not running
 
-1. Ensure that you don't have a typo in your filename. For example, `precommit` or `pre-commit.sh` are invalid names. See Git hooks [documentation](https://git-scm.com/docs/githooks) for valid names.
-1. Check that `git config core.hooksPath` returns `.archy` (or your custom hooks directory).
-1. Verify that hook files are executable. This is automatically set when using `archgpt add` command but you can run `chmod +x .archy/<hookname>` to fix that.
+1. Ensure that you don't have a typo in your filename. For example, `precommit` or
+   `pre-commit.sh` are invalid names. See Git hooks
+   [documentation](https://git-scm.com/docs/githooks) for valid names.
+1. Check that `git config core.hooksPath` returns `.archgpt` (or your custom hooks
+   directory).
+1. Verify that hook files are executable. This is automatically set when using `archgpt add`
+   command but you can run `chmod +x .archgpt/<hookname>` to fix that.
 1. Check that your version of Git is greater than `2.9`.
 
 ## .git/hooks/ not working after uninstall
 
-If after uninstalling `archgpt`, hooks in `.git/hooks/` aren't working. Run `git config --unset core.hooksPath`.
+If after uninstalling `archgpt`, hooks in `.git/hooks/` aren't working. Run
+`git config --unset core.hooksPath`.
 
-Note: this was done automatically by `npm <7` when uninstalling archgpt, however `preuninstall` is now unsupported.
+Note: this was done automatically by `npm <7` when uninstalling archgpt, however
+`preuninstall` is now unsupported.
 
 ## Yarn on Windows
 
-Git hooks may fail when using Yarn on Windows with Git Bash (`stdin is not a tty`). If you have users on Windows, it's highly recommended to add the following workaround.
+Git hooks may fail when using Yarn on Windows with Git Bash (`stdin is not a tty`). If you
+have users on Windows, it's highly recommended to add the following workaround.
 
-1. Create `.archy/common.sh`:
+1. Create `.archgpt/common.sh`:
 
 ```shell
 command_exists () {
@@ -74,4 +83,5 @@ yarn ...
 
 ## Does it work on Windows?
 
-Yes. When you install Git on Windows, it comes with the necessary software to run shell scripts.
+Yes. When you install Git on Windows, it comes with the necessary software to run shell
+scripts.

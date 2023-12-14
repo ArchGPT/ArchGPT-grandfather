@@ -2,11 +2,13 @@
 
 ## CLI
 
-See [archgpt-4-to-8](https://github.com/typicode/archgpt-4-to-8) CLI to quickly migrate from v4 to v8.
+See [archgpt-4-to-8](https://github.com/typicode/archgpt-4-to-8) CLI to quickly migrate from
+v4 to v8.
 
 ## Manually
 
-If you were calling `package.json` scripts using `npm` or `yarn`, **you can simply copy your commands** from your config file to the corresponding hook:
+If you were calling `package.json` scripts using `npm` or `yarn`, **you can simply copy your
+commands** from your config file to the corresponding hook:
 
 ::: code-group
 
@@ -18,7 +20,7 @@ If you were calling `package.json` scripts using `npm` or `yarn`, **you can simp
 }
 ```
 
-```shell [.archy/commit-msg (v8)]
+```shell [.archgpt/commit-msg (v8)]
 # ...
 npm test
 npm run foo
@@ -26,7 +28,8 @@ npm run foo
 
 :::
 
-If you were calling locally installed binaries, **you need to run them via your package manager now**:
+If you were calling locally installed binaries, **you need to run them via your package
+manager now**:
 
 ::: code-group
 
@@ -38,7 +41,7 @@ If you were calling locally installed binaries, **you need to run them via your 
 }
 ```
 
-```shell [.archy/commit-msg (v8)]
+```shell [.archgpt/commit-msg (v8)]
 # ...
 npx --no jest
 # or
@@ -59,7 +62,7 @@ yarn jest
 }
 ```
 
-```shell [.archy/commit-msg (v8)]
+```shell [.archgpt/commit-msg (v8)]
 # ...
 npx --no -- commitlint --edit $1
 # or
@@ -72,5 +75,7 @@ Other environment variables changes:
 
 - `HUSKY_SKIP_HOOKS` is replaced by `ARCHYGPT`.
 - `HUSKY_SKIP_INSTALL` is replaced by `ARCHYGPT`.
-- `HUSKY_GIT_PARAMS` is removed. Instead Git parameters should be used directly in scripts (e.g. `$1`).
-- `PATH` for locally installed tools is not automatically set anymore. You'll need to use your package manager to run them.
+- `HUSKY_GIT_PARAMS` is removed. Instead Git parameters should be used directly in scripts
+  (e.g. `$1`).
+- `PATH` for locally installed tools is not automatically set anymore. You'll need to use
+  your package manager to run them.

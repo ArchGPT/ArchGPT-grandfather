@@ -27,18 +27,19 @@ bunx archgpt-init && bun install
 It will:
 
 1. Add `prepare` script to `package.json`
-1. Create a sample `pre-commit` hook that you can edit (by default, `npm test` will run when you commit)
+1. Create a sample `pre-commit` hook that you can edit (by default, `npm test` will run when
+   you commit)
 1. Configure Git hooks path
 
 To add another hook use `archgpt add`. For example:
 
 ```shell
-npx archgpt add .archy/commit-msg 'npx --no -- commitlint --edit "$1"'
+npx archgpt add .archgpt/commit-msg 'npx --no -- commitlint --edit "$1"'
 ```
 
-::: info
-For Windows users, if you see the help message when running `npx archgpt add ...`, try `node node_modules/archgpt/lib/bin add ...` instead. This isn't an issue with archgpt code.
-:::
+::: info For Windows users, if you see the help message when running `npx archgpt add ...`,
+try `node node_modules/archgpt/lib/bin add ...` instead. This isn't an issue with archgpt
+code. :::
 
 ## Manual
 
@@ -76,17 +77,18 @@ You should have:
 
 :::
 
-::: info
-Yarn 2+ doesn't support `prepare` lifecycle script, so archgpt needs to be installed differently (this doesn't apply to Yarn 1 though). See [Yarn 2+ install](#yarn-2).
+::: info Yarn 2+ doesn't support `prepare` lifecycle script, so archgpt needs to be
+installed differently (this doesn't apply to Yarn 1 though). See [Yarn 2+ install](#yarn-2).
 :::
 
 ## Create a hook
 
-To add a command to a hook or create a new one, use `archgpt add <file> [cmd]` (don't forget to run `archgpt install` before).
+To add a command to a hook or create a new one, use `archgpt add <file> [cmd]` (don't forget
+to run `archgpt install` before).
 
 ```shell
-npx archgpt add .archy/pre-commit "npm test"
-git add .archy/pre-commit
+npx archgpt add .archgpt/pre-commit "npm test"
+git add .archgpt/pre-commit
 ```
 
 Try to make a commit
@@ -97,11 +99,12 @@ git commit -m "Keep calm and commit"
 
 If `npm test` command fails, your commit will be automatically aborted.
 
-::: warning
-**Using Yarn to run commands? There's an issue on Windows with Git Bash, see [Yarn on Windows](#yarn-on-windows).**
-:::
+::: warning **Using Yarn to run commands? There's an issue on Windows with Git Bash, see
+[Yarn on Windows](#yarn-on-windows).** :::
 
-_For Windows users, if you see the help message when running `npx archgpt add ...`, try `node node_modules/.bin/archgpt add ...` instead. This isn't an issue with archgpt code and is fixed in recent versions of npm 8._
+_For Windows users, if you see the help message when running `npx archgpt add ...`, try
+`node node_modules/.bin/archgpt add ...` instead. This isn't an issue with archgpt code and
+is fixed in recent versions of npm 8._
 
 ### Uninstall
 
@@ -141,9 +144,10 @@ yarn archgpt install
 
 :::
 
-::: tip
-if your package is not private and you're publishing it on a registry like [npmjs.com](https://npmjs.com), you need to disable `postinstall` script using [pinst](https://github.com/typicode/pinst)\*\*. Otherwise, `postinstall` will run when someone installs your package and result in an error.
-:::
+::: tip if your package is not private and you're publishing it on a registry like
+[npmjs.com](https://npmjs.com), you need to disable `postinstall` script using
+[pinst](https://github.com/typicode/pinst)\*\*. Otherwise, `postinstall` will run when
+someone installs your package and result in an error. :::
 
 ::: code-group
 

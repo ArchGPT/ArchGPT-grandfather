@@ -2,4 +2,7 @@
 .env
 node_modules
 
+
+db.sqlite
+
 test-output

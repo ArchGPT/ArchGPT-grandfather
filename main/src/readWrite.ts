@@ -1,6 +1,6 @@
 import { describe, expect, test } from '@jest/globals';
 import { initDB } from './db';
-import { ArST_withMetaInfo, flattenArST } from './parser';
+import { ArParser, ArST_withMetaInfo, flattenArST } from './parser';
 import { applyMakeQueryToDir } from '.'
 import fs, {
   readFileSync, writeFileSync,
@@ -11,18 +11,18 @@ import path from 'path';
 
 
 export const writeToFolder = (hs: ArST_withMetaInfo[], folder: string) => {
-  // writing into .archy folder
+  // writing into .archgpt folder
   hs.forEach((h) => {
     const fp = h.filePath
-    // create .archy folder 
-    fs.mkdirSync(folder + ".archy/.db/vector_db", { recursive: true })
+    // create .archgpt folder 
+    fs.mkdirSync(folder + ".archgpt/.db/vector_db", { recursive: true })
 
 
-    // write into .archy folder 
+    // write into .archgpt folder 
     const realPath = fp.replace(folder, '')
     console.log('realPath', realPath);
 
-    writeFileSyncAndCreateFolderINE(path.join(folder + '.archy', realPath + '.json'), JSON.stringify(h, null, 2))
+    writeFileSyncAndCreateFolderINE(path.join(folder + '.archgpt', realPath + '.json'), JSON.stringify(h, null, 2))
 
   })
 
@@ -52,17 +52,18 @@ export type HS_INIT_Option = {
 }
 
 // init -> read from folder if not, otherwise call applyMakeQueryToDir
-export const initHypeEdges = (folder: string, initOption: HS_INIT_Option): ArST_withMetaInfo[] => {
+export const initHypeEdges = (folder: string, parser: ArParser, initOption: HS_INIT_Option): ArST_withMetaInfo[] => {
   const hs: ArST_withMetaInfo[] = []
-  const archyFolder = path.join(folder, '.archy')
+  const archyFolder = path.join(folder, '.archgpt')
   const exist = fs.existsSync(archyFolder)
 
+
   if (!initOption.fromScratch && exist && fs.readdirSync(archyFolder).filter((a) => !a.startsWith(".")).length > 0) {
-    hs.push(...readFromFolder(path.join(folder, '.archy')))
+    hs.push(...readFromFolder(path.join(folder, '.archgpt')))
   } else {
     console.log("[applyMakeQueryToDir]");
 
-    hs.push(...applyMakeQueryToDir(folder))
+    hs.push(...applyMakeQueryToDir(folder, parser))
   }
   return hs
 

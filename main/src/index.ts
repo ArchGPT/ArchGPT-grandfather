@@ -21,7 +21,7 @@ import { Connection, Table } from 'vectordb';
 
 export const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY, dangerouslyAllowBrowser: true, });
 
-export function applyMakeQueryToDir(folderPath: string, gitIgnoredFiles: string[] = []): ArST_withMetaInfo[] {
+export function applyMakeQueryToDir(folderPath: string, parser: ArParser, gitIgnoredFiles: string[] = []): ArST_withMetaInfo[] {
   const files = fs.readdirSync(folderPath)
 
   return _.flatten(files.map((file) => {
@@ -33,7 +33,7 @@ export function applyMakeQueryToDir(folderPath: string, gitIgnoredFiles: string[
 
     const applyToCurrentFolder = currentIgnoredFiles.filter((a) => '/' === a[0])
 
-    if (_.includes([...applyToCurrentFolder.map((a) => a.slice(1).replace(/\/$/, '')), '.git', '.archy'], file)) {
+    if (_.includes([...applyToCurrentFolder.map((a) => a.slice(1).replace(/\/$/, '')), '.git', '.archgpt'], file)) {
       return []
     }
 
@@ -45,7 +45,7 @@ export function applyMakeQueryToDir(folderPath: string, gitIgnoredFiles: string[
 
 
     if (stats.isDirectory()) {
-      return applyMakeQueryToDir(filePath, allIgnored);
+      return applyMakeQueryToDir(filePath, parser, allIgnored);
     } else if (stats.isFile()) {
       if ([
         '.js',
@@ -55,7 +55,7 @@ export function applyMakeQueryToDir(folderPath: string, gitIgnoredFiles: string[
       ].some((a) => path.extname(filePath).endsWith(a))) {
         const content = fs.readFileSync(filePath, 'utf8')
         // return []
-        return makeQuery(content, filePath);
+        return parser.makeQuery(content, filePath);
       }
     }
     return []
@@ -67,6 +67,7 @@ export function applyMakeQueryToDir(folderPath: string, gitIgnoredFiles: string[
 type ArchGPTOption = {
   converDBPathToMatchF_Path?: (path: string) => string
 }
+
 
 export const initArchGPT = (option: ArchGPTOption = {}): ARCH_GPT => {
 
@@ -80,8 +81,8 @@ export const initArchGPT = (option: ArchGPTOption = {}): ARCH_GPT => {
   const archGPT: ARCH_GPT = {
     history: {},
 
-    initHypeEdges: async (folder: string): Promise<void> => {
-      hs = initHypeEdges(folder, { fromScratch: false })
+    initHypeEdges: async (folder: string, parser: ArParser): Promise<void> => {
+      hs = initHypeEdges(folder, parser, { fromScratch: false })
     },
     initParser: (Parser: TreeSitterParser, Query: TreeSitterQuery, langs: TreeSitterLangs): ArParser => {
 
@@ -92,13 +93,13 @@ export const initArchGPT = (option: ArchGPTOption = {}): ARCH_GPT => {
       db = r.db
       tables.push(...r.tables)
     },
-    searchFiles: async (query: string, options: { nameOnly?: boolean } = {}): Promise<ArST_withMetaInfo[]> => {
+    searchFiles: async (query: string, options: { printNamesOnly?: boolean } = {}): Promise<ArST_withMetaInfo[]> => {
 
 
       const r = searchFiles(hs, option.converDBPathToMatchF_Path)(tables[0], query, options)
       return r
     },
-    searchSegs: async (query: string, options: { nameOnly?: boolean } = {}) => {
+    searchSegs: async (query: string, options: { printNamesOnly?: boolean } = {}) => {
       return await searchSegs(hs)(tables[1], query, options)
     },
     runPrompt: async (purpose: string, _config: PromptConfig | PromptConfigToUseTemplate,): Promise<string> => {
@@ -196,11 +197,11 @@ export type ARCH_GPT = {
   history: {
     [id: string]: string[]
   },
-  initHypeEdges: (folder: string) => Promise<void>,
+  initHypeEdges: (folder: string, paresr: ArParser) => Promise<void>,
   initParser: (Parser: TreeSitterParser, Query: TreeSitterQuery, langs: TreeSitterLangs) => ArParser,
   initDB: (folder: string) => Promise<void>,
-  searchFiles: (query: string, options: { nameOnly?: boolean }) => Promise<ArST_withMetaInfo[]>,
-  searchSegs: (query: string, options: { nameOnly?: boolean }) => Promise<ArST_withMetaInfo[]>,
+  searchFiles: (query: string, options?: { printNamesOnly?: boolean }) => Promise<ArST_withMetaInfo[]>,
+  searchSegs: (query: string, options: { printNamesOnly?: boolean }) => Promise<ArST_withMetaInfo[]>,
   runPrompt: (purpose: string, config: PromptConfig) => Promise<string>,
   composeMessage: (purpose: string, config: PromptConfig) => Promise<[string, string]>,
 }
@@ -215,10 +216,9 @@ export const furtherExtendPromptByPurpose = async () => {
 export type PromptConfig = {
 
   basedOn: ArST_withMetaInfo[]
-  description: string
   llm: LLMType
 
-  prompt: String | Array<ChatCompletionMessageParam>,
+  promptInput: string | any | Array<ChatCompletionMessageParam>,
   gptConfig?: Partial<ChatCompletionCreateParamsBase>
 
 } & PromptConfigBased

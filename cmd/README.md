@@ -2,7 +2,7 @@
 
 > Modern native Git hooks made easy
 
-Husky improves your commits and more 🐶 *woof!*
+Husky improves your commits and more 🐶 _woof!_
 
 # Install
 
@@ -22,8 +22,8 @@ npm run prepare
 Add a hook:
 
 ```sh
-npx archgpt add .archy/pre-commit "npm test"
-git add .archy/pre-commit
+npx archgpt add .archgpt/pre-commit "npm test"
+git add .archgpt/pre-commit
 ```
 
 Make a commit:

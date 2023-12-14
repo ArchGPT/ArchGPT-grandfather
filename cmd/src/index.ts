@@ -11,7 +11,7 @@ const git = (args: string[]): cp.SpawnSyncReturns<Buffer> =>
   cp.spawnSync('git', args, { stdio: 'inherit' })
 
 // Install archgpt
-export function install(dir = '.archy'): void {
+export function install(dir = '.archgpt'): void {
   if (process.env.ARCHYGPT === '0') {
     l('ARCHYGPT env variable is set to 0, skipping install')
     return
@@ -35,13 +35,13 @@ export function install(dir = '.archy'): void {
 
 
   try {
-    // Create .archy/_
+    // Create .archgpt/_
     fs.mkdirSync(p.join(dir, '_'), { recursive: true })
 
-    // Create .archy/_/.gitignore
+    // Create .archgpt/_/.gitignore
     fs.writeFileSync(p.join(dir, '_/.gitignore'), '*')
 
-    // Copy archgpt.sh to .archy/_/archgpt.sh
+    // Copy archgpt.sh to .archgpt/_/archgpt.sh
     fs.copyFileSync(p.join(__dirname, '../archgpt.sh'), p.join(dir, '_/archgpt.sh'))
 
     // Configure repo

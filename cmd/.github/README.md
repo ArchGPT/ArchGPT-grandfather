@@ -1,6 +1,8 @@
 # archgpt
 
-[![Open Collective](https://opencollective.com/archgpt/all/badge.svg?label=financial+contributors)](https://opencollective.com/archgpt) [![](https://img.shields.io/npm/dm/archgpt.svg?style=flat)](https://www.npmjs.org/package/archgpt) [![Node.js CI](https://github.com/typicode/archgpt/workflows/Node.js%20CI/badge.svg)](https://github.com/typicode/archgpt/actions)
+[![Open Collective](https://opencollective.com/archgpt/all/badge.svg?label=financial+contributors)](https://opencollective.com/archgpt)
+[![](https://img.shields.io/npm/dm/archgpt.svg?style=flat)](https://www.npmjs.org/package/archgpt)
+[![Node.js CI](https://github.com/typicode/archgpt/workflows/Node.js%20CI/badge.svg)](https://github.com/typicode/archgpt/actions)
 
 > Modern native Git hooks made easy
 
@@ -24,8 +26,8 @@ npm run prepare
 Add a hook:
 
 ```sh
-npx archgpt add .archy/pre-commit "npm test"
-git add .archy/pre-commit
+npx archgpt add .archgpt/pre-commit "npm test"
+git add .archgpt/pre-commit
 ```
 
 Make a commit:
@@ -35,13 +37,15 @@ git commit -m "Keep calm and commit"
 # `npm test` will run every time you commit
 ```
 
-_For more use cases (project in sub-directory, custom directory, CI support, ...), see documentation._
+_For more use cases (project in sub-directory, custom directory, CI support, ...), see
+documentation._
 
 ## Documentation
 
 https://typicode.github.io/archgpt
 
-**Important** Upgrading from v4 to v8 requires migrating previous config, please see the docs.
+**Important** Upgrading from v4 to v8 requires migrating previous config, please see the
+docs.
 
 ## Articles
 
@@ -56,7 +60,8 @@ MIT
 
 ## Companies
 
-Does your company use archgpt? Ask your manager or marketing team if your company would be interested in supporting this project.
+Does your company use archgpt? Ask your manager or marketing team if your company would be
+interested in supporting this project.
 
 <a href="https://opencollective.com/archgpt/tiers/company/0/website"><img src="https://opencollective.com/archgpt/tiers/company/0/avatar.svg?avatarHeight=120"></a>
 <a href="https://opencollective.com/archgpt/tiers/company/1/website"><img src="https://opencollective.com/archgpt/tiers/company/1/avatar.svg?avatarHeight=120"></a>
@@ -71,8 +76,12 @@ Does your company use archgpt? Ask your manager or marketing team if your compan
 
 ## Individuals
 
-Find archgpt helpful? Become a backer and show your appreciation with a monthly donation on [Open Collective](https://opencollective.com/archgpt). You can also tip with a one-time donation.
+Find archgpt helpful? Become a backer and show your appreciation with a monthly donation on
+[Open Collective](https://opencollective.com/archgpt). You can also tip with a one-time
+donation.
 
 <a href="https://opencollective.com/archgpt" target="_blank"><img src="https://opencollective.com/archgpt/tiers/individual.svg?avatarHeight=32"/></a>
 
-GitHub sponsors can be viewed on my [profile](https://github.com/typicode). All past and current Open Collective sponsors can be viewed on [here](https://opencollective.com/archgpt).
+GitHub sponsors can be viewed on my [profile](https://github.com/typicode). All past and
+current Open Collective sponsors can be viewed on
+[here](https://opencollective.com/archgpt).

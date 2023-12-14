@@ -104,7 +104,7 @@ const checkIfExist = async (trees: ArST[], str: string) => {
 
 export const initDB = async (folderPath: string, hs: ArST_withMetaInfo[], option = { fromScratch: false }) => {
   console.log("INIT..");
-  const db = await connect(path.join(folderPath, '.archy', '.db', 'vector_db'))
+  const db = await connect(path.join(folderPath, '.archgpt', '.db', 'vector_db'))
 
   const [table, shouldInit] = await getTable(db, option)
 
@@ -126,10 +126,9 @@ export const initDB = async (folderPath: string, hs: ArST_withMetaInfo[], option
 
     await table.add([...embeddingEntries, ...metaEntries])
     const endTime = Date.now()
-    console.log(`[All] Embedded ${ArSTs.length} ArSTs took ${endTime - startTime} ms`);
+    console.log(`[Table on init] Embedded ${ArSTs.length} ArSTs took ${endTime - startTime} ms`);
   } else {
-    console.log("HAS INITED");
-
+    console.log("TABLE HAS INITED");
   }
 
   const segTables = await createSegsTables(db, hs)
@@ -138,9 +137,9 @@ export const initDB = async (folderPath: string, hs: ArST_withMetaInfo[], option
   return { db, tables: [table, segTables] }
 }
 
-const makeEntry = (f: ArST_withMetaInfo, tags) => {
+const makeEntry = (f: ArST_withMetaInfo, tags): EmbeddingEntry => {
   return {
-    str: f.ast.str,
+    str: f.ast.str!,
     fileName: f.filePath,
     id: f.ast.nestedIndex.join('-'),
     labels: tags
@@ -155,7 +154,7 @@ const arcSTsForSegs = (hs: ArST_withMetaInfo[]) => {
 }
 
 const createSegsTables = async (db: Connection, hs: ArST_withMetaInfo[]) => {
-  const [table, shouldInit] = await getTable(db, { fromScratch: true }, "code-segs")
+  const [table, shouldInit] = await getTable(db, { fromScratch: false }, "code-segs")
   if (shouldInit) {
     const startTime = Date.now()
     const segs = arcSTsForSegs(hs)
@@ -165,7 +164,7 @@ const createSegsTables = async (db: Connection, hs: ArST_withMetaInfo[]) => {
     )
     await table.add([...embeddingEntries, ...metaEntries])
     const endTime = Date.now()
-    console.log(`[SEG] Embedding ${segs.length} ArSTs took ${endTime - startTime} ms`);
+    console.log(`[createSegsTables] Embedding ${segs.length} ArSTs took ${endTime - startTime} ms`);
   } else {
     console.log("HAS INITED");
   }
@@ -184,7 +183,7 @@ export const rankEntry = async (table: Table<EmbeddingEntry>, searchText: string
   const standard = (r) => r.map((a) => [a.fileName, a._distance, a.id, a.labels])
 
 
-  if (rankOption.nameOnly) {
+  if (rankOption.printNamesOnly) {
     return [r.map((a) => a.fileName), r2.map((a) => a.fileName)]
   }
 
@@ -201,13 +200,14 @@ export const searchSegs = (files: ArST_withMetaInfo[]) => async (table: Table<Em
 }
 
 type RankOption = {
-  nameOnly?: boolean
+  printNamesOnly?: boolean
 }
 export const searchFiles = (files: ArST_withMetaInfo[], transformFilePath = (a) => a) => async (table: Table<EmbeddingEntry>, searchText: string, rankOption: RankOption) => {
 
   const result = await rankEntry(table, searchText, "labels='FILE'", rankOption)
 
-  console.log("X", result, files);
+  // console.log("all files", files);
+  // console.log("X", result, files);
 
 
   return result[0].map((a) =>

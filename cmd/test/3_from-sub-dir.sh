@@ -15,7 +15,7 @@ npm install ../../archgpt.tgz
 cat > package.json << EOL
 {
 	"scripts": {
-		"prepare": "cd .. && archgpt install sub/.archy"
+		"prepare": "cd .. && archgpt install sub/.archgpt"
 	}
 }
 EOL
@@ -24,10 +24,10 @@ EOL
 npm run prepare
 
 # Add hook
-npx --no-install archgpt add .archy/pre-commit "echo \"pre-commit hook\" && exit 1"
+npx --no-install archgpt add .archgpt/pre-commit "echo \"pre-commit hook\" && exit 1"
 
 # Test core.hooksPath
-expect_hooksPath_to_be "sub/.archy"
+expect_hooksPath_to_be "sub/.archgpt"
 
 # Test pre-commit
 git add package.json
