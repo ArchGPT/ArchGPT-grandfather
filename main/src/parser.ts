@@ -43,7 +43,13 @@ export type ArST = {
 
 const l = console.log
 
-export const initializeParpser = (Parser: TreeSitterParser, Query: TreeSitterQuery, langs: TreeSitterLangs) => {
+export type ArParser = {
+  makeQuery: (inputContent: string, filePath?: string) => ArST_withMetaInfo;
+  idOfArST: (node: ArST) => string;
+  flattenArST: (ast: ArST) => ArST[];
+}
+
+export const initializeArParser = (Parser: TreeSitterParser, Query: TreeSitterQuery, langs: TreeSitterLangs): ArParser => {
 
   const knownConfigFiles = ['next-env.d.ts']
 

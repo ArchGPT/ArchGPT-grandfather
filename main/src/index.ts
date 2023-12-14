@@ -1,11 +1,11 @@
 import fs from 'fs';
 import path from 'path';
-import { ArST, ArST_withMetaInfo, initializeParpser, TreeSitterParser, TreeSitterQuery, TreeSitterLangs } from './parser';
+import { ArST, ArST_withMetaInfo, initializeArParser, TreeSitterParser, TreeSitterQuery, TreeSitterLangs, ArParser } from './parser';
 import _ from 'lodash';
 import parseGI from 'parse-gitignore'
 import { minimatch } from 'minimatch'
 import { initHypeEdges } from './readWrite';
-import { initDB, searchFiles, searchSegs } from './db';
+import { EmbeddingEntry, initDB, searchFiles, searchSegs } from './db';
 
 import OpenAI from "openai";
 import { CallbackObj, localLLMs, runViaOllama } from './localLLM';
@@ -16,6 +16,7 @@ import { ChatCompletionChunk, ChatCompletionMessageParam } from 'openai/resource
 import { defaultTemplates } from './defaultTemplates';
 import { ChatCompletionCreateParamsBase } from 'openai/resources/chat/completions';
 import { runViaOpenAI } from './remoteLLM';
+import { Connection, Table } from 'vectordb';
 
 
 export const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY, dangerouslyAllowBrowser: true, });
@@ -67,29 +68,29 @@ type ArchGPTOption = {
   converDBPathToMatchF_Path?: (path: string) => string
 }
 
-export const initArchGPT = (option: ArchGPTOption = {}) => {
+export const initArchGPT = (option: ArchGPTOption = {}): ARCH_GPT => {
 
 
-  let hs = []
-  let db = null
-  let tables = []
+  let hs: ArST_withMetaInfo[] = []
+  let db: Connection | null = null
+  let tables: Table<EmbeddingEntry>[] = []
 
   console.log("initalizing initArchGPT..");
 
-  const archGPT = {
+  const archGPT: ARCH_GPT = {
     history: {},
 
     initHypeEdges: async (folder: string): Promise<void> => {
       hs = initHypeEdges(folder, { fromScratch: false })
     },
-    initParser: (Parser: TreeSitterParser, Query: TreeSitterQuery, langs: TreeSitterLangs) => {
+    initParser: (Parser: TreeSitterParser, Query: TreeSitterQuery, langs: TreeSitterLangs): ArParser => {
 
-      return initializeParpser(Parser, Query, langs)
+      return initializeArParser(Parser, Query, langs)
     },
     initDB: async (folder: string): Promise<void> => {
       const r = await initDB(folder, hs, { fromScratch: false })
       db = r.db
-      tables.push(r.tables)
+      tables.push(...r.tables)
     },
     searchFiles: async (query: string, options: { nameOnly?: boolean } = {}): Promise<ArST_withMetaInfo[]> => {
 
@@ -189,6 +190,19 @@ export const initArchGPT = (option: ArchGPTOption = {}) => {
   }
 
   return archGPT
+}
+
+export type ARCH_GPT = {
+  history: {
+    [id: string]: string[]
+  },
+  initHypeEdges: (folder: string) => Promise<void>,
+  initParser: (Parser: TreeSitterParser, Query: TreeSitterQuery, langs: TreeSitterLangs) => ArParser,
+  initDB: (folder: string) => Promise<void>,
+  searchFiles: (query: string, options: { nameOnly?: boolean }) => Promise<ArST_withMetaInfo[]>,
+  searchSegs: (query: string, options: { nameOnly?: boolean }) => Promise<ArST_withMetaInfo[]>,
+  runPrompt: (purpose: string, config: PromptConfig) => Promise<string>,
+  composeMessage: (purpose: string, config: PromptConfig) => Promise<[string, string]>,
 }
 
 export const furtherExtendPromptByPurpose = async () => {

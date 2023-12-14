@@ -46,7 +46,7 @@ export class OpenAIEmbeddingFunction implements EmbeddingFunction<string> {
 
 
 
-type EmbeddingEntry = {
+export type EmbeddingEntry = {
   str: string,
   fileName: string,
   id: string,
@@ -122,6 +122,8 @@ export const initDB = async (folderPath: string, hs: ArST_withMetaInfo[], option
     const embeddingEntries: EmbeddingEntry[] = ArSTs.map((a) =>
       makeEntry(a, "FILE")
     )
+    console.log("[table add -> embeddingEntries]", embeddingEntries.length, embeddingEntries);
+
     await table.add([...embeddingEntries, ...metaEntries])
     const endTime = Date.now()
     console.log(`[All] Embedded ${ArSTs.length} ArSTs took ${endTime - startTime} ms`);

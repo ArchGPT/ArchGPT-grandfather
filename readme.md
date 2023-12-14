@@ -35,7 +35,7 @@ These "abstract relationships" are the equivalent of **Arrows** in Category Theo
 - User stories
 - etc.
 
-They are basically be everything within the domain of human language.
+They can basically be everything within the domain of human language.
 
 **For the Yoneda Paradigm to work, we need to first define a list of "abstractions" most
 interesting to us, and then generate/customize a list of "abstract relationships" between
@@ -94,7 +94,7 @@ archgpt --version
 In your `~/.env` file, or the `.env` in the repo:
 
 ```
-LL_MARKET_API_CALL=...
+LL_MARKET_API_KEY=...
 ```
 
 To obtain an API key, create an account on https://ll.market

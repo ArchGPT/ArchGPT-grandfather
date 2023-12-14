@@ -31,6 +31,7 @@
     "@prisma/client": "^5.4.1",
     "@swc/core": "^1.1.82",
     "apache-arrow": "^12.0.0",
+    "axios": "^1.6.2",
     "dotenv": "^16.3.1",
     "hono": "^3.7.5",
     "immer": "^10.0.3",
