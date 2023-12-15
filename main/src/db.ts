@@ -1,50 +1,10 @@
-import { connect, Connection, EmbeddingFunction, MetricType, Table } from 'vectordb'
+import { connect, Connection, MetricType, Table } from 'vectordb'
 import { tableFromArrays, tableFromIPC, tableToIPC, FixedSizeList, Field, Int32, makeVector, Schema, Utf8, Table as ArrowTable, vectorFromArray, Float32 } from 'apache-arrow'
 import { readFileSync, writeFileSync } from 'fs'
 import { ArST, flattenArST, ArST_withMetaInfo, idOfArST } from './parser'
 import path from 'path'
 import _ from 'lodash'
-import OpenAI from "openai"
-
-export class OpenAIEmbeddingFunction implements EmbeddingFunction<string> {
-  private readonly _openai: any
-  private readonly _modelName: string
-
-  constructor(sourceColumn: string, openAIKey: string, modelName: string = 'text-embedding-ada-002') {
-    let openai
-    try {
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      openai = require('openai')
-    } catch {
-      throw new Error('please install openai using npm install openai')
-    }
-
-    this.sourceColumn = sourceColumn
-    this._openai = new OpenAI({
-      dangerouslyAllowBrowser: true,
-      apiKey: openAIKey
-    })
-    this._modelName = modelName
-  }
-
-  async embed(data: string[]): Promise<number[][]> {
-    const response = await this._openai.embeddings.create({
-      model: this._modelName,
-      input: data
-    })
-    const embeddings: number[][] = []
-    // console.log("io", data, response.data);
-
-    for (let i = 0; i < response.data.length; i++) {
-      embeddings.push(response.data[i].embedding as number[])
-    }
-    return embeddings
-  }
-
-  sourceColumn: string
-}
-
-
+import { OpenAIEmbeddingFunction } from './OpenAIEmbeddingFunction'
 
 export type EmbeddingEntry = {
   str: string,
@@ -72,7 +32,7 @@ const schema = new Schema(
   ]
 )
 
-const getTable = async (db: Connection, option, tableName = 'code'): Promise<[Table<EmbeddingEntry>, boolean, Connection]> => {
+const getTable = async (db: Connection, option, tableName: string): Promise<[Table<EmbeddingEntry>, boolean, Connection]> => {
 
   if (option.fromScratch) {
     try {
@@ -83,10 +43,9 @@ const getTable = async (db: Connection, option, tableName = 'code'): Promise<[Ta
     }
   }
 
-
   let table
   let shouldInit = false
-  const embeddingFunction = new OpenAIEmbeddingFunction("str", process.env.OPENAI_API_KEY)
+  const embeddingFunction = new OpenAIEmbeddingFunction("str", process.env.OPENAI_API_KEY!)
   try {
     table = await db.openTable(tableName, embeddingFunction)
   } catch (e) {
@@ -106,7 +65,21 @@ export const initDB = async (folderPath: string, hs: ArST_withMetaInfo[], option
   console.log("INIT..");
   const db = await connect(path.join(folderPath, '.archgpt', '.db', 'vector_db'))
 
-  const [table, shouldInit] = await getTable(db, option)
+  const fileTable = await createFileTable(db, option, hs)
+
+  const segTables = await createSegsTable(
+    db,
+    option,
+    // { fromScratch: false }
+    hs
+  )
+
+
+  return { db, tables: [fileTable, segTables] }
+}
+
+const createFileTable = async (db, option, hs) => {
+  const [table, shouldInit] = await getTable(db, option, 'code')
 
 
   /**
@@ -131,10 +104,7 @@ export const initDB = async (folderPath: string, hs: ArST_withMetaInfo[], option
     console.log("TABLE HAS INITED");
   }
 
-  const segTables = await createSegsTables(db, hs)
-
-
-  return { db, tables: [table, segTables] }
+  return table
 }
 
 const makeEntry = (f: ArST_withMetaInfo, tags): EmbeddingEntry => {
@@ -153,8 +123,8 @@ const arcSTsForSegs = (hs: ArST_withMetaInfo[]) => {
   return allArcSts.filter((a) => a.ast.label === "fish_segments")
 }
 
-const createSegsTables = async (db: Connection, hs: ArST_withMetaInfo[]) => {
-  const [table, shouldInit] = await getTable(db, { fromScratch: false }, "code-segs")
+const createSegsTable = async (db: Connection, option, hs: ArST_withMetaInfo[]) => {
+  const [table, shouldInit] = await getTable(db, option, "code-segs")
   if (shouldInit) {
     const startTime = Date.now()
     const segs = arcSTsForSegs(hs)
@@ -164,7 +134,9 @@ const createSegsTables = async (db: Connection, hs: ArST_withMetaInfo[]) => {
     )
     await table.add([...embeddingEntries, ...metaEntries])
     const endTime = Date.now()
-    console.log(`[createSegsTables] Embedding ${segs.length} ArSTs took ${endTime - startTime} ms`);
+    console.log(`[createSegsTable] Embedding ${segs.length} ArSTs took ${endTime - startTime} ms`);
+    // console.log(`[createSegsTable] ${JSON.stringify(embeddingEntries)}`);
+
   } else {
     console.log("HAS INITED");
   }

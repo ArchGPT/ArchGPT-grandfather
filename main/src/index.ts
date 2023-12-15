@@ -84,6 +84,9 @@ export const initArchGPT = (option: ArchGPTOption = {}): ARCH_GPT => {
     initHypeEdges: async (folder: string, parser: ArParser): Promise<void> => {
       hs = initHypeEdges(folder, parser, { fromScratch: false })
     },
+    hyperEdges: (label?: string, isTrue: boolean = true) => {
+      return label ? hs.filter((a) => (a.ast.label === label) === isTrue) : hs
+    },
     initParser: (Parser: TreeSitterParser, Query: TreeSitterQuery, langs: TreeSitterLangs): ArParser => {
 
       return initializeArParser(Parser, Query, langs)
@@ -204,6 +207,7 @@ export type ARCH_GPT = {
   searchSegs: (query: string, options: { printNamesOnly?: boolean }) => Promise<ArST_withMetaInfo[]>,
   runPrompt: (purpose: string, config: PromptConfig) => Promise<string>,
   composeMessage: (purpose: string, config: PromptConfig) => Promise<[string, string]>,
+  hyperEdges: (label?: string, isTrue?: boolean) => ArST_withMetaInfo[]
 }
 
 export const furtherExtendPromptByPurpose = async () => {

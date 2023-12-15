@@ -2,6 +2,7 @@ import { ChatCompletionMessageParam } from 'openai/resources';
 import { openai } from '.';
 import { CallbackObj } from './localLLM';
 import axios from 'axios';
+import { LL_MARKET_URL } from '../constants/LL_MARKET_URL';
 
 type OpenAILLM = string
 
@@ -30,8 +31,6 @@ export const runViaOpenAI = async (config: RemoteGPTConfig, callbackObj: Callbac
 
 };
 
-const MARKET_URL = "http://localhost:3000"
-// const MARKET_URL = "https://ll.market"
 
 export const runViaLLMarket = async (config: RemoteGPTConfig, callbackObj: CallbackObj) => {
   const LL_MARKET_API_KEY = process.env.LL_MARKET_API_KEY
@@ -40,7 +39,7 @@ export const runViaLLMarket = async (config: RemoteGPTConfig, callbackObj: Callb
   const obj = callbackObj
 
   // axios HTTP stream call to https://ll.market/api/llm/test 
-  const stream: any = await axios.post(`${MARKET_URL}/api/llm/${config.llm}`, {
+  const stream: any = await axios.post(`${LL_MARKET_URL}/api/llm/${config.llm}`, {
     prompt: config.prompt,
     ...(config.gptConfig || {})
   }, {

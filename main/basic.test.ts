@@ -121,15 +121,18 @@ describe('test archGPT basic ', () => {
     await archGPT.initHypeEdges(folder, parser)
     await archGPT.initDB(folder)
 
-  }, 100_000);
+    console.log("archGPT", archGPT.hyperEdges("FILE", false));
 
-  test('search files', async () => {
-
-    ArSTs = await archGPT.searchFiles("to do list")
-    const files = ArSTs.map((a) => a.filePath)
-    console.log("files", files);
 
   }, 100_000);
+
+  // test('search files', async () => {
+
+  //   ArSTs = await archGPT.searchFiles("post item")
+  //   const files = ArSTs.map((a) => a.filePath)
+  //   console.log("files", files);
+
+  // }, 100_000);
 
   // test('gpt4 gen', async () => {
 
