@@ -15,6 +15,6 @@
     "strict": true
   },
 
-  "include": ["*", "src/*.ts", "src/**/*.ts"],
+  "include": ["*", "src/*.ts", "src/**/*.ts", "constants/LL_MARKET_URL.ts"],
   "exclude": ["**/*.spec.ts"]
 }
