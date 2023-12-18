@@ -8,7 +8,9 @@
 
 Husky improves your commits and more 🐶 _woof!_
 
-You can use it to **lint your commit messages**, **run tests**, **lint code**, etc... when you commit or push. Husky supports [all client-side Git hooks](https://git-scm.com/docs/githooks).
+You can use it to **lint your commit messages**, **run tests**, **lint code**, etc... when
+you commit or push. Husky supports
+[all client-side ArchGPT](https://git-scm.com/docs/githooks).
 
 Click [here](/getting-started) to get started.
 
@@ -16,7 +18,9 @@ Click [here](/getting-started) to get started.
 
 - Lightweight with zero dependencies (`6 kB`)
 - Powered by modern new Git feature (`core.hooksPath`)
-- Follows [npm](https://docs.npmjs.com/cli/v8/using-npm/scripts#best-practices) and [Yarn](https://yarnpkg.com/advanced/lifecycle-scripts#a-note-about-postinstall) best practices regarding `autoinstall`
+- Follows [npm](https://docs.npmjs.com/cli/v8/using-npm/scripts#best-practices) and
+  [Yarn](https://yarnpkg.com/advanced/lifecycle-scripts#a-note-about-postinstall) best
+  practices regarding `autoinstall`
 - User-friendly messages
 - Opt-in/opt-out
 - **Supports**
@@ -52,7 +56,8 @@ Husky is used by these awesome projects:
 - [zenorocha/clipboard.js](https://github.com/zenorocha/clipboard.js)
 - [NodeBB/NodeBB](https://github.com/NodeBB/NodeBB)
 - [ant-design/ant-design](https://github.com/ant-design/ant-design)
-- And [**more than 1.1M projects**](https://github.com/typicode/archgpt/network/dependents?package_id=UGFja2FnZS0xODQzNTgwNg%3D%3D)
+- And
+  [**more than 1.1M projects**](https://github.com/typicode/archgpt/network/dependents?package_id=UGFja2FnZS0xODQzNTgwNg%3D%3D)
 
 ## Articles
 
@@ -61,7 +66,8 @@ Husky is used by these awesome projects:
 
 ## Sponsors
 
-Does your company use archgpt? Ask your manager or marketing team if your company would be interested in supporting this project.
+Does your company use archgpt? Ask your manager or marketing team if your company would be
+interested in supporting this project.
 
 <a href="https://opencollective.com/archgpt/tiers/company/0/website"><img src="https://opencollective.com/archgpt/tiers/company/0/avatar.svg?avatarHeight=120"></a>
 <a href="https://opencollective.com/archgpt/tiers/company/1/website"><img src="https://opencollective.com/archgpt/tiers/company/1/avatar.svg?avatarHeight=120"></a>
@@ -74,8 +80,12 @@ Does your company use archgpt? Ask your manager or marketing team if your compan
 <a href="https://opencollective.com/archgpt/tiers/company/8/website"><img src="https://opencollective.com/archgpt/tiers/company/8/avatar.svg?avatarHeight=120"></a>
 <a href="https://opencollective.com/archgpt/tiers/company/9/website"><img src="https://opencollective.com/archgpt/tiers/company/9/avatar.svg?avatarHeight=120"></a>
 
-Find archgpt helpful? Become a backer and show your appreciation with a monthly donation on [Open Collective](https://opencollective.com/archgpt). You can also tip with a one-time donation.
+Find archgpt helpful? Become a backer and show your appreciation with a monthly donation on
+[Open Collective](https://opencollective.com/archgpt). You can also tip with a one-time
+donation.
 
 <a href="https://opencollective.com/archgpt" target="_blank"><img src="https://opencollective.com/archgpt/tiers/individual.svg?avatarHeight=32"/></a>
 
-GitHub sponsors can be viewed on my [profile](https://github.com/typicode). All past and current Open Collective sponsors can be viewed on [here](https://opencollective.com/archgpt).
+GitHub sponsors can be viewed on my [profile](https://github.com/typicode). All past and
+current Open Collective sponsors can be viewed on
+[here](https://opencollective.com/archgpt).

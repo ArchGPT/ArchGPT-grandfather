@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: '🐶 archgpt',
-  description: 'Git hooks made easy',
+  description: 'ArchGPT made easy',
   base: '/archgpt/',
   themeConfig: {
     outline: [2, 3],

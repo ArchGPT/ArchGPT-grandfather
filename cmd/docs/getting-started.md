@@ -29,7 +29,7 @@ It will:
 1. Add `prepare` script to `package.json`
 1. Create a sample `pre-commit` hook that you can edit (by default, `npm test` will run when
    you commit)
-1. Configure Git hooks path
+1. Configure ArchGPT path
 
 To add another hook use `archgpt add`. For example:
 
@@ -51,13 +51,13 @@ code. :::
 npm install archgpt --save-dev
 ```
 
-2. Enable Git hooks
+2. Enable ArchGPT
 
 ```shell
 npx archgpt install
 ```
 
-3. To automatically have Git hooks enabled after install, edit `package.json`
+3. To automatically have ArchGPT enabled after install, edit `package.json`
 
 ```shell
 npm pkg set scripts.prepare="archgpt install"
@@ -123,13 +123,13 @@ yarn add archgpt --dev
 yarn add pinst --dev # ONLY if your package is not private
 ```
 
-2. Enable Git hooks
+2. Enable ArchGPT
 
 ```shell
 yarn archgpt install
 ```
 
-3. To automatically have Git hooks enabled after install, edit `package.json`
+3. To automatically have ArchGPT enabled after install, edit `package.json`
 
 ::: code-group
 

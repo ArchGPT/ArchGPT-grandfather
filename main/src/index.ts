@@ -91,16 +91,23 @@ export const initArchGPT = (option: ArchGPTOption = {}): ARCH_GPT => {
 
       return initializeArParser(Parser, Query, langs)
     },
-    initDB: async (folder: string): Promise<void> => {
-      const r = await initDB(folder, hs, { fromScratch: false })
+    initDB: async (folder: string, option?: { fromScratch: boolean }): Promise<{ db: Connection, tables: Table<EmbeddingEntry>[] }> => {
+      const r = await initDB(folder, hs, option)
       db = r.db
       tables.push(...r.tables)
+      return { db, tables }
     },
     searchFiles: async (query: string, options: { printNamesOnly?: boolean } = {}): Promise<ArST_withMetaInfo[]> => {
 
 
       const r = searchFiles(hs, option.converDBPathToMatchF_Path)(tables[0], query, options)
       return r
+    },
+    searchTable: async (index: number, statement: string) => {
+      const query = tables[index].search([] as any).where(statement)
+      const result = await query.execute()
+      console.log("result", result)
+      return result
     },
     searchSegs: async (query: string, options: { printNamesOnly?: boolean } = {}) => {
       return await searchSegs(hs)(tables[1], query, options)
@@ -195,6 +202,9 @@ export const initArchGPT = (option: ArchGPTOption = {}): ARCH_GPT => {
 
   return archGPT
 }
+export type InitDBOption = {
+  fromScratch: boolean
+}
 
 export type ARCH_GPT = {
   history: {
@@ -202,9 +212,11 @@ export type ARCH_GPT = {
   },
   initHypeEdges: (folder: string, paresr: ArParser) => Promise<void>,
   initParser: (Parser: TreeSitterParser, Query: TreeSitterQuery, langs: TreeSitterLangs) => ArParser,
-  initDB: (folder: string) => Promise<void>,
+  searchTable: (index: number, statement: string) => Promise<any>,
+
+  initDB: (folder: string, option?: InitDBOption) => Promise<{ db: Connection, tables: Table<EmbeddingEntry>[] }>,
   searchFiles: (query: string, options?: { printNamesOnly?: boolean }) => Promise<ArST_withMetaInfo[]>,
-  searchSegs: (query: string, options: { printNamesOnly?: boolean }) => Promise<ArST_withMetaInfo[]>,
+  searchSegs: (query: string, options?: { printNamesOnly?: boolean }) => Promise<ArST_withMetaInfo[]>,
   runPrompt: (purpose: string, config: PromptConfig) => Promise<string>,
   composeMessage: (purpose: string, config: PromptConfig) => Promise<[string, string]>,
   hyperEdges: (label?: string, isTrue?: boolean) => ArST_withMetaInfo[]

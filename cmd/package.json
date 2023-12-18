@@ -1,7 +1,7 @@
 {
   "name": "archgpt",
-  "version": "0.0.1",
-  "description": "Modern native Git hooks made easy",
+  "version": "0.1.0",
+  "description": "Modern native ArchGPT made easy",
   "keywords": [
     "llm"
   ],
@@ -9,11 +9,12 @@
   "repository": "archgpt/archgpt",
   "license": "MIT",
   "author": "Archy Will He <archy@archgpt.dev>",
-  "bin": "lib/bin.js",
+  "bin": {
+    "archgpt": "lib/bin.js"
+  },
   "main": "lib/index.js",
   "files": [
-    "lib",
-    "archgpt.sh"
+    "lib"
   ],
   "scripts": {
     "build": "tsc",

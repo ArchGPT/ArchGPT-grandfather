@@ -1,5 +1,6 @@
 import { EmbeddingFunction } from 'vectordb';
 import OpenAI from "openai";
+import _ from 'lodash';
 
 
 export class OpenAIEmbeddingFunction implements EmbeddingFunction<string> {
@@ -23,10 +24,24 @@ export class OpenAIEmbeddingFunction implements EmbeddingFunction<string> {
     this._modelName = modelName;
   }
 
-  async embed(data: string[]): Promise<number[][]> {
-    const response = await this._openai.embeddings.create({
+  async embed(data: string[] | number[][]): Promise<number[][]> {
+    // note: every item in string[] represents a file content
+    console.log("data <_> ", data);
+
+    if (data.length === 0) {
+      return [[0]]
+    }
+    if (data.length === 1 && data[0].length === 0) {
+      return [[0]]
+    }
+    if (_.isNumber(data[0]?.[0])) {
+      return data as number[][]
+    }
+
+
+    const response = await (this._openai as OpenAI).embeddings.create({
       model: this._modelName,
-      input: data
+      input: data as string[]
     });
     const embeddings: number[][] = [];
     // console.log("io", data, response.data);

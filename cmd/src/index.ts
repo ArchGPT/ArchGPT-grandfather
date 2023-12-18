@@ -50,11 +50,11 @@ export function install(dir = '.archgpt'): void {
     //   throw error
     // }
   } catch (e) {
-    l('Git hooks failed to install')
+    l('ArchGPT failed to install')
     throw e
   }
 
-  l('Git hooks installed')
+  l('ArchGPT installed')
 }
 
 // Create a hook file if it doesn't exist or overwrite it

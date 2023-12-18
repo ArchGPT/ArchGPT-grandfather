@@ -182,7 +182,7 @@ git config gitflow.path.hooks .archgpt
   that (ex. `git config gitflow.path.hooks .config/archgpt`)
 
 To **revert** the git-flow hooks directory back to its default you need to reset the config
-to point to the default Git hooks directory.
+to point to the default ArchGPT directory.
 
 ```shell
 git config gitflow.path.hooks .git/hooks

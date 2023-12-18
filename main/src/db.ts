@@ -4,11 +4,12 @@ import { readFileSync, writeFileSync } from 'fs'
 import { ArST, flattenArST, ArST_withMetaInfo, idOfArST } from './parser'
 import path from 'path'
 import _ from 'lodash'
-import { OpenAIEmbeddingFunction } from './OpenAIEmbeddingFunction'
+import { OpenAIEmbeddingFunction } from './embeddings/OpenAIEmbedding'
+import { LLMarketEmbedding } from './embeddings/LLMarketEmbedding'
 
 export type EmbeddingEntry = {
   str: string,
-  fileName: string,
+  file_name: string,
   id: string,
   labels: string,
 }
@@ -16,7 +17,7 @@ export type EmbeddingEntry = {
 const clean = (a: EmbeddingEntry & any): EmbeddingEntry => {
   return {
     str: a.str,
-    fileName: a.fileName,
+    file_name: a.file_name,
     id: a.id,
     labels: a.labels
   }
@@ -26,15 +27,15 @@ const schema = new Schema(
   [
     new Field('vector', new FixedSizeList(1536, new Field('float32', new Float32()))),
     new Field('str', new Utf8()),
-    new Field('fileName', new Utf8()),
+    new Field('file_name', new Utf8()),
     new Field('id', new Utf8()),
     new Field('labels', new Utf8()),
   ]
 )
 
-const getTable = async (db: Connection, option, tableName: string): Promise<[Table<EmbeddingEntry>, boolean, Connection]> => {
+const getTable = async (db: Connection, option: { fromScratch: boolean }, tableName: string): Promise<[Table<EmbeddingEntry>, boolean, Connection]> => {
 
-  if (option.fromScratch) {
+  if (option?.fromScratch) {
     try {
       await db.dropTable(tableName)
       console.log("DROP TABLE.. & retart", tableName);
@@ -45,7 +46,9 @@ const getTable = async (db: Connection, option, tableName: string): Promise<[Tab
 
   let table
   let shouldInit = false
-  const embeddingFunction = new OpenAIEmbeddingFunction("str", process.env.OPENAI_API_KEY!)
+  // const FN = LLMarketEmbedding
+  const FN = OpenAIEmbeddingFunction
+  const embeddingFunction = new FN("str", process.env.OPENAI_API_KEY!)
   try {
     table = await db.openTable(tableName, embeddingFunction)
   } catch (e) {
@@ -61,7 +64,7 @@ const checkIfExist = async (trees: ArST[], str: string) => {
   return tree
 }
 
-export const initDB = async (folderPath: string, hs: ArST_withMetaInfo[], option = { fromScratch: false }) => {
+export const initDB = async (folderPath: string, hs: ArST_withMetaInfo[], option?: { fromScratch: boolean }) => {
   console.log("INIT..");
   const db = await connect(path.join(folderPath, '.archgpt', '.db', 'vector_db'))
 
@@ -78,7 +81,7 @@ export const initDB = async (folderPath: string, hs: ArST_withMetaInfo[], option
   return { db, tables: [fileTable, segTables] }
 }
 
-const createFileTable = async (db, option, hs) => {
+const createFileTable = async (db, option, hs: ArST_withMetaInfo[]) => {
   const [table, shouldInit] = await getTable(db, option, 'code')
 
 
@@ -87,7 +90,9 @@ const createFileTable = async (db, option, hs) => {
    */
   if (shouldInit) {
     const startTime = Date.now()
-    const ArSTs = hs.filter((a) => a.ast.nestedIndex.length === 0 && !a.isTest && !a.isConfig)
+    const ArSTs = hs.filter((a) => a.ast.label === "FILE" && !a.isTest && !a.isConfig)
+    console.log("ArSTs - ", ArSTs.length);
+
     // console.log("ArSTs", ArSTs.length);
 
     const metaEntries = await makeDefaultCategoiesAndSymbol()
@@ -95,9 +100,12 @@ const createFileTable = async (db, option, hs) => {
     const embeddingEntries: EmbeddingEntry[] = ArSTs.map((a) =>
       makeEntry(a, "FILE")
     )
-    console.log("[table add -> embeddingEntries]", embeddingEntries.length, embeddingEntries);
+    console.log("[table add -> embeddingEntries]", embeddingEntries.length, embeddingEntries)
 
-    await table.add([...embeddingEntries, ...metaEntries])
+    await Promise.all(_.chunk([...embeddingEntries, ...metaEntries], 5).map((e) => {
+      return table.add(e)
+    }))
+
     const endTime = Date.now()
     console.log(`[Table on init] Embedded ${ArSTs.length} ArSTs took ${endTime - startTime} ms`);
   } else {
@@ -110,7 +118,7 @@ const createFileTable = async (db, option, hs) => {
 const makeEntry = (f: ArST_withMetaInfo, tags): EmbeddingEntry => {
   return {
     str: f.ast.str!,
-    fileName: f.filePath,
+    file_name: f.filePath,
     id: f.ast.nestedIndex.join('-'),
     labels: tags
   }
@@ -152,11 +160,11 @@ export const rankEntry = async (table: Table<EmbeddingEntry>, searchText: string
 
   const r2 = await table.search(searchText as any).metricType(MetricType.L2).where(sql).execute()
 
-  const standard = (r) => r.map((a) => [a.fileName, a._distance, a.id, a.labels])
+  const standard = (r) => r.map((a) => [a.file_name, a._distance, a.id, a.labels])
 
 
   if (rankOption.printNamesOnly) {
-    return [r.map((a) => a.fileName), r2.map((a) => a.fileName)]
+    return [r.map((a) => a.file_name), r2.map((a) => a.file_name)]
   }
 
   return [standard(r), standard(r2)]
@@ -190,10 +198,10 @@ export const searchFiles = (files: ArST_withMetaInfo[], transformFilePath = (a) 
 
 const makeDefaultCategoiesAndSymbol = async (): Promise<EmbeddingEntry[]> => {
 
-  const emptiness: EmbeddingEntry = { str: " ", fileName: "", id: "EMPTY", labels: "SYMBOL" }
+  const emptiness: EmbeddingEntry = { str: " ", file_name: "", id: "EMPTY", labels: "SYMBOL" }
   const defaultCategories: EmbeddingEntry[] = [
     "GUI", "Router", "Database",
-  ].map((a) => ({ str: a, fileName: "", id: a, labels: "CATEGORY" }))
+  ].map((a) => ({ str: a, file_name: "", id: a, labels: "CATEGORY" }))
 
   return [emptiness, ...defaultCategories]
 }

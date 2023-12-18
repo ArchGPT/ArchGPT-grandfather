@@ -102,36 +102,82 @@ _describe('test: local Ollama ', () => {
 // Next, we need to make sure ArchGPT's encoding with `codebase-indexer` & vector DB are working
 
 
-const folder = path.join(__dirname, '../example-todo-list/')
-console.log("folder", folder);
-
 import Parser, { Query } from 'tree-sitter';
 import TS from "tree-sitter-typescript"
+import { MetricType } from 'vectordb';
+
+// _describe('test archGPT on example snippets ', () => {
+//   let archGPT: ARCH_GPT
+//   let ArSTs: ArST_withMetaInfo[]
+//   test('init', async () => {
+//     const folder = path.join(__dirname, '../example-snippets/prisma')
+
+//     archGPT = await initArchGPT()
+//     const parser = archGPT.initParser(Parser, Query, TS)
+//     await archGPT.initHypeEdges(folder, parser)
+//     await archGPT.initDB(folder)
+
+//     console.log("archGPT", archGPT.hyperEdges("FILE", false))
 
 
-let archGPT: ARCH_GPT
-let ArSTs: ArST_withMetaInfo[]
-describe('test archGPT basic ', () => {
-  test('init', async () => {
+//   }, 100_000);
+// })
+
+// describe('GO ', () => {
+//   let archGPT: ARCH_GPT
+//   let ArSTs: ArST_withMetaInfo[]
+//   test('init', async () => {
+//     const folder = path.join(__dirname, '../../ll.market')
+
+//     archGPT = await initArchGPT()
+//     const parser = archGPT.initParser(Parser, Query, TS)
+//     await archGPT.initHypeEdges(folder, parser)
+//     const { db, tables } = await archGPT.initDB(folder, { fromScratch: false })
+
+
+//     console.log("archGPT", archGPT.hyperEdges("FILE", false))
+
+
+//   }, 100_000);
+// })
+
+
+describe('test archGPT on example-todo ', () => {
+  let archGPT: ARCH_GPT
+  let ArSTs: ArST_withMetaInfo[]
+
+  test('init tables', async () => {
+
+    const folder = path.join(__dirname, '../example-todo-list/')
+    console.log("folder", folder);
 
     archGPT = await initArchGPT()
     const parser = archGPT.initParser(Parser, Query, TS)
     //   console.log("parser", parser);
 
     await archGPT.initHypeEdges(folder, parser)
-    await archGPT.initDB(folder)
-
-    console.log("archGPT", archGPT.hyperEdges("FILE", false));
-
+    const { tables } = await archGPT.initDB(folder)
+    expect(tables.length).toBeGreaterThan(0)
 
   }, 100_000);
 
-  // test('search files', async () => {
+  test('search table by sql', async () => {
+
+    const a = await archGPT.searchTable(0, 'file_name == "' + path.join(__dirname, '../example-todo-list/prisma/seed.ts') + '"')
+    // note: if we get "failed to downcast" error, it means that vector is not created
+
+    expect(a.length).toBe(1)
+
+  }, 100_000);
+
+  // test('search file by distance', async () => {
 
   //   ArSTs = await archGPT.searchFiles("post item")
   //   const files = ArSTs.map((a) => a.filePath)
   //   console.log("files", files);
-
+  //   expect(files.length).toBeGreaterThan(0)
+  //   expect(files[0]).toBe(path.join(__dirname, '../example-todo-list/src/pages/post/[id].tsx'))
+  //   expect(files[1]).toBe(path.join(__dirname, '../example-todo-list/prisma/seed.ts'))
   // }, 100_000);
 
   // test('gpt4 gen', async () => {

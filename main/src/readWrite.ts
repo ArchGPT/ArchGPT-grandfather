@@ -57,11 +57,12 @@ export const initHypeEdges = (folder: string, parser: ArParser, initOption: HS_I
   const archyFolder = path.join(folder, '.archgpt')
   const exist = fs.existsSync(archyFolder)
 
-
   if (!initOption.fromScratch && exist && fs.readdirSync(archyFolder).filter((a) => !a.startsWith(".")).length > 0) {
+    // hyper edges exist.
     hs.push(...readFromFolder(path.join(folder, '.archgpt')))
   } else {
-    console.log("[applyMakeQueryToDir]");
+    // hyper edges don't exist; 
+    console.log("...creating hyer edges now with [applyMakeQueryToDir]");
 
     hs.push(...applyMakeQueryToDir(folder, parser))
   }

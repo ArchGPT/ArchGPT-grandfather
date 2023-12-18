@@ -7,7 +7,7 @@ const p = require("path");
 const os = require("os");
 const l = (msg) => console.log(`archgpt - ${msg}`);
 const git = (args) => cp.spawnSync('git', args, { stdio: 'inherit' });
-function install(dir = '.archy') {
+function install(dir = '.archgpt') {
     if (process.env.ARCHYGPT === '0') {
         l('ARCHYGPT env variable is set to 0, skipping install');
         return;
@@ -20,19 +20,16 @@ function install(dir = '.archy') {
     if (!p.resolve(process.cwd(), dir).startsWith(process.cwd())) {
         throw new Error(`.. not allowed (see ${url})`);
     }
-    if (!fs.existsSync('.git')) {
-        throw new Error(`.git can't be found (see ${url})`);
-    }
     try {
         fs.mkdirSync(p.join(dir, '_'), { recursive: true });
         fs.writeFileSync(p.join(dir, '_/.gitignore'), '*');
         fs.copyFileSync(p.join(__dirname, '../archgpt.sh'), p.join(dir, '_/archgpt.sh'));
     }
     catch (e) {
-        l('Git hooks failed to install');
+        l('ArchGPT failed to install');
         throw e;
     }
-    l('Git hooks installed');
+    l('ArchGPT installed');
 }
 exports.install = install;
 function set(file, cmd) {

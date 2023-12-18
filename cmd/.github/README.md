@@ -4,7 +4,7 @@
 [![](https://img.shields.io/npm/dm/archgpt.svg?style=flat)](https://www.npmjs.org/package/archgpt)
 [![Node.js CI](https://github.com/typicode/archgpt/workflows/Node.js%20CI/badge.svg)](https://github.com/typicode/archgpt/actions)
 
-> Modern native Git hooks made easy
+> Modern native ArchGPT made easy
 
 Husky improves your commits and more 🐶 _woof!_
 

@@ -5,9 +5,8 @@ import h = require('./')
 // Show usage and exit with code
 function help(code: number) {
   console.log(`Usage:
-  archgpt install [dir] (default: .archgpt)
-  archgpt uninstall
-  archgpt set|add <file> [cmd]`)
+  archgpt init
+  `)
   process.exit(code)
 }
 
@@ -23,6 +22,9 @@ const hook = (fn: (a1: string, a2: string) => void) => (): void =>
 
 // CLI commands
 const cmds: { [key: string]: () => void } = {
+  init: (): void => {
+    console.log("Hello")
+  },
   install: (): void => (ln > 1 ? help(2) : h.install(x)),
   uninstall: h.uninstall,
   set: hook(h.set),

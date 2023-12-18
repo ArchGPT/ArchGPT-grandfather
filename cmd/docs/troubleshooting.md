@@ -37,7 +37,7 @@ Try this before following any of these steps above!\*\* :::
 ## Hooks not running
 
 1. Ensure that you don't have a typo in your filename. For example, `precommit` or
-   `pre-commit.sh` are invalid names. See Git hooks
+   `pre-commit.sh` are invalid names. See ArchGPT
    [documentation](https://git-scm.com/docs/githooks) for valid names.
 1. Check that `git config core.hooksPath` returns `.archgpt` (or your custom hooks
    directory).
@@ -55,7 +55,7 @@ Note: this was done automatically by `npm <7` when uninstalling archgpt, however
 
 ## Yarn on Windows
 
-Git hooks may fail when using Yarn on Windows with Git Bash (`stdin is not a tty`). If you
+ArchGPT may fail when using Yarn on Windows with Git Bash (`stdin is not a tty`). If you
 have users on Windows, it's highly recommended to add the following workaround.
 
 1. Create `.archgpt/common.sh`:

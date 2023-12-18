@@ -86,8 +86,8 @@ export const initializeArParser = (Parser: TreeSitterParser, Query: TreeSitterQu
     // l(comments);
     // show the comments
 
-    l(comments.map((comment) => comment.text));
-    l('------------------- ');
+    // l(comments.map((comment) => comment.text));
+    // l('------------------- ');
 
     // tree-sitter query to cathc ><> comments
     const query = option.all ? `(
@@ -127,7 +127,7 @@ export const initializeArParser = (Parser: TreeSitterParser, Query: TreeSitterQu
 
       newContent = newContent.replace(content, '// ' + NS + ' ><|.> ' + (name))
       newContent = newContent.replace(comment, '')
-      console.log("NEW", name, newContent)
+      // console.log("NEW", name, newContent)
       return { comment, content, name };
     })
     // l(pairs);
@@ -287,7 +287,7 @@ export const initializeArParser = (Parser: TreeSitterParser, Query: TreeSitterQu
 
         // inject a fish object from saved ArchGPT dict
         const name = node.text.split(`// ${NS} ><|.> `)[1].trim()
-        console.log("FOUND FISH", name);
+        // console.log("FOUND FISH", name);
         const fishParts = fishDictionary[name]
 
         if (fishParts.length > 0) {
@@ -358,9 +358,9 @@ export const initializeArParser = (Parser: TreeSitterParser, Query: TreeSitterQu
 
     const str = _.reverse(match.split("")).join("")
     const [pairs,] = getFishSegs(dict, lang)(str, { all: true })
-    l("STR", str);
+    // l("STR", str);
 
-    l("PAIRS", pairs);
+    // l("PAIRS", pairs);
 
     return [pairs, str, pairs[0].name]
 
