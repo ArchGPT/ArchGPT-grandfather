@@ -1,7 +1,8 @@
-lib
+
 node_modules
 archgpt-*.tgz
 tsconfig.tsbuildinfo
 *.log
 docs/.vitepress/cache
 docs/.vitepress/dist
+dist

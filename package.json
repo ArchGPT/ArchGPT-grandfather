@@ -1,16 +1,14 @@
 {
-  "name": "archgpt",
+  "name": "archgpt-dev",
   "version": "0.0.1",
-  "main": "index.ts",
+  "main": "main/dist/index.js",
   "repository": "https://github.com/ArchGPT/ArchGPT",
   "author": "archy <a@0a.io>",
   "license": "MIT",
   "dependencies": {},
-  "bin": {
-    "archgpt": "cmd/lib/bin.js"
-  },
   "scripts": {
     "test": "npm --prefix ./main run test",
-    "build": "npm --prefix ./cmd run prepare"
+    "prepare": "npm --prefix ./cmd run prepare",
+    "publish": "cd cmd && npm publish"
   }
 }

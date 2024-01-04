@@ -43,19 +43,21 @@ them. And then ArchGPT will figure out the realization (i.e. within the context 
 existing codebase) of these "abstractions" and "abstract relationships", and automatically
 handle the prompt orchestration to feed into LLMs for code generation/editing.**
 
-### Examples
+## Right now ArchGPT is still work in progress && under active development .. (i.e. the implementation is not completed yet)
 
-After configuration, ArchGPT can be used to give natural-language commands to generate/edit
+### Miletone 1 (Feb 2024)
+
+After configuration, ArchGPT should be able to allow users to give natural-language commands to generate/edit
 code based on the existing codebase.
 
-Here is an example of using an image to edit the ReactJS code for the UI of a to-do list
+e.g. using an image to edit the ReactJS code for the UI of a to-do list
 app.
 
 ```
 archgpt "use this image for the UI" --image "./img1.png"
 ```
 
-[Video]
+<!-- [Video]
 
 Here is the "./img1.png" used in the example:
 
@@ -66,131 +68,5 @@ Here is the final resulted UI:
 [Image]
 
 To get a sense of how ArchGPT works, you can check out
-[the to-do list demo](https://archgpt.github.io/ArchGPT/to-do-list).
+[the to-do list demo](https://archgpt.github.io/ArchGPT/to-do-list). -->
 
-### Quickstart with LL.Market
-
-1. Install ArchGPT globally
-
-```bash
-npm install archgpt --global
-```
-
-or
-
-```bash
-yarn add archgpt --global
-```
-
-To verify the installation, run
-
-```
-archgpt --version
-## 0.1.0a
-```
-
-2. Set up the env variable for ll.market (recommended)
-
-In your `~/.env` file, or the `.env` in the repo:
-
-```
-LL_MARKET_API_KEY=...
-```
-
-To obtain an API key, create an account on https://ll.market
-
-> Alternatively, you can use your own `OPEN_AI` API key or set up
-> [Ollama](https://ollama.ai/) to use local LLM models (such as Mistral, CodeLlama, etc) and
-> configure **Caregories** by yourself. For more details, see **Endpoints and Categories
-> Configuration** below.
-
-3. Initalize ArchGPT for your codebase
-
-In the root folder of your codebase, run
-
-```
-archgpt init
-```
-
-This will create an `.archgpt/` folder, and index the existing codebase using an encoder,
-and generate meta-information about the repo. This will take a while, depending on the size
-of the codebase.
-
-> By default, it uses
-> [ll.market's `codebase-indexer`](https://ll.market/llm/codebase-indexer). In the case if
-> you want to use a custom indexer (e.g. with `text-embedding-ada` + `gpt-4`, or locally
-> with Mistral, etc), see **Codebase Indexer Configuration** below.
-
-4. Now you can give command to ArchGPT:
-
-```
-archgpt "use this image for the UI" --image "~/archgpt/to-do-example/img-1.jpg"
-```
-
-<!-- ```
-archgpt "refactor reducers to "
-``` -->
-
-### How does ArchGPT work
-
-```
-archgpt [command] [options]
-
-## e.g. archgpt "use this image for the UI" --image "~/archgpt/to-do-example/img-1.jpg"
-```
-
-Upon receiving a command (such as "use this image for the UI"), ArchGPT will first go
-through the meta-information about the repo (in `.archgpt`), and figure out which
-specialized LLMs on LL.Market to use, and then ArchGPT will orchestrate the prompt
-composition and run a sequence of LLMs to generate/edit the existing source code.
-
-> Alternatively, you can create your own specialized LLMs (e.g. locally with Mistral, etc)
-> and configure **Endpoints and Categories** by yourself. For more details, see **Endpoints
-> and Categories Configuration** below.
-
-<!--
-### Prerequisite
-
-For local-only LLMs:
-
-Make sure you have [Ollama](https://ollama.ai/) installed.
-
-For API-based LLMs:
-
-We support LLMs from [OpenAI](https://platform.openai.com/) and
-[LL.Market](https://ll.market). (More coming soon)
-
-For it to work, you need to ensure you have the following environment variables in `.env` of
-the root folder, or in `~/.env`
-
-`OPENAI_API_KEY=` (for OpenAI API key)
-
-`LLMARKET_API_KEY=` (for LLMarket API key) -->
-
-<!--
-```typescript
-import {initArchGPT} from "archgpt"
-
-const archGPT = await initArchGPT(folder)
-
-const ArSTs = await archGPT.searchFiles("to do list")
-
-const description = "allow users to assign a todo item to existing members in a team"
-
-const result = await archGPT.runPrompt("CREATE_FILE", {
-  basedOn: ArSTs,
-  description,
-  llm: "gpt-4",
-})
-```
-
-### coming soon:
-
-1. [Insomnium](https://github.com/ArchGPT/insomnium/) Integration:
-   https://github.com/ArchGPT/insomnium/discussions/13 to have first-class support for LLMs
-
-2. upload to npm & add API documentations
-
-3. ArchGPT GUI:
-
-![HN](https://github.com/ArchGPT/ArchGPT/blob/main/gui.png?raw=true) -->

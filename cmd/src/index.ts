@@ -1,3 +1,5 @@
+// @ts-nocheck 
+
 import cp = require('child_process')
 import fs = require('fs')
 import p = require('path')

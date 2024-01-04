@@ -1,7 +1,7 @@
 {
   "name": "archgpt",
-  "version": "0.1.0",
-  "description": "Modern native ArchGPT made easy",
+  "version": "0.0.1l",
+  "description": "The ArchGPT Command-line Tool - Architecture For Reasoning and Computing over Hypergraphs with LLMs",
   "keywords": [
     "llm"
   ],
@@ -10,18 +10,18 @@
   "license": "MIT",
   "author": "Archy Will He <archy@archgpt.dev>",
   "bin": {
-    "archgpt": "lib/bin.js"
+    "archgpt": "dist/bin.js"
   },
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
     "build": "tsc",
     "test": "sh test/all.sh",
     "lint": "eslint cmd-src --ext .ts",
     "serve": "docsify serve docs",
-    "prepare": "npm run build && node lib/bin install",
+    "prepare": "npm run build && node dist/bin install",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
@@ -30,6 +30,7 @@
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
     "@tsconfig/node14": "^1.0.3",
+    "@tsconfig/node16": "^16.1.1",
     "@types/node": "^20.1.4",
     "@typicode/eslint-config": "^1.1.0",
     "typescript": "^5.0.4",

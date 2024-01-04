@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 import p = require('path')
 import h = require('./')
 
