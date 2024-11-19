@@ -2,4 +2,4 @@
 
 Summary
 
-ArchGPT is a RAG framework which can also be used to manage your source code. (It is not to be confused with ARCHY, an ARC-AGI solver that utilizes ArchGPT among many things).
+ArchGPT is a RAG framework which can be used to manage any codebase
